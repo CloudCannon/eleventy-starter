@@ -5,7 +5,7 @@
       <img class="{{ c }}__svg-img" src={{ bg_image }} alt="" />
    {% endif %}
    <div class="{{ c }}__wrapper">
-      <h1>{{ heading }}</h1>
+      <h1 data-rosey="title">{{ heading }}</h1>
       <p>{{ text }}</p>
       {% if button %}
          {% bookshop "global/button" bind: button %}

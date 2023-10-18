@@ -27,6 +27,16 @@ This template has enough in it to start experiencing how editing works inside Cl
 ## Creating new components
 At the root of the project, run `npm run new my-new-component`. This will create a new component with the appropriate files in `component-library/components`.
 
+## Translating with Rosey
+This branch contains a Rosey example, inside of the Hero Bookshop component. The tag `data-rosey="title"` generates an entry inside `rosey/base.json` when `npx rosey generate --source _site` is run. We then use the generated `base.json` in conjunction with a [locale file](https://rosey.app/docs/#creating-locale-files) to build our translated pages. If `base.json` doesn't have the latest `data-rosey` value, remember Rosey generates the `base.json` from our *built* site, so remember to run a build between adding the `data-rosey` tag, and running `npx rosey generate --source _site`. 
+
+Use the file `rosey/locales/ko-kr.json` as an example for how to fill in your chosen language. We must create these locale files ourselves.
+
+After filling in the translations in the locale files, run `npx rosey build --source _site` to generate the translated pages in `_site_translated`.
+
+
+[Rosey Docs](https://rosey.app/docs/)
+
 ## Theme colors & Sass Variables
 - Theme colors can be set in *Data* / *Theme*
 - The main colors are set and variants of them are computed
