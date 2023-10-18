@@ -1,0 +1,32 @@
+.pagination {
+  padding-top: 64px;
+
+  ul {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    color: $color-primary;
+
+    a {
+      display: block;
+      padding: 1rem 1.5rem;
+      border: $base-border-width solid $color-primary;
+      border-radius: $base-border-radius;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+  }
+
+  svg {
+    stroke: $color-primary;
+
+    g  {
+      fill: $color-primary;
+    }
+  }
+
+  .active {
+    background-color: $color-primary;
+    color: white;
+  }
+}

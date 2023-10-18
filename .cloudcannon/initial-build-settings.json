@@ -1,0 +1,19 @@
+{
+  "ssg": "eleventy",
+  "build_configuration": {
+    "config": "",
+    "formats": "",
+    "input": "",
+    "output": "_site",
+    "pathprefix": "",
+    "quiet": false,
+    "incremental": false,
+    "ignoreinitial": false,
+    "preserved_paths": "node_modules/",
+    "preserveOutput": false,
+    "includeGit": true,
+    "manage_plugin_manually": false,
+    "use_beta_plugin": false,
+    "environment_variables": []
+  }
+}

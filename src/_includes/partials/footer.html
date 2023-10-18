@@ -1,0 +1,37 @@
+{% assign c = "footer" %}
+
+<footer class="{{ c }}">
+  <div class="{{ c }}__container">
+    <div class="{{ c }}__details">
+      <div class="{{ c }}__logo">
+          <a href="/">
+            <img src="{{ footer.logo }}" alt="">
+          </a>
+          <p>
+            Copyright {% year %} {{ footer.copyright }}
+          </p>
+      </div>
+      <ul class="{{ c }}__social-icons">
+        {% for item in footer.social %}
+          <li>
+              <a href="{{ item.link }}"> <i class="fa-brands {{ item.icon }}" aria-hidden="true"></i></a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="{{ c }}__sections">
+      {% for item in footer.sections %}
+        <div class="{{ c }}__section">
+            <h3>{{ item.title }}</h3>
+            <ul>
+              {% for link in item.links %}
+              <li>
+                  <a href="{{ link.link }}">{{ link.text }}</a>
+              </li>
+              {% endfor %}
+            </ul>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</footer>

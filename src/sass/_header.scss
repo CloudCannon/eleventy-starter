@@ -1,0 +1,98 @@
+.header {
+  position: relative;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    padding: $base-padding;
+    max-width: $max-width-xxl;
+    margin: 0 auto;
+
+    @media screen and (min-width: $max-width-md) {
+      padding: $base-padding 32px;
+    }
+
+    @media screen and (min-width: $max-width-xl) {
+      padding: 64px 157px;
+    }
+  }
+
+  &__logo {
+    img {
+      width: 200px;
+
+      @media screen and (min-width: $max-width-md) {
+        width: 250px;
+      }
+    }
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+  }
+
+  &__nav-list {
+    display: none;
+
+    @media screen and (min-width: $max-width-xl) {
+      position: static;
+      display: flex;
+      padding: 0;
+
+      li {
+        margin-bottom: 0;
+        margin-left: 2rem;
+      }
+
+      a {
+        font-size: 1.25rem;
+        letter-spacing: 0.5px;
+        font-weight: lighter;
+      }
+    }
+  }
+
+  &__nav-list-item {
+    display: flex;
+
+    img {
+      width: .9rem;
+      margin-left: .5rem;
+    }
+  }
+
+  &__nav-list-mobile {
+    position: absolute;
+    z-index: 99;
+    top: 76px;
+    right: 0;
+    left: 0;
+
+    width: 100%;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 0 0 0 4px;
+    font-family: $font-primary;
+    letter-spacing: 1.2;
+    color: text;
+
+    li {
+      margin-bottom: .5rem;
+    }
+
+    @media screen and (min-width: $max-width-xl) {
+      display: none !important;
+    }
+  }
+
+  &__hamburger {
+    display: block;
+    border: none;
+    background: none;
+
+    @media screen and (min-width: $max-width-xl) {
+      display: none;
+    }
+  }
+}

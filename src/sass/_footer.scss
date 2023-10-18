@@ -1,0 +1,95 @@
+.footer {
+  background-color: $color-black;
+
+  &__container {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    padding-inline: 32px;
+    padding-block: 64px;
+    max-width: $max-width-xxl;
+    margin: 0 auto;
+  
+    @media screen and (min-width: $max-width-xl) {
+      padding-inline: 157px;
+    }
+
+    @media screen and (min-width: $max-width-xl) {
+      flex-direction: row;
+    }
+
+  }
+
+  p,
+  a {
+    color: $color-text-white;
+  }
+
+
+  &__details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+
+
+    p {
+     padding-block: 32px; 
+    }
+
+
+    @media screen and (min-width: $max-width-xl) {
+      width: 50%;
+      text-align: start;
+      align-items: start;
+    }
+  }
+
+  &__logo {
+    svg {
+      width: 108px;
+    }
+  }
+
+  &__social-icons {
+    display: flex;
+    gap: 16px;
+    font-size: 2rem;
+  }
+
+  &__sections {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    width: 100%;    
+    
+    @media screen and (min-width: $max-width-xs) {
+      flex-direction: row;
+      text-align: start;
+    }
+
+    @media screen and (min-width: $max-width-xl) {
+      width: 50%;
+    }
+
+    h3 {
+      color: $color-text-white;
+      font-weight: bold;
+      padding-bottom: 16px;
+
+      @media screen and (min-width: $max-width-xs) {
+        padding-bottom: 32px;
+      }
+    }
+
+    li {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__section {
+    margin-bottom: 32px;
+  }
+}

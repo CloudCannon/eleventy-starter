@@ -1,0 +1,48 @@
+// Font Variables
+$font-primary: 'Source Sans 3', sans-serif;
+$font-secondary: 'Roboto', sans-serif;
+$base-font-size: 1rem;
+
+//Colors Variables
+$color-white: #fff;
+$color-black: #000;
+$color-gray: #808080;
+$color-gray-light: mix($color-gray, $color-white, 10%);
+$color-gray-dark: mix($color-gray, $color-black, 50%);
+$color-primary: #034AD8;
+$color-primary-light: mix($color-primary, $color-white, 10%);
+$color-primary-dark: mix($color-primary, $color-black, 50%);
+$color-secondary: #D9CFFF;
+$color-secondary-light: mix($color-secondary, $color-white, 10%);
+$color-secondary-dark: mix($color-secondary, $color-black, 50%);
+$color-anchor: #ffba08;
+$color-anchor-light: mix($color-anchor, $color-white, 10%);
+$color-anchor-dark: mix($color-anchor, $color-black, 50%);
+$color-header: #181512;
+$color-header-light: mix($color-anchor, $color-white, 10%);
+$color-header-dark: mix($color-anchor, $color-black, 50%);
+$color-text: #181222;
+$color-text-white: #dddddd;
+$color-text-light: #4d4d4d;
+$color-deactive: #ababab;
+
+// Spacer Variables
+$base-padding: 1rem;
+$base-margin: 1rem;
+
+// Page Container Variables
+$max-width-xs: 620px;
+$max-width-sm: 780px;
+$max-width-md: 870px;
+$max-width-lg: 1028px;
+$max-width-xl: 1280px;
+$max-width-xxl: 1920px;
+
+// Transition Variables
+$base-transition: all 0.5s ease-in-out;
+
+//Other Variables
+$base-border-width: 1px;
+$base-border-radius: 8px;
+
+

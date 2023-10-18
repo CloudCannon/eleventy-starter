@@ -1,0 +1,57 @@
+.blog {
+  padding: 64px $base-padding;
+  max-width: $max-width-xxl;
+  margin: 0 auto;
+
+  @media screen and (min-width: $max-width-md) {
+    padding: 64px 32px;
+  }
+
+  @media screen and (min-width: $max-width-xl) {
+    padding: 64px 157px;
+  }
+
+  &__hero-content {
+    h1 {
+      padding-block: 32px;
+      font-size: 2.5rem;
+      font-weight: bold;
+
+      @media screen and (min-width: $max-width-md) {
+        font-size: 3.5rem;
+      }
+    }
+  }
+
+  &__grid {
+    display: grid;
+    gap: 36px;
+
+    @media screen and (min-width: $max-width-md) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__post-thumb {
+    img {
+      border-radius: $base-border-radius;
+    }
+  }
+
+  &__post-tag {
+    padding-block: 8px;
+
+    a {
+      padding: 4px 12px;
+      border-radius: $base-border-radius;
+      background-color: $color-primary-dark;
+      color: $color-white
+    }
+  }
+
+  &__post-title {
+    padding-block: 8px;
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+}

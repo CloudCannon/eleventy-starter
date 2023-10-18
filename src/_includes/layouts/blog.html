@@ -1,0 +1,40 @@
+---
+layout: layouts/base.html
+---
+
+{% assign c = "blog" %}
+<main class="{{ c }}">
+  <section class="{{ c }}__hero">
+    <div class="{{ c }}__hero-content">
+      <h1>{{title}}</h1>
+    </div>
+  </section>
+  <section>
+    <ul class="{{ c }}__grid">
+      {% for blog in blog %}
+        <li class="{{ c }}__post-card">
+          <div class="{{ c }}__post-thumb">
+            <a href="{{ blog.url }}">
+              <img
+                src="{{ blog.data.thumbImg.image }}"
+                alt="{{ blog.data.thumbImg.image_alt }}"
+                loading="lazy"
+              />
+            </a>
+          </div>
+          <div class="{{ c }}__post-content">
+            <div class="{{ c }}__post-tag">
+              {% for tag in blog.data.tags limit: 2 %}
+              <a href="/tags/{{ tag }}/">{{ tag }}</a>
+              {% endfor %}
+            </div>
+            <div class="{{ c }}__post-title">
+              <a href="{{ blog.url }}" class="">{{blog.data.title}}</a>
+            </div>
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+    {% include 'partials/pagination.html' %}
+  </section>
+</main>

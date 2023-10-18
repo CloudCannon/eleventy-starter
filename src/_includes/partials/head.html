@@ -1,0 +1,22 @@
+<head>
+  {% include './meta.html' %}
+  <title>{{ title }} | {{ site.site_title }}</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/bookshop.css">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="{{ site.favicon_icon }}" type="image/x-icon" />
+  <link rel="icon" href="{{ site.favicon_image }}" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="{{ site.favicon_image }}">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Source+Sans+3:wght@300;400;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/18459b0ca5.js" crossorigin="anonymous"></script>
+
+  <!-- Alpine -->
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.1/dist/cdn.min.js"></script>
+</head>

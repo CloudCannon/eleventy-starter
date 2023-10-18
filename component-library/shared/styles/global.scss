@@ -1,0 +1,12 @@
+// Files in shared/styles will be used as global stylesheets on your site,
+// as well as in the component browser and screenshots.
+@import 'variables';
+
+html, body {
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}

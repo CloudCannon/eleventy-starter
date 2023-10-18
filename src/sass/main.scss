@@ -1,0 +1,62 @@
+@import 'variables';
+@import 'header';
+@import 'footer';
+@import 'pagination';
+@import '404';
+@import 'blog';
+@import 'article';
+
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+main {
+  min-height: 100vh;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-primary;
+  line-height: 1;
+  color: $color-text;
+  text-wrap: balance;
+}
+
+p, ol, ul, a, span {
+  font-family: $font-secondary;
+  color: $color-text;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.main-page-container {
+  position: relative;
+  min-height: 100vh;
+  color: $color-text-white;
+
+  &__bg-img {
+    position: absolute;
+    top: 0px;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: fill;
+  }
+}

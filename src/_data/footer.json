@@ -1,0 +1,73 @@
+{
+  "logo": "/images/logos/logo-wordmark-white.png",
+  "copyright": "MyCompany, All rights reserved!",
+  "social": [
+    {
+      "link": "https://www.facebook.com/",
+      "icon": "fa-facebook",
+      "icon_alt": "Facebook"
+    },
+    {
+      "link": "https://www.instagram.com/",
+      "icon": "fa-instagram",
+      "icon_alt": "Instagram"
+    },
+    {
+      "link": "https://twitter.com/",
+      "icon": "fa-twitter",
+      "icon_alt": "Twitter"
+    },
+    {
+      "link": "https://www.github.com/",
+      "icon": "fa-github",
+      "icon_alt": "GitHub"
+    },
+    {
+      "link": "https://www.youtube.com/",
+      "icon": "fa-youtube",
+      "icon_alt": "YouTube"
+    }
+  ],
+  "sections": [
+    {
+      "title": "Main Pages",
+      "links": [
+        {
+          "link": "/",
+          "text": "Home"
+        }
+      ]
+    },
+    {
+      "title": "Community",
+      "links": [
+        {
+          "link": "/blog",
+          "text": "Blog"
+        },
+        {
+          "link": "/sitemap.xml",
+          "text": "Sitemap"
+        }
+      ]
+    },
+    {
+      "title": "Company",
+      "links": [
+        {
+          "link": "/contact",
+          "text": "Contact"
+        },
+        {
+          "link": "/privacy",
+          "text": "Privacy Policy"
+        }
+      ]
+    }
+  ],
+  "_inputs": {
+    "logo": {
+      "type": "image"
+    }
+  }
+}

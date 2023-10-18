@@ -1,0 +1,85 @@
+source: src
+
+collections_config:
+  pages:
+    icon: feed
+    disable_add_folder: true
+    output: true
+    path: pages
+    # schemas:
+    #   default:
+    #     path: site/schemas/page.html
+    _enabled_editors:
+      - visual
+  blog:
+    path: blog
+    icon: article
+    disable_add_folder: true
+    output: true
+    # schemas:
+    #   default:
+    #     path: site/schemas/post.md
+    # preview:
+    #   metadata: 
+    #     - icon: newspaper
+    #       text: 
+    #         - key: tags
+    _enabled_editors:
+      - content
+      - visual
+  data: 
+    output: true
+    path: _data
+    icon: settings
+    disable_add: true
+    disable_add_folder: true
+    _enabled_editors:
+      - data
+    filter:
+      exclude: 
+        - nav.json
+        - footer.json
+        - theme.json
+  site_navigation:
+    output: true
+    path: _data
+    icon: table_rows
+    disable_add: true
+    disable_add_folder: true
+    _enabled_editors:
+      - data
+    filter:
+      base: none
+      include: 
+        - nav.json
+        - footer.json
+  theme_palette:
+    output: true
+    path: _data
+    disable_add: true
+    disable_add_folder: true
+    icon: color_lens
+    _enabled_editors:
+      - data
+    filter:
+      base: none
+      include: 
+        - theme.json
+
+collection_groups:
+  - heading: Pages
+    collections:
+      - pages
+  - heading: Blogging
+    collections:
+      - blog
+  - heading: Site Settings
+    collections:
+      - data
+      - theme_palette
+      - site_navigation
+
+paths:
+  uploads: images
+  data: _data
+  includes: _includes

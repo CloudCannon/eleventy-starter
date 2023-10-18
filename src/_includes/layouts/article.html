@@ -1,0 +1,58 @@
+---
+layout: layouts/base.html
+---
+
+{% assign c = 'article' %}
+<main class="{{ c }}">
+  <section>
+      <a class="{{ c }}__back" href="/blog/">
+        <i class="fa-solid fa-arrow-left"></i>
+        <span>Back</span>
+      </a>
+      <article>
+        <div class="{{ c }}__hero">
+          <h1>{{ title }}</h1>
+          <div class="{{ c }}__details">
+            <span href="/{{ author | slugify }}/">{{ author }}</span>
+            <i class="fa-solid fa-grip-lines-vertical"></i>
+            <span>{{ date | postDate }}</span>
+          </div>
+          <img
+            src="{{ featured_image.image }}"
+            alt="{{ featured_image.image_alt }}"
+          />
+        </div>
+        <div class="{{ c }}__content">
+          {{ content }}
+        </div>
+      </article>
+  </section>
+
+  <section>
+    <ul class="blog__grid">
+      {% for blog in collections.blog limit: 3 %}
+      <li class="blog__post-card">
+        <div class="blog__post-thumb">
+          <a href="{{ blog.url }}">
+            <img
+              src="{{ blog.data.thumbImg.image }}"
+              alt="{{ blog.data.thumbImg.image_alt }}"
+              loading="lazy"
+            />
+          </a>
+        </div>
+        <div class="blog__post-content">
+          <div class="blog__post-tag">
+            {% for tag in blog.data.tags limit: 2 %}
+            <a href="/tags/{{ tag }}/">{{ tag }}</a>
+            {% endfor %}
+          </div>
+          <div class="blog__post-title">
+            <a href="{{ blog.url }}" class="">{{blog.data.title}}</a>
+          </div>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+</main>

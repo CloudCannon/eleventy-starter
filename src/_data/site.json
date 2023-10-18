@@ -1,0 +1,10 @@
+{
+    "BaseURL": "http://example.org",
+    "site_title": "Ookla",
+    "favicon_icon": "/images/favicons/favicon.ico",
+    "favicon_image": "/images/favicons/favicon.png",
+    "description": "A barebones eleventy template, suitable for developers",
+    "twitter_image": "",
+    "twitter_site": "",
+    "image": ""
+}

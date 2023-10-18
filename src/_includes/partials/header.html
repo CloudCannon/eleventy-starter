@@ -1,0 +1,98 @@
+{% assign c = 'header' %}
+
+<header>
+  <nav class="{{ c }}">
+    <div class="{{ c }}__container">
+      <!-- Logo -->
+      <a class="{{ c }}__logo" href="/">
+          <img src="{{ nav.logo }}" alt="Nav-Logo" />
+      </a>
+      <div class="{{ c }}__nav" x-data="{ open: false }">
+        <!-- Hamburger -->
+        <button x-on:click="open = ! open" class="{{ c }}__hamburger">
+          <span x-show="!open" class="navbar-toggler-default">
+            <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <line
+                  x1="3.5"
+                  y1="5.5"
+                  x2="21.5"
+                  y2="5.5"
+                  stroke="#292D32"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <line
+                  x1="4.5"
+                  y1="12.5"
+                  x2="21.5"
+                  y2="12.5"
+                  stroke="#292D32"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <line
+                  x1="11.5"
+                  y1="19.5"
+                  x2="21.5"
+                  y2="19.5"
+                  stroke="#292D32"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+            </svg>
+          </span>
+          <span x-show="open" class="navbar-toggler-toggled">
+            <svg
+                width="20"
+                height="20"
+                viewBox="0 0 28 28"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <path
+                  d="M21.5 6.5L6.5 21.5"
+                  stroke="#404152"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M21.5 21.5L6.5 6.5"
+                  stroke="#404152"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+            </svg>
+          </span>
+        </button>
+        <!-- Mobile nav -->
+        <ul class="{{ c }}__nav-list-mobile" x-show="open" x-cloak x-transition>
+          {% for item in nav.items %}
+            {% assign url = item.link %}
+            <li>
+              <a class="nav-link {% if page.url == url%}active{% endif %}" href="{{ item.link }}">{{ item.text }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+        <!-- Desktop nav -->
+        <ul class="{{ c }}__nav-list">
+          {% for item in nav.items %}
+            {% assign url = item.link %}
+            <li class="{{ c }}__nav-list-item">
+              <a class="nav-link {% if page.url == url%}active{% endif %}" href="{{ item.link }}">{{ item.text }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div> 
+    </div>
+  </nav>
+</header>

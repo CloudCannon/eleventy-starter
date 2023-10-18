@@ -1,0 +1,23 @@
+.button {
+  cursor: pointer;
+  border: none;
+  border-radius: $base-border-radius;
+  padding: 0;
+
+  a {
+    background: transparent;
+    display: block;
+    border-radius: $base-border-radius;
+    padding: 1rem 1.75rem;
+    font-size: 1rem;
+
+    &:hover {
+      backdrop-filter: brightness(0.85);
+    }
+  }
+
+  @media only screen and (min-width: 1020px) {
+    font-size: 1.25rem;
+  }
+}
+
