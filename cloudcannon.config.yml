@@ -1,18 +1,16 @@
-source: src
-
 collections_config:
   pages:
     icon: feed
     disable_add_folder: true
     output: true
-    path: pages
+    path: src/pages
     # schemas:
     #   default:
     #     path: site/schemas/page.html
     _enabled_editors:
       - visual
   blog:
-    path: blog
+    path: src/blog
     icon: article
     disable_add_folder: true
     output: true
@@ -29,7 +27,7 @@ collections_config:
       - visual
   data: 
     output: true
-    path: _data
+    path: src/_data
     icon: settings
     disable_add: true
     disable_add_folder: true
@@ -50,7 +48,7 @@ collections_config:
       - data
   site_navigation:
     output: true
-    path: _data
+    path: src/_data
     icon: table_rows
     disable_add: true
     disable_add_folder: true
@@ -63,7 +61,7 @@ collections_config:
         - footer.json
   theme_palette:
     output: true
-    path: _data
+    path: src/_data
     disable_add: true
     disable_add_folder: true
     icon: color_lens
@@ -89,6 +87,6 @@ collection_groups:
       - rosey
 
 paths:
-  uploads: images
-  data: _data
-  includes: _includes
+  uploads: src/images
+  data: src/_data
+  includes: src/_includes
