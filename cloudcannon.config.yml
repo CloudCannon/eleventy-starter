@@ -40,6 +40,14 @@ collections_config:
         - nav.json
         - footer.json
         - theme.json
+  rosey: 
+    output: true
+    path: rosey/locales
+    icon: translate
+    disable_add: true
+    disable_add_folder: true
+    _enabled_editors:
+      - data
   site_navigation:
     output: true
     path: _data
@@ -78,6 +86,7 @@ collection_groups:
       - data
       - theme_palette
       - site_navigation
+      - rosey
 
 paths:
   uploads: images
