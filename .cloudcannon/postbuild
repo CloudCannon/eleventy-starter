@@ -1,1 +1,2 @@
 npx @bookshop/generate
+npx rosey generate --source _site
