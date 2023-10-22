@@ -1,6 +1,10 @@
+#!/usr/bin/env bash
+
+npm i
 npx @bookshop/generate
-# TODO: Move to node fs file
+echo "Translating site with Rosey"
+# Move Rosey back to the root
 mv ./src/rosey .
-npx rosey generate --source _site
-mv rosey ./src
-node ./src/rosey/create-locale-file.js
+# There's a little bit of shuffling around here to ensure the translated site ends up where CloudCannon picks up your site
+mv ./_site ./_untranslated_site                 
+npx rosey@latest build --source _untranslated_site --dest _site
