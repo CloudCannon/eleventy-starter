@@ -6,7 +6,7 @@
    {% endif %}
    <div class="{{ c }}__wrapper">
       <h1 data-rosey="title">{{ heading }}</h1>
-      <p>{{ text }}</p>
+      <p data-rosey="hero-text">{{ text }}</p>
       {% if button %}
          {% bookshop "global/button" bind: button %}
       {% endif %}
