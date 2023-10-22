@@ -2,5 +2,4 @@ npx @bookshop/generate
 # TODO: Move to node fs file
 mv ./src/rosey .
 npx rosey generate --source _site
-mv rosey ./src
-node ./src/rosey/create-locale-file.js
+node ./rosey/create-locale-file.js

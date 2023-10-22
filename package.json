@@ -28,6 +28,7 @@
   },
   "dependencies": {
     "@bookshop/eleventy-bookshop": "3.8.1",
+    "mv": "^2.1.1",
     "sass": "^1.69.2"
   }
 }
