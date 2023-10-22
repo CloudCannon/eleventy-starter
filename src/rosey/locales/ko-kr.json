@@ -1,10 +1,14 @@
 {
-  "title": {
-      "original": "Connectivity insights for the modern era",
-      "value": "현대 시대를 위한 연결 인사이트"
-  },
   "hero-text": {
-      "original": "Delivering a world-class network experience is more challenging than ever before. Ookla’s end-to-end enterprise solutions help you transform wireless and fixed network measurement into actionable insights across a network’s lifecycle, from planning and building to communicating performance and availability to customers.",
-      "value": "세계적 수준의 네트워크 경험을 제공하는 것은 그 어느 때보다 어렵습니다. Ookla의 엔드 투 엔드 엔터프라이즈 솔루션은 무선 및 고정 네트워크 측정을 계획 및 구축부터 고객에게 성능 및 가용성 전달에 이르기까지 네트워크 수명주기 전반에 걸쳐 실행 가능한 통찰력으로 전환하는 데 도움이 됩니다."
+    "original": "Delivering a world-class network experience is more challenging than ever before. Ookla’s end-to-end enterprise solutions help you transform wireless and fixed network measurement into actionable insights across a network’s lifecycle, from planning and building to communicating performance and availability to customers.",
+    "value": "세계적 수준의 네트워크 경험을 제공하는 것은 그 어느 때보다 어렵습니다. Ookla의 엔드 투 엔드 엔터프라이즈 솔루션은 무선 및 고정 네트워크 측정을 계획 및 구축부터 고객에게 성능 및 가용성 전달에 이르기까지 네트워크 수명주기 전반에 걸쳐 실행 가능한 통찰력으로 전환하는 데 도움이 됩니다."
+  },
+  "left-right-heading": {
+    "original": "Your unbiased industry guide",
+    "value": ""
+  },
+  "title": {
+    "original": "Connectivity insights for the modern era",
+    "value": "현대 시대를 위한 연결 인사이트"
   }
 }
