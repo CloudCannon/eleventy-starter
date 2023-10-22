@@ -1,2 +1,6 @@
 npx @bookshop/generate
+# TODO: Move to node fs file
+# TODO: Create node fs file to create the locale
+mv ./src/rosey .
 npx rosey generate --source _site
+mv rosey ./src
