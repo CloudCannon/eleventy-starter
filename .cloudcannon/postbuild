@@ -3,6 +3,8 @@
 npm i
 npx @bookshop/generate
 echo "Translating site with Rosey"
+# Move Rosey back to the root
+mv ./src/rosey .
 # There's a little bit of shuffling around here to ensure the translated site ends up where CloudCannon picks up your site
-mv ./_site ./_untranslated_site                  
+mv ./_site ./_untranslated_site                 
 npx rosey@latest build --source _untranslated_site --dest _site
