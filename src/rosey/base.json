@@ -5,12 +5,24 @@
       "original": "Delivering a world-class network experience is more challenging than ever before. Ookla’s end-to-end enterprise solutions help you transform wireless and fixed network measurement into actionable insights across a network’s lifecycle, from planning and building to communicating performance and availability to customers.",
       "value": null,
       "pages": {
-        "index.html": 1
+        "en/index.html": 1,
+        "index.html": 1,
+        "ko-kr/index.html": 1
       },
-      "total": 1
+      "total": 3
     },
     "left-right-heading": {
       "original": "Your unbiased industry guide",
+      "value": null,
+      "pages": {
+        "en/index.html": 3,
+        "index.html": 3,
+        "ko-kr/index.html": 3
+      },
+      "total": 9
+    },
+    "left-right-text": {
+      "original": "For almost two decades, Ookla’s data-backed insights into the performance, quality, and accessibility of networks have driven industry advancement. Whether you’re interested in the rollout of an emerging technology or a country’s telecommunications landscape, Ookla distills the noise to deliver what you actually need to know to stay competitive.",
       "value": null,
       "pages": {
         "index.html": 3
