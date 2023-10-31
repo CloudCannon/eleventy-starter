@@ -6,5 +6,6 @@ npm i
 # Process scss to css
 #npm run build:sass
 #npm run build:bookshop-sass
+mkdir _site
 mkdir _site/css
 npm run start
