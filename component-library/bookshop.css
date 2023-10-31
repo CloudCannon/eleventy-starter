@@ -1,6 +1,5 @@
-@import '/shared/styles/global.css';
-@import '/shared/styles/_variables.css';
-@import '/components/left-right/left-right.css';
-@import '/components/hero/hero.css';
-@import '/components/heading-text/heading-text.css';
 @import '/components/global/button/button.css';
+@import '/components/heading-text/heading-text.css';
+@import '/components/hero/hero.css';
+@import '/components/left-right/left-right.css';
+@import '/shared/styles/global.css';
