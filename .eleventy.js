@@ -1,5 +1,6 @@
 const pluginBookshop = require("@bookshop/eleventy-bookshop");
 const { DateTime } = require("luxon");
+const { Tokenizer, assert } = require('liquidjs');
 
 module.exports = function (eleventyConfig) {
   // Hot reloading for local dev
@@ -23,6 +24,23 @@ module.exports = function (eleventyConfig) {
 
  /* eleventyConfig.addWatchTarget("./_site/css/*.css");
   eleventyConfig.setUseGitIgnore(false);*/
+
+  eleventyConfig.addLiquidTag('assign_local', function(liquidEngine) {
+    return {
+      parse: function (token) {
+          const tokenizer = new Tokenizer(token.args, this.liquid.options.operatorsTrie);
+          this.key = tokenizer.readIdentifier().content;
+          tokenizer.skipBlank();
+          assert(tokenizer.peek() === '=', () => `illegal token ${token.getText()}`);
+          tokenizer.advance();
+          this.value = tokenizer.remaining();
+      },
+      render: function(ctx) {
+          ctx.scopes[ctx.scopes.length-1][this.key] = this.liquid.evalValueSync(this.value, ctx);
+      }
+    }
+});
+
 
   // Display the current year
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
