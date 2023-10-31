@@ -8,7 +8,7 @@
     "watch:eleventy": "eleventy --serve",
     "build:eleventy": "eleventy",
     "start": "npm-run-all fetch-theme-color --parallel watch:eleventy process-css",
-    "build": "npm-run-all build:*",
+    "build": "npm-run-all fetch-theme-color build:eleventy process-css",
     "new": "npx @bookshop/init --component",
     "process-css": "node utils/cloudcannon-postcss.js"
   },
