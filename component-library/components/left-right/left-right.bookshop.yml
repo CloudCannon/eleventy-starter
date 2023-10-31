@@ -9,13 +9,12 @@ spec:
 
 # Defines the structure of this component, as well as the default values
 blueprint:
+  image_on_left: false
+  heading_text: bookshop:heading-text
   bg_image:
-  heading:
-  text:
   button: bookshop:global/button
   image:
   image_alt:
-  image_on_left: false
 
 # Overrides any fields in the blueprint when viewing this component in the component browser
 preview:
