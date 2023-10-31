@@ -1,19 +1,25 @@
 {% assign c = "shared-bg-left-right" %}
 
-<div class="{{ c }}">
-   {% if bg_image %}
-      <img class="{{ c }}__svg-img" src={{ bg_image }} alt="" />
-   {% endif %}
-   <div class="{{ c }}__wrapper">
-      <div class="{{ c }}__text">
-         <h2>{{ heading }}</h2>
-         <p>{{ text }}</p>
-         {% if button %}
-            {% bookshop "global/button" bind: button %}
+<section class="{{ c }}" style="--background-image:url({{ bg_image }})">
+   <div class="content-block">
+      {% if image_on_left == true %}
+         {% if image %}
+            <div class="{{ c }}__img {{ c }}__img--image-on-left">
+               <img src={{ image }} alt={{ image_alt }} />
+            </div>
          {% endif %}
-      </div>
-      {% if image %}
-         <img class="{{ c }}__img" src={{ image }} alt={{ image_alt }} />
-      {% endif %}
+         <div class="{{ c }}__text {{ c }}__text--image-on-left">
+            {% bookshop "heading-text" bind: heading-text %}
+         </div>
+      {% else %}         
+         <div class="{{ c }}__text">
+            {% bookshop "heading-text" bind: heading-text %}
+         </div>
+         {% if image %}
+            <div class="{{ c }}__img">
+               <img src={{ image }} alt={{ image_alt }} />
+            </div>
+         {% endif %}
+      {% endif %}      
    </div>
-</div>
+</section>

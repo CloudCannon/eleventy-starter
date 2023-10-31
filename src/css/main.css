@@ -1,10 +1,10 @@
-@import 'variables';
-@import 'header';
-@import 'footer';
-@import 'pagination';
-@import '404';
-@import 'blog';
-@import 'article';
+@import '_variables';
+@import '_header';
+@import '_footer';
+@import '_pagination';
+@import '_404';
+@import '_blog';
+@import '_article';
 
 html {
   box-sizing: border-box;
@@ -46,11 +46,20 @@ img {
   height: auto;
 }
 
-.main-page-container {
+.main-page-container {  
   background-image:var(--background-image);
   background-repeat:no-repeat;
   background-size:cover;
   background-position:center;
   min-height: 100vh;
   color: var(--color-text-white);
+}
+
+
+.content-block{
+  max-width:var(--content-max-width);
+  margin:auto;
+  display:grid;
+  grid-template-columns: var(--twelve-column-grid);
+  padding-inline: max(var(--base-padding), 48px);
 }

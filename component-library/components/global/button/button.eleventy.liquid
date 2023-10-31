@@ -1,10 +1,12 @@
 {% assign c = 'button' %}
 
-<button class="{{ c }}" style="background-color: {{ button_color }};">
+<button class="{{ c }}" style="
+  --button-background-color: {{ button_color }};
+  --button-text-color: {{ button_text_color }};
+">
   <a 
   class='{{ c }}__link' 
-  href='{{ path }}'
-  style="color: {{ button_text_color }};"
+  href='{{ path }}'  
   >
     {{ button_text }}
   </a>

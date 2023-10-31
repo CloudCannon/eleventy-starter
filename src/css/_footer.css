@@ -5,19 +5,12 @@
     display: flex;
     flex-direction: column-reverse;
     justify-content: space-between;
-    padding-inline: 32px;
     padding-block: 64px;
-    max-width: var(--max-width-xxl);
-    margin: 0 auto;
-  
-    @media screen and (min-width: var(--max-width-xl)) {
-      padding-inline: 157px;
-    }
+    padding-inline: max(var(--base-padding), 48px);
+    max-width: var(--content-max-width);
+    margin: 0 auto;    
 
-    @media screen and (min-width: var(--max-width-xl)) {
-      flex-direction: row;
-    }
-
+    @media (--desktop) { flex-direction: row; }
   }
 
   p,
@@ -33,11 +26,9 @@
     text-align: center;
     width: 100%;
 
-
     p {
      padding-block: 32px; 
     }
-
 
     @media screen and (min-width: var(--max-width-xl)) {
       width: 50%;
@@ -47,6 +38,16 @@
   }
 
   &__logo {
+
+    a{
+      display:flex;
+      align-items:center;
+      font-size:64px;
+      gap:30px;
+      font-weight:bold;      
+    }
+
+    img,
     svg {
       width: 108px;
     }
@@ -65,13 +66,14 @@
     text-align: center;
     width: 100%;    
     
-    @media screen and (min-width: var(--max-width-xs)) {
+    /*@media screen and (min-width: var(--max-width-xs)) {
+      
+    }*/
+
+    @media (--desktop) {      
       flex-direction: row;
       text-align: start;
-    }
-
-    @media screen and (min-width: var(--max-width-xl)) {
-      width: 50%;
+      width: fit-content;
     }
 
     h3 {

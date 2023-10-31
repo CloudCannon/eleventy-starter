@@ -1,28 +1,28 @@
 # Metadata about this component, to be used in the CMS
 spec:
   structures:
-    - content_blocks
-  label: Left-Right Block
-  description: Left-Right block with heading, text & button next to image.
-  icon: 'chrome_reader_mode'
-  tags: ['block', 'left-right']
+    - basic_block
+  label: "Heading-text"
+  description:
+  icon: title
+  tags: ['text', 'heading']
 
 # Defines the structure of this component, as well as the default values
 blueprint:
-  bg_image:
+  heading_level: h1
   heading:
-  text:
+  text:  
   button: bookshop:global/button
-  image:
-  image_alt:
-  image_on_left: false
 
 # Overrides any fields in the blueprint when viewing this component in the component browser
 preview:
 
 # Any extra CloudCannon inputs configuration to apply to the blueprint
 _inputs:
+  heading_level: select
+    options:
+      values:
+        - h1
+        - h2
   text:
     type: markdown
-  image_on_left:
-    hidden: !image

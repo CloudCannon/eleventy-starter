@@ -4,16 +4,15 @@
   &__container {
     display: flex;
     justify-content: space-between;
-    padding: var(--base-padding);
-    max-width: var(--max-width-xxl);
+    max-width: var(--content-max-width);
     margin: 0 auto;
 
     @media screen and (min-width: var(--max-width-md)) {
       padding: var(--base-padding) 32px;
-    }
+    }   
 
-    @media screen and (min-width: var(--max-width-xl)) {
-      padding: 64px 157px;
+    @media (--desktop){
+      padding-block:32px;
     }
   }
 

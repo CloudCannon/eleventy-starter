@@ -1,14 +1,11 @@
 {% assign c = "shared-bg-hero" %}
 
-<div class="{{ c }}">
-   {% if bg_image %}
+<div class="{{ c }}"" style="--background-image:url({{ bg_image }})" >
+   <!-- Best practices question: is there any reason to use an img tag instead of setting the background-image property of this container?? -->
+   {% comment %} {% if bg_image %}
       <img class="{{ c }}__svg-img" src={{ bg_image }} alt="" />
-   {% endif %}
-   <div class="{{ c }}__wrapper">
-      <h1>{{ heading }}</h1>
-      <p>{{ text }}</p>
-      {% if button %}
-         {% bookshop "global/button" bind: button %}
-      {% endif %}
+   {% endif %} {% endcomment %}
+   <div class="{{ c }}__wrapper content-block"">
+      {% bookshop "heading-text" bind: heading-text %}
    </div>
 </div>
