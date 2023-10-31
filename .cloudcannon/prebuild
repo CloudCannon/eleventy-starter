@@ -2,7 +2,10 @@
 
 npm i
 # Replace scss color variables with whatever is set in _data/theme.json
-npm run fetch-theme-color
+#npm run fetch-theme-color
 # Process scss to css
-npm run build:sass
-npm run build:bookshop-sass
+#npm run build:sass
+#npm run build:bookshop-sass
+mkdir _site
+mkdir _site/css
+npm run start
