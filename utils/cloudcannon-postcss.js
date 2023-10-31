@@ -16,7 +16,10 @@ const fs = require('fs')
 var path = require('path')
 
 const chokidar = require('chokidar');
-const { deserialize } = require("v8")
+
+// need to create _site/css before this script will work
+if (!fs.existsSync(config.destDir))
+    fs.mkdirSync(config.destDir);
 
 // start by deleting the bundled bookshop css file - we don't want to continually be appending to an existing file
 try{
