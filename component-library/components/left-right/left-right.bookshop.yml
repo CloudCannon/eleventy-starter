@@ -12,7 +12,6 @@ blueprint:
   image_on_left: false
   heading_text: bookshop:heading-text
   bg_image:
-  button: bookshop:global/button
   image:
   image_alt:
 
@@ -21,7 +20,5 @@ preview:
 
 # Any extra CloudCannon inputs configuration to apply to the blueprint
 _inputs:
-  text:
-    type: markdown
   image_on_left:
     hidden: !image
