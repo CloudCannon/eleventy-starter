@@ -62,4 +62,7 @@ img {
   display:grid;
   grid-template-columns: var(--twelve-column-grid);
   padding-inline: max(var(--base-padding), 48px);
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position:center;
 }

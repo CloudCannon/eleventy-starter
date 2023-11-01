@@ -1,6 +1,5 @@
 const BOOKSHOP_SRC_PATH = 'component-library'
-const config = require("./cloudcannon-postcss-config.json")
-config.inputDirs.push(BOOKSHOP_SRC_PATH)
+const DESTINATION_PATH = "_site/css"
 
 /* postCSS plugins */
 const postcss = require('postcss')
@@ -15,11 +14,12 @@ const postcss_preset_env = require('postcss-preset-env')
 const fs = require('fs')
 var path = require('path')
 
-const chokidar = require('chokidar');
+//const chokidar = require('chokidar');
+
 
 // need to create destination dir, e.g. _site/css before this script will work
-if (!fs.existsSync(config.destDir))
-    fs.mkdirSync(config.destDir);
+if (!fs.existsSync(DESTINATION_PATH))
+    fs.mkdirSync(DESTINATION_PATH);
 
 // start by deleting the bundled bookshop css file - we don't want to continually be appending to an existing file
 try{
@@ -34,19 +34,20 @@ const processFile = async path => {
     path = path.join("/")  
 
     let src_file = path.indexOf(BOOKSHOP_SRC_PATH) != -1 ? `${BOOKSHOP_SRC_PATH}/bookshop.css` : `${path}/main.css`;
-    let dest_file = path.indexOf(BOOKSHOP_SRC_PATH) != -1 ? `${config.destDir}/bookshop.css` : `${config.destDir}/main.css`;
+    let dest_file = path.indexOf(BOOKSHOP_SRC_PATH) != -1 ? `${DESTINATION_PATH}/bookshop.css` : `${DESTINATION_PATH}/main.css`;
 
+    // delete old destination file to avoid writing duplicate styles
     try{
         if (fs.existsSync(dest_file))
             fs.unlinkSync(dest_file)
     }
     catch(e) { console.log(e) }
 
+    // need to touch file before postCSS will write to it
     fs.openSync(dest_file, 'w');                        
                 
- fs.readFile(src_file, async (err, css) => {     
+    fs.readFile(src_file, async (err, css) => {     
         let temp_result = await postcss([postcss_import]).process(css, { from: src_file })  
-        console.log(temp_result.css)
         let result = await postcss([
             postcss_nested,
             postcss_media_variables,
