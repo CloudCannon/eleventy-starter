@@ -2,10 +2,10 @@
 spec:
   structures:
     - content_blocks
-  label: "Image-slider"
-  description:
-  icon:
-  tags: []
+  label: "Image carousel"
+  description: An infinite looping image carousel
+  icon: collections
+  tags: ['image', 'carousel', 'slider']
 
 # Defines the structure of this component, as well as the default values
 blueprint:
