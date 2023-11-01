@@ -1,6 +1,10 @@
 .shared-bg-left-right {
-  background-image:var(--background-image);
   padding-block: 60px;
+  
+  background-image:var(--background-image);
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position:center;
 
   .content-block{ row-gap:60px; }
   

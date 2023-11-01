@@ -1,6 +1,10 @@
 .c-image-slider {
-    background-image:var(--background-image);
     padding-block: 90px;
+
+    background-image:var(--background-image);
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position:center;
 
     &__wrapper{        
         
