@@ -47,7 +47,7 @@ const processFile = async path => {
     fs.openSync(dest_file, 'w');                        
                 
     fs.readFile(src_file, async (err, css) => {     
-        let temp_result = await postcss([postcss_import]).process(css, { from: src_file })  
+        
         let result = await postcss([
             postcss_nested,
             postcss_media_variables,

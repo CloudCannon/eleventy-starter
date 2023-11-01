@@ -1,11 +1,12 @@
 /** @type {import('postcss-load-config').Config} */
-
 const config = {
-    plugins: [
-        require('postcss-import')({
-            path: ['component-library', 'src/css'],
-            plugins: [
+    plugins: [        
+        require('postcss-cloudcannon')({
+            path: ['src/css', 'component-library'],
+            destination: "_site/css/main.css",
+            plugins:[                
                 require('postcss-nested'),
+                require('postcss-advanced-variables'),
                 require('postcss-media-variables'),                
                 require('postcss-custom-media'),
                 require('postcss-css-variables')({
@@ -13,10 +14,9 @@ const config = {
                 }),
                 require('postcss-media-variables') ,
                 require('postcss-mixins'),
-                require('postcss-preset-env')                                
-            ]            
-        }),    
-            
+                require('postcss-preset-env')
+            ]
+        })    
     ]
   }
   

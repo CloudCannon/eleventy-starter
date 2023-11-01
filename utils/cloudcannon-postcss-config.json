@@ -1,6 +1,0 @@
-{
-    "inputDirs" : [
-        "src/css"
-    ],
-    "destDir" : "_site/css"
-}

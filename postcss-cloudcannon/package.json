@@ -1,0 +1,25 @@
+{
+  "name": "postcss-cloudcannon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "postcss": "^8.4.31",
+    "postcss-advanced-variables": "^3.0.1",
+    "postcss-cli": "^10.1.0",
+    "postcss-css-variables": "^0.19.0",
+    "postcss-custom-media": "^10.0.2",
+    "postcss-discard-duplicates": "^6.0.0",
+    "postcss-import": "^15.1.0",
+    "postcss-import-sync": "^7.1.4",
+    "postcss-media-variables": "^2.0.1",
+    "postcss-mixins": "^9.0.4",
+    "postcss-nested": "^6.0.1",
+    "postcss-preset-env": "^9.2.0"
+  },
+  "author": "",
+  "license": "ISC"
+}
