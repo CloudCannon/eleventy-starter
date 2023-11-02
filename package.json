@@ -7,8 +7,8 @@
     "fetch-theme-color": "node utils/fetch-theme-color.js",
     "watch:eleventy": "eleventy --serve",
     "build:eleventy": "eleventy",
-    "start": "npm-run-all fetch-theme-color build:cloudcannon-styles --parallel watch:eleventy",
-    "build": "npm-run-all fetch-theme-color build:cloudcannon-styles build:eleventy",
+    "start": "npm-run-all fetch-theme-color --parallel watch:eleventy",
+    "build": "npm-run-all fetch-theme-color build:eleventy",
     "new": "npx @bookshop/init --component",
     "build:cloudcannon-styles": "./node_modules/.bin/postcss src/css/main.css"
   },
