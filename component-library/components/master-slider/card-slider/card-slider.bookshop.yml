@@ -18,3 +18,8 @@ preview:
 _inputs:      
   slides:
     type: array
+  slides[*]:
+    type: object
+    options:
+      - heading: This is a heading
+      - image: /images/carousel/carousel-01.jpg
