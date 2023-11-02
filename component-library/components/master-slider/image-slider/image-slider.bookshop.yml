@@ -9,9 +9,8 @@ spec:
 
 # Defines the structure of this component, as well as the default values
 blueprint:
-  bg_image: 
-  with_heading: false
-  images: []
+  master_slider: bookshop:master-slider
+  component: bookshop:master-slider/image-slider/image-slides! 
 
 # Overrides any fields in the blueprint when viewing this component in the component browser
 preview:

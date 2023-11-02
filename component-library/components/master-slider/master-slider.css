@@ -1,0 +1,105 @@
+.c-master-slider {
+    padding-block: 90px;
+
+    background-image:var(--background-image);
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position:center;
+
+    .heading-text{
+        grid-column: 1 / 13;
+        padding-bottom: 60px;
+
+        p{
+            text-align:center;
+        }
+    }
+
+    &__wrapper{        
+        
+        .carousel_wrapper{
+            grid-column:1 / 13;
+            width:100%;        
+            position: relative;                  
+            display:flex;
+            align-items: center;  
+
+            .btn{
+                box-shadow:1px 1px 5px #333;
+                cursor:pointer;
+                position: absolute;
+                height:40px;
+                width:40px;
+                display:flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 24px;
+                background:var(--color-white);
+                border-radius:50%;
+                color:var(--color-black);
+
+                &--left { left: -22px; }
+
+                &--right { right: -22px; }
+            }            
+
+            .carousel{
+                width:100%;
+                display:grid;
+                grid-auto-flow:column;
+                grid-auto-columns: 100%;                
+                gap:16px;
+                overflow-x:auto;
+                scroll-snap-type: x mandatory;
+                scroll-behavior: smooth;
+                scrollbar-width: 0;
+
+                @media (--tablet){
+                    grid-auto-columns: calc((100% / 2) - 9px);
+                }
+
+                @media (--desktop){
+                    grid-auto-columns: calc((100% / 3) - 12px);
+                }
+
+                &--dragging{
+                    scroll-snap-type: none;
+                    scroll-behavior: auto;
+                    .card{
+                        cursor:grab;
+                        user-select:none;
+                    }
+                }
+
+                &--no-transition{
+                    scroll-behavior: auto;
+                }
+
+                &::-webkit-scrollbar{
+                    display:none;
+                }
+            
+                .card{
+                    scroll-snap-align: start;
+                    display:flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius:var(--card-border-radius);
+                    overflow:hidden;
+
+                    .img{
+                        width:100%;
+                        height:100%;
+                        border-radius:var(--image-border-radius);
+
+                        img{
+                            width:100%;
+                            height:100%;
+                            object-fit:cover;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
