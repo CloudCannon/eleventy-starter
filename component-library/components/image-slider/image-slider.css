@@ -6,6 +6,15 @@
     background-size:cover;
     background-position:center;
 
+    .heading-text{
+        grid-column: 1 / 13;
+        padding-bottom: 60px;
+
+        p{
+            text-align:center;
+        }
+    }
+
     &__wrapper{        
         
         .carousel_wrapper{
