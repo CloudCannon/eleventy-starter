@@ -5,6 +5,6 @@ const postcssrc = require('postcss-load-config')
 module.exports = (config) => {
     (async () => {        
         const {plugins,options} = await postcssrc()        
-        console.log(postcss(plugins))
+        postcss(plugins)
     })();
 }

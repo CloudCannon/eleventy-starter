@@ -30,8 +30,12 @@ const plugin = (opts = {}) => {
     const destination = opts.destination
     try{
         if (fs.existsSync(destination))
-            fs.unlinkSync(destination)
-        fs.writeFileSync(destination, "");
+            fs.unlinkSync(destination)   
+                    
+        if(!fs.existsSync(path.dirname(destination)))
+            fs.mkdir(path.dirname(destination), { recursive: true }, (err) => {
+                fs.writeFileSync(destination, "");
+            })
     } catch(err) { console.log(err) }
 
     // get all files in the specified directories
