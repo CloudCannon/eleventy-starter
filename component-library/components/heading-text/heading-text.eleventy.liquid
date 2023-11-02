@@ -1,8 +1,12 @@
 {% assign_local c = "heading-text" %}
 
 <div class="{{ c }}">
-    <{{ heading_level }}>{{ heading }}</{{ heading_level }}>
-    <p>{{ text }}</p>
+    {% if heading %}
+        <{{ heading_level }}>{{ heading }}</{{ heading_level }}>
+    {% endif %}
+    {% if text %}
+        <p>{{ text }}</p>
+    {% endif %}
     {% if button %}
         {% bookshop "global/button" bind: button %}
     {% endif %}

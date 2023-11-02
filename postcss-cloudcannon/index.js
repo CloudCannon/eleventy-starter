@@ -38,8 +38,6 @@ const plugin = (opts = {}) => {
         }
     } catch(err) { console.log(err) }
 
-    console.log(fs.existsSync(destination))
-
     // get all files in the specified directories
     const paths = opts.path;
     const all_files = []
