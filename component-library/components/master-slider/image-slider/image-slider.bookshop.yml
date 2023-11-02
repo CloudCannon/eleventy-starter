@@ -18,3 +18,5 @@ preview:
 _inputs:      
   slides:
     type: array
+  slides[*]:
+    type: image
