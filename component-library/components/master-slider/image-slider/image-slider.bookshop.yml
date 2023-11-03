@@ -10,7 +10,7 @@ spec:
 # Defines the structure of this component, as well as the default values
 blueprint:
   with_heading: false
-  heading-text: 
+  heading_text: 
     _bookshop_name: heading-text
     heading: Something?
     text: This?
@@ -25,7 +25,7 @@ preview:
 _inputs:  
   with_heading:
     type: switch
-  heading-text:   
+  heading_text:   
     text:  
       type: markdown
     hidden: !with_heading   
