@@ -7,7 +7,9 @@
     {% if text %}
         <p>{{ text }}</p>
     {% endif %}
+    {% comment %}
     {% if button %}
         {% bookshop "global/button" bind: button %}
     {% endif %}
+{% endcomment %}
 </div>
