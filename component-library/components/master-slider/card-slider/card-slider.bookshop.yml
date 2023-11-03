@@ -9,7 +9,6 @@ spec:
 
 # Defines the structure of this component, as well as the default values
 blueprint:
-  with_heading: false
   heading-text: bookshop:heading-text!
   card_border_radius: 4
   image_border_radius: 50
@@ -22,12 +21,6 @@ preview:
 
 # Any extra CloudCannon inputs configuration to apply to the blueprint
 _inputs: 
-  with_heading:
-    type: switch
-  heading-text:   
-    text:  
-      type: markdown
-    hidden: !with_heading
   image_border_radius:
     type: range
     options:

@@ -54,10 +54,8 @@
         }
     }"
     >
-    <div class="{{ c }}__wrapper content-block">
-        {% if with_heading %}
-            {% bookshop "heading-text" bind: heading_text %}
-        {% endif %}
+    <div class="{{ c }}__wrapper content-block">        
+        {% bookshop "heading-text" bind: heading_text %}        
         <div class="carousel_wrapper">
             <i class="fa-solid fa-chevron-left btn  btn--left" @click="scroll('left')"></i>
             <ul x-ref="carousel" class="
