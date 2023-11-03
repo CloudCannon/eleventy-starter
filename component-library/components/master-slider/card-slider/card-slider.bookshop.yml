@@ -9,7 +9,7 @@ spec:
 
 # Defines the structure of this component, as well as the default values
 blueprint:
-  heading_text: bookshop:heading-text!
+  heading_text: bookshop:heading-text
   card_border_radius: 4
   image_border_radius: 50
   slides: 
