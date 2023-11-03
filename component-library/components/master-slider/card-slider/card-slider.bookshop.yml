@@ -10,10 +10,9 @@ spec:
 # Defines the structure of this component, as well as the default values
 blueprint:
   with_heading: false
-  heading-text:
-    - bookshop_name: heading-text
-      heading: Where is this?
-      text: And this???
+  heading-text: bookshop:heading-text!
+    heading: Where is this?
+    text: And this???
   card_border_radius: 4
   image_border_radius: 50
   slides: []
