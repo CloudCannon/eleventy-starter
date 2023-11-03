@@ -13,7 +13,9 @@ blueprint:
   heading-text: bookshop:heading-text!
   card_border_radius: 4
   image_border_radius: 50
-  slides: []
+  slides: 
+    - heading:
+      image: 
 
 # Overrides any fields in the blueprint when viewing this component in the component browser
 preview:
@@ -38,8 +40,3 @@ _inputs:
       step: 1
       min: 0
       max: 50
-  slides:
-    type: array
-  slides[*]:
-    heading: This is a heading
-    image: /images/carousel/carousel-01.jpg
