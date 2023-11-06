@@ -38,7 +38,7 @@
       max-width:var(--content-max-width);
       width:100%;
       margin:auto;
-      padding:64px;
+      padding:64px 32px;
       transition:opacity 0.2s linear 0.1s;   
     }
 
