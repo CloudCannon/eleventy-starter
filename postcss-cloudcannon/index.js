@@ -3,7 +3,7 @@ const path = require("path");
 
 // plugin imports - these are required minimum
 const postcss = require('postcss')
-const postcss_import_sync = require('postcss-import-sync')
+const postcss_import_sync = require('postcss-import-sync2')
 
 // find all css or scss files in the input directories
 const recurseFiles = (dir, css_files = []) => {        
