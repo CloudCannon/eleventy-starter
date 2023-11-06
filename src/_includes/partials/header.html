@@ -112,13 +112,15 @@
               {% endif %}
             </li>
             {% if item.items %}
-              <li class="{{ c }}__dropdown-menu">              
-                <h3>{{ item.text }}</h3>
-                <ul>
-                  {% for subitem in item.items %}
-                    <li>{{ subitem.text }}</li>
-                  {% endfor %}
-                </ul>
+              <li class="{{ c }}__dropdown-menu">   
+                <div class="{{ c }}__dropdown-menu-wrapper">            
+                  <h3>{{ item.text }}</h3>
+                  <ul>
+                    {% for subitem in item.items %}
+                      <li><a href="{{ subitem.link }}">{{ subitem.text }}</a></li>
+                    {% endfor %}
+                  </ul>
+                </div>
               </li>
             {% elsif item.text == 'Example blog' %}
               <li class="{{ c }}__dropdown-menu">   
