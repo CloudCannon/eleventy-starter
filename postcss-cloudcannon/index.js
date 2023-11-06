@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const chokidar = require("chokidar")
 
 // plugin imports - these are required minimum
 const postcss = require('postcss')
@@ -25,7 +26,7 @@ const processImports = async (file, destination) => {
     return fs.appendFileSync(destination, `${temp_result.css}\n`) 
 }
 
-const plugin = (opts = {}) => {    
+const processCSS = (opts) => {
     // clear main.css first
     const destination = opts.destination
     try{
@@ -60,7 +61,19 @@ const plugin = (opts = {}) => {
                 })
             });        
         }
-    })    
+    }) 
+}
+
+const plugin = (opts = {}) => {    
+    processCSS(opts);
+
+    if(opts.watch)
+    {
+        chokidar.watch(opts.path).on('all', (event,path) => {
+            if(event === "change")
+                processCSS(opts);
+        })
+    }
 
     return {
         postcssPlugin: 'postcss-cloudcannon'        

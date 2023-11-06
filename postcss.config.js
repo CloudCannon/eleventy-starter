@@ -4,6 +4,7 @@ const config = {
         require('postcss-cloudcannon')({
             path: ['src/css', 'component-library'],
             destination: "_site/css/main.css",
+            watch: true,
             plugins:[                
                 require('postcss-nested'),
                 require('postcss-advanced-variables'),
