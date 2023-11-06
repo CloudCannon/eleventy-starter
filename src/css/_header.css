@@ -196,6 +196,9 @@
     overflow:hidden;
     
     ul{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
       font-size: 2rem;
       font-weight: lighter;
       padding: 2rem;
@@ -209,6 +212,7 @@
 
       /* Submenu */
       ul{
+        gap:0;
         margin-top:1rem;
         padding:0;
         color:var(--color-text-light);
@@ -237,6 +241,12 @@
     display: block;
     border: none;
     background: none;
+
+    &-open{
+      position: fixed;
+      top: 0;
+      right: 0;
+    }
 
     @media (--desktop) {
       display: none;

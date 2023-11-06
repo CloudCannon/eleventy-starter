@@ -5,7 +5,7 @@
     <div class="{{ c }}__container">
       <div class="{{ c }}__nav" x-data="{ open: false }">
         <!-- Hamburger -->
-        <button x-on:click="open = ! open" class="{{ c }}__hamburger">
+        <button x-on:click="open = ! open" class="{{ c }}__hamburger" :class="open ? '{{ c }}__hamburger-open' : ''">
           <span x-show="!open" class="navbar-toggler-default">
             <svg
                 width="24"
@@ -71,7 +71,7 @@
           </span>
         </button>
         <!-- Mobile nav -->
-        <div class="{{ c }}__nav-list-mobile" :class="open ? '{{ c }}__nav-list-mobile-show' : ''" x-cloak x-transition.height>
+        <div class="{{ c }}__nav-list-mobile" :class="open ? '{{ c }}__nav-list-mobile-show' : ''" x-cloak>
           <ul>
             {% for item in nav.items %}
               {% assign url = item.link %}
