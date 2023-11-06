@@ -3,10 +3,6 @@
 <header>
   <nav class="{{ c }}">
     <div class="{{ c }}__container">
-      <!-- Logo -->
-      <a class="{{ c }}__logo" href="/">
-          <img src="{{ nav.logo }}" alt="Nav-Logo" />
-      </a>
       <div class="{{ c }}__nav" x-data="{ open: false }">
         <!-- Hamburger -->
         <button x-on:click="open = ! open" class="{{ c }}__hamburger">
@@ -75,22 +71,65 @@
           </span>
         </button>
         <!-- Mobile nav -->
-        <ul class="{{ c }}__nav-list-mobile" x-show="open" x-cloak x-transition>
-          {% for item in nav.items %}
-            {% assign url = item.link %}
-            <li>
-              <a class="nav-link {% if page.url == url%}active{% endif %}" href="{{ item.link }}">{{ item.text }}</a>
-            </li>
-          {% endfor %}
-        </ul>
+        <div class="{{ c }}__nav-list-mobile" :class="open ? '{{ c }}__nav-list-mobile-show' : ''" x-cloak x-transition.height>
+          <ul>
+            {% for item in nav.items %}
+              {% assign url = item.link %}
+              <li>
+                <a class="nav-link {% if page.url == url%}active{% endif %}" href="{{ item.link }}">{{ item.text }}</a>
+                {% if item.items %}
+                  <ul>
+                    {% for subitem in item.items %}
+                      <li>{{ subitem.text }}</li>
+                    {% endfor %}
+                  </ul>
+                {% elsif item.text == 'Example blog' %}
+                  <ul>
+                    {% for blog in collections.blog %}
+                      <li>{{ blog.data.title }}</li>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
         <!-- Desktop nav -->
         <ul class="{{ c }}__nav-list">
+          <li class="{{ c }}__nav-list-item {{ c }}__nav-list-item-logo">
+             <!-- Logo -->
+            <a class="{{ c }}__logo" href="/">
+              <img src="{{ nav.logo }}" alt="Nav-Logo" />
+            </a>
+          </li>
           {% for item in nav.items %}
             {% assign url = item.link %}
             <li class="{{ c }}__nav-list-item">
               <a class="nav-link {% if page.url == url%}active{% endif %}" href="{{ item.link }}">{{ item.text }}</a>
             </li>
+            {% if item.items %}
+              <li class="{{ c }}__dropdown-menu">              
+                <h3>{{ item.text }}</h3>
+                <ul>
+                  {% for subitem in item.items %}
+                    <li>{{ subitem.text }}</li>
+                  {% endfor %}
+                </ul>
+              </li>
+            {% elsif item.text == 'Example blog' %}
+              <li class="{{ c }}__dropdown-menu">   
+                <div class="{{ c }}__dropdown-menu-wrapper">           
+                  <h3>{{ item.text }}</h3>
+                  <ul>
+                    {% for blog in collections.blog %}
+                      <li><a href="{{ blog.url }}">{{ blog.data.title }}</a></li>
+                    {% endfor %}
+                  </ul>
+                </div>
+              </li>
+            {% endif %}
           {% endfor %}
+          <li class="blur-veil"></li>
         </ul>
       </div> 
     </div>
