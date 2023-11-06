@@ -105,7 +105,11 @@
           {% for item in nav.items %}
             {% assign url = item.link %}
             <li class="{{ c }}__nav-list-item">
+              <div class="underline"></div>
               <a class="nav-link {% if page.url == url%}active{% endif %}" href="{{ item.link }}">{{ item.text }}</a>
+              {% if item.items or item.text == 'Example blog' %}
+                <i class="fa-solid fa-chevron-down"></i>
+              {% endif %}
             </li>
             {% if item.items %}
               <li class="{{ c }}__dropdown-menu">              

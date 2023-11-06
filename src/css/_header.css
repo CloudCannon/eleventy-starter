@@ -119,15 +119,41 @@
   }
 
   &__nav-list-item {
+    position:relative;
     display: flex;
+    align-items:center;
     padding: var(--base-padding) 32px;
+
+    .underline{
+      position: absolute;
+      height: 2px;
+      background: var(--color-text);
+      left: 0;
+      right: 100%;
+      margin: 32px;
+      bottom: -10px;
+      transition:right 0.5s;
+    }
+
+    i{
+      margin-left:5px;
+      font-size:smaller;
+    }
 
     @media (--desktop){
       padding:32px;
     }
 
     &:hover{
-      background:white;
+      .underline{
+        right:0%;
+      }
+    }
+
+    &:has(+ .header__dropdown-menu:hover){
+      .underline{
+        right:0%;
+      }
     }
 
     &:hover + .header__dropdown-menu{
