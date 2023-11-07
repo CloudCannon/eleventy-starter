@@ -6,8 +6,7 @@
     justify-content: space-between;
     max-width: var(--content-max-width);
     margin: 0 auto;
-
-    @media (--desktop){ }
+    padding-inline: max(1rem, 48px);
   }
 
   &__dropdown-menu{   
@@ -38,7 +37,7 @@
       max-width:var(--content-max-width);
       width:100%;
       margin:auto;
-      padding:64px 32px;
+      padding:64px 48px;
       transition:opacity 0.2s linear 0.1s;   
     }
 
@@ -122,8 +121,7 @@
     position:relative;
     display: flex;
     align-items:center;
-    padding: var(--base-padding) 32px;
-
+    
     .underline{
       position: absolute;
       height: 2px;
@@ -140,9 +138,13 @@
       font-size:smaller;
     }
 
-    @media (--desktop){
-      padding:32px;
-    }
+    a{
+      padding: var(--base-padding) 32px;
+      
+      @media (--desktop){
+        padding:32px;
+      }
+    }    
 
     &:hover{
       .underline{
@@ -174,8 +176,10 @@
     }
 
     &-logo{
-      padding-block: 0!important;
+      padding: 0!important;
       margin-right:auto;
+
+      a{ padding:0!important; }
     }
   }
 
