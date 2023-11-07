@@ -12,6 +12,15 @@
     {
       "text": "Example blog",
       "link": "/blog/"
+    },
+    {
+      "text" : "More info",
+      "link" : "",
+      "items" : [
+        {
+          "text" : "test"
+        }
+      ]
     }
   ]
 }
