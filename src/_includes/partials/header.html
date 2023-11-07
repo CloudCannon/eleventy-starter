@@ -58,24 +58,28 @@
             </li>
             {% if item.items %}
               <li class="{{ c }}__dropdown-menu">   
-                <div class="{{ c }}__dropdown-menu-wrapper">            
-                  <h3>{{ item.text }}</h3>
-                  <ul>
-                    {% for subitem in item.items %}
-                      <li><a href="{{ subitem.link }}">{{ subitem.text }}</a></li>
-                    {% endfor %}
-                  </ul>
+                <div class="{{ c }}__dropdown-menu-wrapper">    
+                  <div class="inner">
+                    <h3>{{ item.text }}</h3>
+                    <ul>
+                      {% for subitem in item.items %}
+                        <li><a href="{{ subitem.link }}">{{ subitem.text }}</a></li>
+                      {% endfor %}
+                    </ul>
+                  </div>
                 </div>
               </li>
             {% elsif item.text == 'Example blog' %}
               <li class="{{ c }}__dropdown-menu">   
-                <div class="{{ c }}__dropdown-menu-wrapper">           
-                  <h3>{{ item.text }}</h3>
-                  <ul>
-                    {% for blog in collections.blog %}
-                      <li><a href="{{ blog.url }}">{{ blog.data.title }}</a></li>
-                    {% endfor %}
-                  </ul>
+                <div class="{{ c }}__dropdown-menu-wrapper">       
+                  <div class="inner">    
+                    <h3>{{ item.text }}</h3>
+                    <ul>
+                      {% for blog in collections.blog %}
+                        <li><a href="{{ blog.url }}">{{ blog.data.title }}</a></li>
+                      {% endfor %}
+                    </ul>
+                  </div>
                 </div>
               </li>
             {% endif %}
