@@ -12,7 +12,7 @@ const recurseFiles = (dir, css_files = []) => {
         if(fs.statSync(abs).isDirectory())
             return recurseFiles(abs, css_files)
         else
-            if((file.endsWith(".css") || file.endsWith(".scss")) && !file.startsWith("_") && file !== "bookshop.css")
+            if((file.endsWith(".css") || file.endsWith(".scss")) && !file.startsWith("_"))
                 css_files.push(abs)                    
     })
     return css_files;
