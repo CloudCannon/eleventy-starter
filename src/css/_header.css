@@ -6,7 +6,10 @@
     justify-content: space-between;
     max-width: var(--content-max-width);
     margin: 0 auto;
-    padding-inline: max(1rem, 48px);
+
+    @media (--desktop){
+      padding-inline: max(1rem, 48px);
+    }
   }
 
   &__dropdown-menu{   
