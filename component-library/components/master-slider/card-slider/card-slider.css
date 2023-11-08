@@ -11,12 +11,12 @@
         gap: 30px;
 
         .img{
-                overflow:hidden;                
-                aspect-ratio:1 / 1;
-                height:auto!important;
-                width: 80%!important;                           
-                border: 8px solid white;
-                outline: 8px solid steelblue;
+            overflow:hidden;                
+            aspect-ratio:1 / 1;
+            height:auto!important;
+            width: 80%!important;                           
+            border: 8px solid white;
+            outline: 8px solid steelblue;
         }
     }
 }

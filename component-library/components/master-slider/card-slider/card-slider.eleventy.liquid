@@ -2,10 +2,14 @@
 
     {% for card in slides %}
         <li class='card'>
-            <h1>{{ card.heading }}</h1>
-            <div class='img'>
-                <img src="{{ card.image }}" alt="" draggable="false"/>
-            </div>
+            {% if card.heading %}
+                <h1>{{ card.heading }}</h1>
+            {% endif %}
+            {% if card.image %}
+                <div class='img'>
+                    <img src="{{ card.image }}" alt="{{ card.image_alt }}" draggable="false"/>
+                </div>
+            {% endif %}
         </li>
     {% endfor %}
 
