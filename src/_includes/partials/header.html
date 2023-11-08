@@ -25,13 +25,7 @@
                     {% for subitem in item.items %}
                       <li>{{ subitem.text }}</li>
                     {% endfor %}
-                  </ul>
-                {% elsif item.text == 'Example blog' %}
-                  <ul>
-                    {% for blog in collections.blog %}
-                      <li>{{ blog.data.title }}</li>
-                    {% endfor %}
-                  </ul>
+                  </ul>                
                 {% endif %}
               </li>
             {% endfor %}
@@ -51,7 +45,7 @@
               <div class="underline"></div>
               <a class="nav-link {% if page.url == url%}active{% endif %}" href="{{ item.link }}">
                 {{ item.text }}
-                {% if item.items or item.text == 'Example blog' %}                
+                {% if item.items %}                
                   <i class="fa-solid fa-chevron-down"></i>
                 {% endif %}
               </a>              
@@ -68,20 +62,7 @@
                     </ul>
                   </div>
                 </div>
-              </li>
-            {% elsif item.text == 'Example blog' %}
-              <li class="{{ c }}__dropdown-menu">   
-                <div class="{{ c }}__dropdown-menu-wrapper">       
-                  <div class="inner">    
-                    <h3>{{ item.text }}</h3>
-                    <ul>
-                      {% for blog in collections.blog %}
-                        <li><a href="{{ blog.url }}">{{ blog.data.title }}</a></li>
-                      {% endfor %}
-                    </ul>
-                  </div>
-                </div>
-              </li>
+              </li>            
             {% endif %}
           {% endfor %}
           <li class="blur-veil"></li>

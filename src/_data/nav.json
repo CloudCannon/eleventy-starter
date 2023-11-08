@@ -1,24 +1,21 @@
 {
   "logo": "/images/logos/logo-wordmark-blue.png",
-  "items": [
-    {
-      "text": "CloudCannon",
-      "link": "https://cloudcannon.com"
-    },
-    {
-      "text": "Bookshop",
-      "link": "https://cloudcannon.com/documentation/guides/bookshop-eleventy-guide/"
-    },
+  "items": [  
     {
       "text": "Example blog",
       "link": "/blog/"
     },
     {
-      "text" : "More info",
+      "text" : "Other links",
       "link" : "",
       "items" : [
         {
-          "text" : "test"
+          "text": "CloudCannon",
+          "link": "https://cloudcannon.com"
+        },
+        {
+          "text": "Bookshop",
+          "link": "https://cloudcannon.com/documentation/guides/bookshop-eleventy-guide/"
         }
       ]
     }
