@@ -83,3 +83,7 @@ paths:
   uploads: images
   data: _data
   includes: _includes
+
+_editables:
+  content:
+    snippet: true
