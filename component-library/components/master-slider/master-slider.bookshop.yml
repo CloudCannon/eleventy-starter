@@ -3,7 +3,7 @@ spec:
   structures:
   label: "Master slider"
   description: This is a base component that extends card-slider and image-slider - the user should not see this directly
-  icon: 'amp_stories'
+  icon: view_carousel
   tags: [ 'slider' ]
 
 # Defines the structure of this component, as well as the default values
