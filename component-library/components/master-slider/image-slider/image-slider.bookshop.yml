@@ -4,14 +4,13 @@ spec:
     - content_blocks
   label: "Image carousel"
   description: An infinite looping image carousel
-  icon: collections
+  icon: amp_stories
   tags: ['image', 'carousel', 'slider']
 
 # Defines the structure of this component, as well as the default values
 blueprint:
   heading_text: bookshop:heading-text
   card_border_radius: 4
-  image_border_radius: 50
   slides: []
 
 # Overrides any fields in the blueprint when viewing this component in the component browser
@@ -19,13 +18,10 @@ preview:
 
 # Any extra CloudCannon inputs configuration to apply to the blueprint
 _inputs:  
-  image_border_radius:
-    type: range
-    options:
-      step: 1
-      min: 0
-      max: 50
+  heading_text:
+    comment: Add a block to the top of this slider with optional heading, text and button.
   card_border_radius:
+    comment: How rounded do you want your image corners (in %)?
     type: range
     options:
       step: 1
