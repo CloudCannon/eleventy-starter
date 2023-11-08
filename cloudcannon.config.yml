@@ -125,7 +125,7 @@ _snippets:
     preview:
       text: YouTube video embed
     definitions:
-      include_name: snippets/youtube
+      include_name: /snippets/youtube
       named_args:
         - editor_key: id
           type: string
