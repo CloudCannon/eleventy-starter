@@ -5,6 +5,7 @@
 @import '_404';
 @import '_blog';
 @import '_article';
+@import '_snippets';
 
 html {
   box-sizing: border-box;
@@ -62,10 +63,4 @@ img {
   display:grid;
   grid-template-columns: var(--twelve-column-grid);
   padding-inline: max(var(--base-padding), 48px);  
-}
-
-.youtube-include{
-  width:100%;
-  height:auto;
-  aspect-ratio: 16 / 9;
 }
