@@ -2,6 +2,7 @@ const pluginBookshop = require("@bookshop/eleventy-bookshop");
 const { DateTime } = require("luxon");
 const { Tokenizer, assert } = require('liquidjs');
 const postcss_cloudcannon = require("./11typlugin");
+const embedEverything = require("eleventy-plugin-embed-everything");
 
 module.exports = function (eleventyConfig) {
   // Hot reloading for local dev
@@ -55,6 +56,8 @@ module.exports = function (eleventyConfig) {
   }));
   
   eleventyConfig.addPlugin(postcss_cloudcannon);
+
+  eleventyConfig.addPlugin(embedEverything);
 
   return {
     dir: {
