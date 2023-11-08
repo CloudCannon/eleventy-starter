@@ -134,7 +134,7 @@
   &__nav-list-item {
     position:relative;
     display: flex;
-    align-items:center;
+    align-items:center;    
     
     .underline{
       position: absolute;
@@ -147,20 +147,16 @@
       transition:right 0.5s;
     }
 
-    i{
-      margin-left:5px;
-      font-size:smaller;
-    }
-
     a{
       padding: var(--base-padding) 32px;
       
       @media (--desktop){
         padding:32px;
-      }
+      }      
     }    
 
     &:hover{
+
       .underline{
         right:0%;
       }
@@ -269,5 +265,19 @@
     @media (--desktop) {
       display: none;
     }
+  }
+
+  .nav-link{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    i{
+      font-size:smaller;
+    }
+  }
+
+  a:hover{    
+    opacity:0.75;    
   }
 }
