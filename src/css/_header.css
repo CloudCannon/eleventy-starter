@@ -1,4 +1,11 @@
 .header {
+
+  --dropdown-hover-transition: grid-template-rows 0.3s linear;
+  --blur-veil-transition-open: opacity 0.2s linear, height 0s;
+  --blur-veil-transition-close: opacity 0.4s linear, height 0s linear 2s;
+  --inner-content-transition-open: opacity 0.6s linear;
+  --inner-content-transition-close: opacity 0.2s linear;
+
   position: relative;
 
   &__container {
@@ -25,7 +32,7 @@
     display:grid;
     grid-template-columns:1fr;
     grid-template-rows: 0fr;
-    transition:grid-template-rows 0.25s linear;  
+    transition:var(--dropdown-hover-transition);  
     
     h3{
       font-size:2rem;
@@ -44,22 +51,22 @@
         width:100%;
         margin:auto;
         padding:64px 48px;
-        transition:opacity 0.2s linear;   
+        transition:var(--inner-content-transition-open);
       }
     }
 
     &:hover{
-      transition:grid-template-rows 0.4s linear;
+      transition:var(--dropdown-hover-transition);
       grid-template-rows: 1fr;
 
       ~ .blur-veil{
         height:100vh;
-        transition:opacity 0.2s linear, height 0s;
+        transition:var(--blur-veil-transition-open);
         opacity:1;
       }
     
       .header__dropdown-menu-wrapper .inner{
-        transition:opacity 0.6s linear;
+        transition:var(--inner-content-transition-close);
         opacity:1;
       }
     }
@@ -94,7 +101,7 @@
 
     .blur-veil{
       opacity:0;
-      transition:opacity 0.4s linear, height 0s linear 2s;
+      transition: var(--blur-veil-transition-close);
       pointer-events: none;
       position: absolute;
       z-index: 0;
@@ -166,19 +173,19 @@
     }
 
     &:hover + .header__dropdown-menu{
-      transition:grid-template-rows 0.4s linear;
+      transition:var(--dropdown-hover-transition);
       grid-template-rows:1fr;
       z-index:20;
 
       ~ .blur-veil{        
-        transition:opacity 0.2s linear, height 0s;
+        transition:var(--blur-veil-transition-open);
         opacity:1;
         height:100vh;
       }
     }
 
     &:hover + .header__dropdown-menu .header__dropdown-menu-wrapper .inner{
-      transition:opacity 0.6s linear;
+      transition:var(--inner-content-transition-open);
       opacity:1;
     }
 
