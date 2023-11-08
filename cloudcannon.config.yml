@@ -48,8 +48,6 @@ collections_config:
         indent: true
         numberedlist: true
         outdent: true
-        code: true
-        embed: true
         horizontalrule: true
         image: true
         table: true
@@ -117,3 +115,17 @@ paths:
   uploads: images
   data: _data
   includes: _includes
+
+_snippets_imports:
+  eleventy_liquid: true
+_snippets:
+  youtube:
+    template: eleventy_liquid_include
+    inline: false
+    preview:
+      text: YouTube video embed
+    definitions:
+      include_name: snippets/youtube
+      named_args:
+        - editor_key: id
+          type: string
