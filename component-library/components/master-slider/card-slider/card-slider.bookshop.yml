@@ -22,9 +22,9 @@ preview:
 
 # Any extra CloudCannon inputs configuration to apply to the blueprint
 _inputs: 
-  slides.heading:
+  slides[*].heading:
     comment: Text to display on this card (optional).
-  slides.image:
+  slides[*].image:
     comment: The image to display on this card.
   heading_text:
     comment: Add a block to the top of this slider with optional heading, text and button.
