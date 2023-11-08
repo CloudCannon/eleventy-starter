@@ -1,5 +1,8 @@
 module.exports = {
     engines: {
-        "@bookshop/eleventy-engine": {}
-    }
+        "@bookshop/eleventy-engine": {
+            "plugins": ["./assign_local.js"]
+        }
+    },
+    format : "yml"
 }

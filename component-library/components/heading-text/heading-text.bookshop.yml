@@ -1,0 +1,29 @@
+# Metadata about this component, to be used in the CMS
+spec:
+  structures:
+    - basic_block
+  label: "Heading-text"
+  description:
+  icon: title
+  tags: ['text', 'heading']
+
+# Defines the structure of this component, as well as the default values
+blueprint:
+  heading_level: h1
+  heading:
+  text:  
+  button: bookshop:global/button
+
+# Overrides any fields in the blueprint when viewing this component in the component browser
+preview:
+
+# Any extra CloudCannon inputs configuration to apply to the blueprint
+_inputs:
+  heading_level: 
+    type: select
+    options:
+      values:
+        - h1
+        - h2
+  text:
+    type: markdown

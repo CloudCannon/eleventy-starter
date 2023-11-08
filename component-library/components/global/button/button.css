@@ -1,0 +1,30 @@
+.button {
+  cursor: pointer;
+  border: none;
+  border-radius: var(--base-border-radius);
+  padding: 0;
+  background-color: var(--button-background-color);
+  width:100%;
+
+  @media only screen and (min-width: var(--max-width-sm)) {
+    width:auto;
+  }
+
+  a {
+    background: transparent;
+    display: block;
+    border-radius: var(--base-border-radius);
+    padding: 1rem 1.75rem;
+    font-size: 1rem;
+    color: var(--button-text-color);
+
+    &:hover {
+      backdrop-filter: brightness(0.85);
+    }    
+  
+    /* was this meant to be affecting the a tag? it was outside so was having no effect */
+    @media only screen and (min-width: 1020px) {
+      font-size: 1.25rem;
+    }
+  }
+}

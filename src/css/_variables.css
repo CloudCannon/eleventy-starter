@@ -1,0 +1,59 @@
+:root{
+    /* Font Variables */
+    --font-primary: 'Source Sans 3', sans-serif;
+    --font-secondary: 'Roboto', sans-serif;
+    --base-font-size: 1rem;
+
+    /* Colors Variables */
+    --color-white: #fff;
+    --color-black: #000;
+    --color-gray: #808080;
+    --color-gray-light: color-mix(in srgb, var(--color-gray) 10%, var(--color-white));
+    --color-gray-dark: color-mix(in srgb, var(--color-gray) 50%, var(--color-black));
+    --color-primary: #111111;
+    --color-primary-light: color-mix(in srgb, var(--color-primary) 10%, var(--color-white));
+    --color-primary-dark: color-mix(in srgb, var(--color-primary) 50%, var(--color-black));
+    --color-secondary: #D9CFFF;
+    --color-secondary-light: color-mix(in srgb, var(--color-secondary) 10%, var(--color-white));
+    --color-secondary-dark: color-mix(in srgb, var(--color-secondary) 50%, var(--color-black));
+    --color-anchor: #ffba08;
+    --color-anchor-light: color-mix(in srgb, var(--color-anchor) 10%, var(--color-white));
+    --color-anchor-dark: color-mix(in srgb, var(--color-anchor) 50%, var(--color-black));
+    --color-header: #181512;
+    --color-header-light: color-mix(in srgb, var(--color-header) 10%, var(--color-white));
+    --color-header-dark: color-mix(in srgb, var(--color-header) 50%, var(--color-black));
+    --color-text: #181222;
+    --color-text-white: #dddddd;
+    --color-text-light: #4d4d4d;
+    --color-deactive: #ababab;
+
+    /* Spacer Variables */
+    --base-padding: 1rem;
+    --base-margin: 1rem;
+
+    /*  Content container */
+    --content-max-width: 1360px;
+
+    /* Custom media queries - device breakpoints */
+    @custom-media --tablet (min-width: 481px);
+    @custom-media --desktop (min-width: 769px);
+
+
+    /* Content Container Variables */
+    --max-width-xs: 620px;
+    --max-width-sm: 768px;
+    --max-width-md: 870px;
+    --max-width-lg: 1028px;
+    --max-width-xl: 1280px;
+    --max-width-xxl: 1920px;
+
+    /* Base grid for site */
+    --twelve-column-grid: repeat(12, 1fr);
+
+    /* Transition Variables */
+    --base-transition: all 0.5s ease-in-out;
+
+    /* Other Variables */
+    --base-border-width: 1px;
+    --base-border-radius: 8px;
+}

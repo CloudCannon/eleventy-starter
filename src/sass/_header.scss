@@ -4,15 +4,15 @@
   &__container {
     display: flex;
     justify-content: space-between;
-    padding: $base-padding;
-    max-width: $max-width-xxl;
+    padding: var(--base-padding);
+    max-width: var(--max-width-xxl);
     margin: 0 auto;
 
-    @media screen and (min-width: $max-width-md) {
-      padding: $base-padding 32px;
+    @media screen and (min-width: var(--max-width-md)) {
+      padding: var(--base-padding) 32px;
     }
 
-    @media screen and (min-width: $max-width-xl) {
+    @media screen and (min-width: var(--max-width-xl)) {
       padding: 64px 157px;
     }
   }
@@ -21,7 +21,7 @@
     img {
       width: 200px;
 
-      @media screen and (min-width: $max-width-md) {
+      @media screen and (min-width: var(--max-width-md)) {
         width: 250px;
       }
     }
@@ -35,7 +35,7 @@
   &__nav-list {
     display: none;
 
-    @media screen and (min-width: $max-width-xl) {
+    @media screen and (min-width: var(--max-width-xl)) {
       position: static;
       display: flex;
       padding: 0;
@@ -73,7 +73,7 @@
     background-color: white;
     padding: 2rem;
     border-radius: 0 0 0 4px;
-    font-family: $font-primary;
+    font-family: var(--font-primary);
     letter-spacing: 1.2;
     color: text;
 
@@ -81,7 +81,7 @@
       margin-bottom: .5rem;
     }
 
-    @media screen and (min-width: $max-width-xl) {
+    @media screen and (min-width: var(--max-width-xl)) {
       display: none !important;
     }
   }
@@ -91,7 +91,7 @@
     border: none;
     background: none;
 
-    @media screen and (min-width: $max-width-xl) {
+    @media screen and (min-width: var(--max-width-xl)) {
       display: none;
     }
   }

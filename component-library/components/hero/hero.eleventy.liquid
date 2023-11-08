@@ -1,14 +1,7 @@
-{% assign c = "shared-bg-hero" %}
+{% assign_local c = "shared-bg-hero" %}
 
-<div class="{{ c }}">
-   {% if bg_image %}
-      <img class="{{ c }}__svg-img" src={{ bg_image }} alt="" />
-   {% endif %}
-   <div class="{{ c }}__wrapper">
-      <h1>{{ heading }}</h1>
-      <p>{{ text }}</p>
-      {% if button %}
-         {% bookshop "global/button" bind: button %}
-      {% endif %}
+<section class="{{ c }}" style="--background-image:url({{ bg_image }})" >
+   <div class="{{ c }}__wrapper content-block">
+      {% bookshop "heading-text" bind: heading_text %}
    </div>
-</div>
+</section>

@@ -1,0 +1,26 @@
+.shared-bg-hero {
+  display:flex;
+  padding-block: 60px; 
+  min-height: 50vh;
+
+  background-image:var(--background-image);
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position:center;
+
+  &__wrapper{
+    .heading-text{
+      grid-column: 1 / 13;
+
+      p{
+        @media (--desktop){
+          text-align:center;
+        }
+      }
+    }
+  }  
+
+  @media (--desktop) {
+    padding-block: 120px;
+  }
+}
