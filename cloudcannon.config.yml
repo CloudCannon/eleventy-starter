@@ -114,6 +114,7 @@ _snippets:
     inline: false
     preview:
       text: YouTube video embed
+      icon: smart_display
     definitions:
       include_name: snippets/youtube.html
       named_args:
@@ -124,6 +125,7 @@ _snippets:
     inline: false
     preview:
       text: Tweet embed
+      icon: title
     definitions:
       include_name: snippets/tweet.html
       named_args:
@@ -134,6 +136,7 @@ _snippets:
     inline: false
     preview:
       text: Vimeo video embed
+      icon: play_circle
     definitions:
       include_name: snippets/vimeo.html
       named_args:
