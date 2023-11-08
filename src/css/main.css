@@ -5,7 +5,6 @@
 @import '_404';
 @import '_blog';
 @import '_article';
-@import '_snippets';
 
 html {
   box-sizing: border-box;
