@@ -8,5 +8,7 @@
         <p>{{ text }}</p>
     {% endif %}
     
-    {% bookshop "global/button" bind: button %}   
+    {% if button %}
+        {% bookshop "global/button" bind: button %}   
+    {% endif %}
 </div>
