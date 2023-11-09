@@ -58,6 +58,9 @@
         {% if heading_text %}   
             {% bookshop "heading-text" bind: heading_text %}        
         {% endif %}
+
+        {% bookshop "dev-note" text: 'Note that the infinite scrolling functionality of this component will not work while live editing... you will need to save and refresh the page to make the scrolling work.' %}
+
         <div class="carousel_wrapper">
             <i class="fa-solid fa-chevron-left btn  btn--left" @click="scroll('left')"></i>
             <ul x-ref="carousel" class="
