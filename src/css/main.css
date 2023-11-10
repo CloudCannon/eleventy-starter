@@ -15,9 +15,9 @@ html {
   box-sizing: inherit;
 }
 
-main {
-  min-height: 100vh;
-}
+main { min-height: 100vh; }
+
+a{ text-decoration: none; }
 
 body, h1, h2, h3, h4, h5, h6, p, ol, ul {
   margin: 0;

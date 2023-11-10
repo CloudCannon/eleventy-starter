@@ -7,7 +7,7 @@ const config = {
             watch: true,
             plugins:[                
                 require('postcss-nested'),
-                require('postcss-advanced-variables'),
+                require('@knagis/postcss-advanced-variables'),
                 require('postcss-media-variables'),                
                 require('postcss-custom-media'),
                 require('postcss-css-variables')({
