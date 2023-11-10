@@ -7,8 +7,8 @@
     "fetch-theme-color": "node utils/fetch-theme-color.js",
     "watch:eleventy": "eleventy --serve",
     "build:eleventy": "eleventy",
-    "start": "npm-run-all fetch-theme-color --parallel watch:eleventy",
-    "build": "npm-run-all fetch-theme-color build:eleventy",
+    "start": "npm-run-all watch:eleventy",
+    "build": "npm-run-all build:eleventy",
     "new": "npx @bookshop/init --component"
   },
   "keywords": [],
@@ -23,6 +23,8 @@
     "npm-run-all": "^4.1.5"
   },
   "dependencies": {
+    "@11ty/eleventy-img": "^3.1.8",
+    "@11ty/eleventy-navigation": "^0.3.5",
     "@bookshop/eleventy-bookshop": "3.8.1",
     "postcss-cloudcannon": "file:postcss-cloudcannon",
     "sass": "^1.69.2"

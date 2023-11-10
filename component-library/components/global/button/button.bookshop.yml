@@ -15,6 +15,9 @@ blueprint:
 
 # Overrides any fields in the blueprint when viewing this component in the component browser
 preview:
+  button_text: 'Test'
+  button_text_color: 'yellow'
+  button_color: 'white'
 
 # Any extra CloudCannon inputs configuration to apply to the blueprint
 _inputs:

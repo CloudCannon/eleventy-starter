@@ -17,7 +17,8 @@
          </div>
          {% if image %}
             <div class="{{ c }}__img">
-               <img src={{ image }} alt={{ image_alt }} />
+               {%- assign sizes = "100vw" %}
+               {%- image image, image_alt, sizes, true %}
             </div>
          {% endif %}
       {% endif %}      
