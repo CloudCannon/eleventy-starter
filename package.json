@@ -5,10 +5,9 @@
   "main": "index.js",
   "scripts": {
     "fetch-theme-color": "node utils/fetch-theme-color.js",
-    "process-breakpoints": "node utils/process-breakpoints.js",
     "watch:eleventy": "eleventy --serve",
     "build:eleventy": "eleventy",
-    "start": "npm-run-all fetch-theme-color process-breakpoints --parallel watch:eleventy",
+    "start": "npm-run-all watch:eleventy",
     "build": "npm-run-all build:eleventy",
     "new": "npx @bookshop/init --component"
   },
