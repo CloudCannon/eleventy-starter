@@ -6,7 +6,10 @@
     justify-content: space-between;
     max-width: var(--content-max-width);
     margin: 0 auto;
-    padding: var(--base-padding) 32px;
+
+    @media screen and (min-width: var(--max-width-md)) {
+      padding: var(--base-padding) 32px;
+    }   
 
     @media (--desktop){
       padding-block:32px;

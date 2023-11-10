@@ -65,7 +65,8 @@
                 {% for image in images %}
                     <li class="card">
                         <div class="img">
-                            <img src="{{ image }}" alt="" draggable="false"/>
+                            {%- assign_local sizes = "33vw, 50vw, 100vw" %}
+                            {%- image image, "alt", sizes, true %}                        
                         </div>
                     </li>
                 {% endfor %}

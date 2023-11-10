@@ -1,21 +1,32 @@
 const pluginBookshop = require("@bookshop/eleventy-bookshop");
 const { DateTime } = require("luxon");
 const { Tokenizer, assert } = require('liquidjs');
+
+// Image optimization
+const path = require("node:path")
+const Image = require("@11ty/eleventy-img")
+
+// Prebuild scripts
+const fetch_theme_colors = require('./utils/fetch-theme-color')
+
+// Navigation
+const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
+
+// CloudCannon postCSS processing automatically on build
 const postcss_cloudcannon = require("./11typlugin");
 
 module.exports = function (eleventyConfig) {
   // Hot reloading for local dev
   eleventyConfig.setServerOptions({
-    // Default values are shown:
     liveReload: true,
     domDiff: true,
     port: 8080,
-
-    // Additional files to watch that will trigger server updates
-    // Accepts an Array of file paths or globs (passed to `chokidar.watch`).
-    // Works great with a separate bundler writing files to your output folder.
-    // e.g. `watch: ["_site/**/*.css"]`
     watch: ["_site/**/*.css"],
+  });
+
+  // Run prebuilds
+  eleventyConfig.on('eleventy.before', async () => {
+    fetch_theme_colors();
   });
   
   eleventyConfig.addLiquidTag('assign_local', function(liquidEngine) {
@@ -33,8 +44,29 @@ module.exports = function (eleventyConfig) {
       }
     }
   });
+
+  // Image optimization
+  const IMAGE_OPTIONS = {
+    widths: [400, 800, 1600],
+    formats: ["avif", "webp", "svg", "jpeg"],
+    outputDir: "./_site/optimized",
+    urlPath: "/optimized/"
+  }
   
-  
+  eleventyConfig.addShortcode("image", async (srcFilePath, alt, sizes, preferSvg) => {
+    let inputFilePath = path.join(eleventyConfig.dir.input, srcFilePath)
+    let metadata = await Image(inputFilePath, Object.assign({
+      svgShortCircuit: preferSvg ? "size" : false
+    }, IMAGE_OPTIONS));
+
+    return Image.generateHTML(metadata, {
+      alt,
+      sizes,
+      loading: "eager",
+      decoding: "async"
+    });
+  });
+
   // Display the current year
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
   
@@ -48,12 +80,16 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.ignores.add("src/schemas");
   eleventyConfig.addPassthroughCopy("src/images");
   
+  // PLugins 
+  eleventyConfig.addPlugin(eleventyNavigationPlugin);
+
   // Bookshop integration
   eleventyConfig.addPlugin(pluginBookshop({
     bookshopLocations: ["component-library"],  
     pathPrefix: '', 
   }));
   
+  // Process CSS/SASS
   eleventyConfig.addPlugin(postcss_cloudcannon);
 
   return {
