@@ -26,6 +26,7 @@
     "@11ty/eleventy-img": "^3.1.8",
     "@11ty/eleventy-navigation": "^0.3.5",
     "@bookshop/eleventy-bookshop": "3.8.1",
+    "eleventy-plugin-embed-everything": "^1.17.0",
     "postcss-cloudcannon": "file:postcss-cloudcannon",
     "sass": "^1.69.2"
   }
