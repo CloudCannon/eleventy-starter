@@ -1,5 +1,9 @@
 source: src
 
+_structures:
+  content_blocks:
+    style: modal
+
 collections_config:
   pages:
     icon: feed
@@ -27,6 +31,28 @@ collections_config:
     _enabled_editors:
       - content
       - visual
+    _editables:
+      text:
+        italic: true
+      block:
+        format: p h3
+        undo: true
+        redo: true
+      content:
+        blockquote: true
+        bold: true
+        format: p h1 h2 h3 h4 h5 h6 pre address div
+        italic: true        
+        underline: true
+        link: true
+        bulletedlist: true
+        numberedlist: true
+        image: true
+        left: align-left
+        center: align-center
+        right: align-right
+        justify: align-justify
+        snippet: true
   data: 
     output: true
     path: _data
@@ -83,3 +109,40 @@ paths:
   uploads: images
   data: _data
   includes: _includes
+
+_snippets_imports:
+  eleventy_liquid: true
+_snippets:
+  youtube:
+    template: eleventy_liquid_include
+    inline: false
+    preview:
+      text: YouTube video embed
+      icon: smart_display
+    definitions:
+      include_name: snippets/youtube.html
+      named_args:
+        - editor_key: id
+          type: string
+  twitter:
+    template: eleventy_liquid_include
+    inline: false
+    preview:
+      text: Tweet embed
+      icon: title
+    definitions:
+      include_name: snippets/tweet.html
+      named_args:
+        - editor_key: url
+          type: string
+  vimeo:
+    template: eleventy_liquid_include
+    inline: false
+    preview:
+      text: Vimeo video embed
+      icon: play_circle
+    definitions:
+      include_name: snippets/vimeo.html
+      named_args:
+        - editor_key: id
+          type: string

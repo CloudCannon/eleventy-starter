@@ -14,6 +14,7 @@ const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 
 // CloudCannon postCSS processing automatically on build
 const postcss_cloudcannon = require("./11typlugin");
+const embedEverything = require("eleventy-plugin-embed-everything");
 
 module.exports = function (eleventyConfig) {
   // Hot reloading for local dev
@@ -91,6 +92,8 @@ module.exports = function (eleventyConfig) {
   
   // Process CSS/SASS
   eleventyConfig.addPlugin(postcss_cloudcannon);
+
+  eleventyConfig.addPlugin(embedEverything);
 
   return {
     dir: {
