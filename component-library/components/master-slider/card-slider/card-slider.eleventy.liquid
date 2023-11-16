@@ -1,0 +1,18 @@
+{%- capture inner_slides -%}
+
+    {% for card in slides %}
+        <li class='card'>
+            {% if card.heading %}
+                <h1>{{ card.heading }}</h1>
+            {% endif %}
+            {% if card.image %}
+                <div class='img'>
+                    <img src="{{ card.image }}" alt="{{ card.image_alt }}" draggable="false"/>
+                </div>
+            {% endif %}
+        </li>
+    {% endfor %}
+
+{%- endcapture %}
+
+{% bookshop "master-slider" type: "card_slider" inner_slides: inner_slides %}

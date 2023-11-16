@@ -1,6 +1,10 @@
-{% assign_local c = "c-image-slider" %}
+{% assign_local c = "c-master-slider" %}
 
-<section class="{{ c }}" style="--background-image:url({{ bg_image }})"
+<section class="{{ c }}" style="
+    --background-image:url({{ bg_image }});
+    --card-border-radius:{{ card_border_radius }}%;
+    --image-border-radius:{{ image_border_radius }}%;
+"
     x-data="{ 
         carouselChildren: [...$refs.carousel.children],
         firstCardWidth: $refs.carousel.querySelector('.card').offsetWidth,
@@ -50,26 +54,27 @@
         }
     }"
     >
-    <div class="{{ c }}__wrapper content-block">
-        {% if with_heading %}
-            {% bookshop "heading-text" bind: heading_text %}
+    <div class="{{ c }}__wrapper content-block">     
+        {% if heading_text %}   
+            {% bookshop "heading-text" bind: heading_text %}        
         {% endif %}
+
+        {% if env_bookshop_live %}
+            {% bookshop "dev-note" text: 'Note that the infinite scrolling functionality of this component will not work while live editing... you will need to save and refresh the page to make the scrolling work.' %}
+        {% endif %}
+
         <div class="carousel_wrapper">
             <i class="fa-solid fa-chevron-left btn  btn--left" @click="scroll('left')"></i>
-            <ul x-ref="carousel" class="carousel" 
+            <ul x-ref="carousel" class="
+                carousel
+                {{ type }}
+            " 
                 @mousemove="dragging" 
                 @mousedown="dragStart"
                 @mouseup.window="dragStop"
                 @scroll="infiniteScroll"
             >
-                {% for image in images %}
-                    <li class="card">
-                        <div class="img">
-                            {%- assign_local sizes = "33vw, 50vw, 100vw" %}
-                            {%- image image, "alt", sizes, true %}                        
-                        </div>
-                    </li>
-                {% endfor %}
+                {{ inner_slides }}     
             </ul>
             <i class="fa-solid fa-chevron-right btn btn--right" @click="scroll('right')"></i>
         </div>        

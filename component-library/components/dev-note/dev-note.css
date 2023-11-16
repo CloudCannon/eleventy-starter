@@ -1,0 +1,39 @@
+.c-dev-note {
+    
+    --primary-blue: #007bff;
+
+    grid-column: 1 / 13;
+    border-radius: 3px;
+    border-top: 1px solid var(--primary-blue);
+    border-right: 1px solid var(--primary-blue);
+    border-bottom: 1px solid var(--primary-blue);
+    border-left: 4px solid var(--primary-blue);
+    background: #E7EEFF;
+    padding: 12px;
+
+    display: grid;
+    grid-template-columns: fit-content(100%) auto fit-content(100%);
+    max-width: 700px;
+    margin: 0 auto 20px auto;
+
+    &__heading-container{
+        &__icon{
+            margin-right: 12px;
+        }
+        &__title{
+            margin: 0;
+            color: var(--primary-blue);            
+            font-weight: bold;
+            line-height: 21px; 
+        }
+
+    }
+
+    &__content-container{
+        grid-row: 2;
+        grid-column: 2;
+        color: var(--color-text);
+
+    }
+}
+

@@ -1,0 +1,44 @@
+# Metadata about this component, to be used in the CMS
+spec:
+  structures:
+    - content_blocks
+  label: "Card carousel"
+  description: An infinite looping card carousel
+  icon: view_carousel
+  tags: ['card', 'carousel', 'slider']
+
+# Defines the structure of this component, as well as the default values
+blueprint:
+  heading_text: bookshop:heading-text
+  card_border_radius: 4
+  image_border_radius: 50
+  slides: 
+    - heading:
+      image: 
+      image_alt:
+
+# Overrides any fields in the blueprint when viewing this component in the component browser
+preview:
+
+# Any extra CloudCannon inputs configuration to apply to the blueprint
+_inputs: 
+  slides[*].heading:
+    comment: Text to display on this card (optional).
+  slides[*].image:
+    comment: The image to display on this card.
+  heading_text:
+    comment: Add a block to the top of this slider with optional heading, text and button.
+  card_border_radius:
+    comment: How rounded do you want your card corners (in %)?
+    type: range
+    options:
+      step: 1
+      min: 0
+      max: 50
+  image_border_radius:
+    comment: How rounded do you want the image inside the card (in %)?
+    type: range
+    options:
+      step: 1
+      min: 0
+      max: 50  
