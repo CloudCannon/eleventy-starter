@@ -14,5 +14,7 @@ seo:
 layout: layouts/layout.html
 permalink: /
 eleventyExcludeFromCollections: false
-content_blocks: []
+content_blocks:
+  - _bookshop_name: sample
+    text: "Hello world!"
 ---
