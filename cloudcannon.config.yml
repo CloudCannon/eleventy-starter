@@ -1,0 +1,21 @@
+source: src
+paths:
+  static: ''
+  uploads: uploads
+  data: _data
+  includes: _includes
+  layouts: _includes
+  collections: ''
+  pages: ''
+collections_config:
+  pages:
+    path: /pages
+    icon: notes
+    output: true
+    disable_add: false
+    disable_add_folder: false
+    disable_file_actions: false
+_structures:
+  content_blocks:
+    style: modal
+timezone: Etc/UTC
