@@ -1,33 +1,21 @@
 {
-  "name": "eleventy-template",
+  "name": "eleventy-starter",
   "version": "1.0.0",
-  "description": "",
+  "description": "A simple starter template for Eleventy, Bookshop & CloudCannon. This is designed to be a good starting point for a site built with Bookshop on CloudCannon, without having to spend too much time stripping out placeholder content. This template aims to take out as much set up work as possible, to allow you to start building pages as quick as possible. <!-- TODO: Live demo site -->",
   "main": "index.js",
   "scripts": {
-    "fetch-theme-color": "node utils/fetch-theme-color.js",
-    "watch:eleventy": "eleventy --serve",
-    "build:eleventy": "eleventy",
-    "start": "npm-run-all watch:eleventy",
-    "build": "npm-run-all build:eleventy",
-    "new": "npx @bookshop/init --component"
+    "eleventy:watch": "ELEVENTY_ENV=development eleventy --serve"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
-    "@bookshop/browser": "3.8.1",
-    "@bookshop/eleventy-engine": "3.8.1",
-    "@bookshop/generate": "3.8.1",
-    "@bookshop/sass": "^3.8.1",
-    "npm-run-all": "^4.1.5"
+    "@bookshop/browser": "3.10.1",
+    "@bookshop/eleventy-engine": "3.10.1",
+    "@bookshop/generate": "3.10.1"
   },
   "dependencies": {
-    "@11ty/eleventy-img": "^3.1.8",
-    "@11ty/eleventy-navigation": "^0.3.5",
-    "@bookshop/eleventy-bookshop": "3.8.1",
-    "eleventy-plugin-embed-everything": "^1.17.0",
-    "postcss-cloudcannon": "file:postcss-cloudcannon",
-    "sass": "^1.69.2"
+    "@bookshop/eleventy-bookshop": "3.10.1"
   }
 }
