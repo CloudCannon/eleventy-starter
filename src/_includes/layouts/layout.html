@@ -25,11 +25,16 @@
 
     <!-- Add Alpine -->
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.1/dist/cdn.min.js"></script>
+
+    <!-- Add FontAwesome Icons -->
+    <link rel="stylesheet" href="/node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+    
     </head>
     <body>
-        {% include 'partials/header.html' %}
+        {% include 'partials/navigation/header.html' %}
         <main id="main">
             {% bookshop_include "page" content_blocks: content_blocks %}
         </main>
+        {% include 'partials/navigation/footer.html' %}
     </body>
 </html>

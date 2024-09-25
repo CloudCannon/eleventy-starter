@@ -1,0 +1,39 @@
+<footer
+  style="background-color: {{navigation.footer.background_color}}; color: {{navigation.footer.color}};">
+  <div class="px-8">
+    <div
+      class="footer grid grid-cols-1 sm:grid-cols-3 justify-between items-center gap-8 py-[48px]">
+      <a
+        class="flex justify-center sm:justify-start items-center"
+        href={{navigation.footer.logo_url}}>
+        <img
+          class="footer__logo-image"
+          src={{navigation.footer.logo}}
+          alt={{navigation.footer.logo_alt}}
+        />
+      </a>
+      <ul class="flex gap-4 items-center justify-center">
+        {% for link in navigation.footer.social %}
+            <li class="w-[2rem]">
+                <a href={{link.link}}>
+                    <i class="fab fa-{{ link.social_icon | downcase }}"></i>
+                </a>
+            </li>
+        {% endfor %}
+      </ul>
+
+      <ul class="flex flex-col text-center sm:text-end gap-4">
+        {% for link in navigation.footer.links %}
+            <li>
+                <a href={{link.link}}>{{link.text}}</a>
+            </li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <p class="text-center py-8">
+      &#169; <span x-text="new Date().getFullYear()"></span>
+      {{navigation.footer.copyright}}
+    </p>
+  </div>
+</footer>

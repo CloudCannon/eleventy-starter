@@ -1,6 +1,7 @@
 {
     "header": {
       "logo": "/assets/images/logos/logo-wordmark-blue.png",
+      "logo_alt": "",
       "logo_url": "/",
       "background_color": "#ffffff",
       "color": "#393939",
@@ -17,6 +18,7 @@
     },
     "footer": {
       "logo": "/assets/images/logos/logo-wordmark-white.png",
+      "logo_alt": "",
       "logo_url": "/",
       "copyright": "MyCompany. All rights reserved.",
       "background_color": "#333232",
