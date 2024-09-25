@@ -2,6 +2,7 @@ const pluginBookshop = require("@bookshop/eleventy-bookshop");
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("css")
+  eleventyConfig.addPassthroughCopy("src/assets/images")
 
   eleventyConfig.addWatchTarget("component-library/");
 

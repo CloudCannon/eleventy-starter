@@ -22,8 +22,12 @@
 
     <!-- Add SEO -->
     {% include 'partials/seo.html' %}
+
+    <!-- Add Alpine -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.1/dist/cdn.min.js"></script>
     </head>
     <body>
+        {% include 'partials/header.html' %}
         <main id="main">
             {% bookshop_include "page" content_blocks: content_blocks %}
         </main>
