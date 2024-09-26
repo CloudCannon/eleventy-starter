@@ -1,5 +1,8 @@
 const pluginBookshop = require("@bookshop/eleventy-bookshop");
 
+/* 11ty config imports */
+const image_shortcode = require('./_11ty_config/image_shortcode')
+
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("css")
   eleventyConfig.addPassthroughCopy("src/assets/images")
@@ -18,6 +21,7 @@ module.exports = function (eleventyConfig) {
 
   // Display the current year
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
+  eleventyConfig.addShortcode("image", image_shortcode);
 
   return {
     dir: {
