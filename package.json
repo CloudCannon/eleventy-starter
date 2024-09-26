@@ -13,7 +13,9 @@
     "sass:build": "sass --no-source-map src/assets/styles:css",
     "eleventy:build": "eleventy",
     "eleventy:watch": "ELEVENTY_ENV=development eleventy --serve",
-    "start": "npm-run-all sass:build bookshop-sass:build --parallel bookshop-sass:watch sass:watch eleventy:watch"
+    "tailwind:watch": "tailwindcss -i src/assets/styles/tailwind.css -o _site/assets/styles/tailwind.css --watch --postcss",
+    "tailwind:build": "tailwindcss -i src/assets/styles/tailwind.css -o _site/assets/styles/tailwind.css --postcss",
+    "start": "npm-run-all sass:build tailwind:build bookshop-sass:build --parallel bookshop-sass:watch sass:watch tailwind:watch eleventy:watch"
   },
   "keywords": [],
   "author": "",
@@ -23,6 +25,8 @@
     "@bookshop/browser": "3.10.1",
     "@bookshop/eleventy-engine": "3.10.1",
     "@bookshop/generate": "3.10.1",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.47",
     "tailwindcss": "^3.4.13"
   },
   "dependencies": {
