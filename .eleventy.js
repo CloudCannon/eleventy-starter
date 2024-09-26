@@ -16,6 +16,9 @@ module.exports = function (eleventyConfig) {
     pathPrefix: ''
   }));
 
+  // Display the current year
+  eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
+
   return {
     dir: {
         input: "src",
