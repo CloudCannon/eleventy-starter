@@ -9,7 +9,7 @@
     max-width: 1280px;
     margin-inline: auto;
     overflow: hidden;
-  }
+
 
   .content h1 {
     font-size: 2.5rem;
@@ -49,14 +49,17 @@
     justify-content: center;
   }
   .blob > picture > img {
-    max-width: 600px;
-    width: 100%;
     background-size: cover;
     -webkit-background-position: center;
     background-position: center center;
-    margin: 20px;
     animation: animate 10s ease-in-out infinite;
     transition: all 1s ease-in-out;
+  }
+
+  .blob > picture {
+    margin: 20px;
+    max-width: 600px;
+    width: 100%;
   }
 
   @media only screen and (min-width: 400px) {
@@ -69,10 +72,9 @@
     }
   }
   @media only screen and (min-width: 960px) {
-    .hero-container {
-      flex-direction: row;
-      padding-block: 48px;
-    }
+    flex-direction: row;
+    padding-block: 48px;
+
     .content {
       width: 50%;
     }
@@ -99,3 +101,4 @@
       border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
     }
   }
+}
