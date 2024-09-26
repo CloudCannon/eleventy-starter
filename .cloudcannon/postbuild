@@ -1,3 +1,4 @@
 npx @bookshop/generate
 
 npm run tailwind:build
+npm run sass:build
