@@ -9,13 +9,13 @@ spec:
 # Defines the structure of this component, as well as the default values
 blueprint:
   image_path:
-  image_alt:
+  alt_text:
   image_sizes:
 
 # Overrides any fields in the blueprint when viewing this component in the component browser
 preview:
   image_path: /assets/images/blog/featured-image-1.jpg
-  image_alt: A child sitting at a desk
+  alt_text: A child sitting at a desk
   image_sizes: 100vw
 
 # Any extra CloudCannon inputs configuration to apply to the blueprint

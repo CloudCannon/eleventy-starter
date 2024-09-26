@@ -3,7 +3,7 @@ const fs = require('fs');
 const Image = require("@11ty/eleventy-img");
 
 const IMAGE_OPTIONS = {
-	widths: [400, 800, 1280, 1600],
+	widths: [640, 960, 1280],
 	formats: ["avif", "webp", "svg", "jpeg"],
 	outputDir: "./_site/optimized/",
 	urlPath: "/optimized/",
