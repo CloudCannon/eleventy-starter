@@ -11,12 +11,12 @@ spec:
 
 # Defines the structure of this component, as well as the default values
 blueprint:
-  button_text:
+  button_text: Button Text
   button_icon:
   button_link: ''
-  background_color: ''
+  background_color: '#034ad8'
   hover_brightness: 0.85
-  text_color: ''
+  text_color: '#FFFFF'
 
 # Overrides any fields in the blueprint when viewing this component in the component browser
 preview:

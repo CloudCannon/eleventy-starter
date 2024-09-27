@@ -48,7 +48,7 @@
     display: flex;
     justify-content: center;
   }
-  .blob > picture > img {
+  .blob > picture > img, .blob > img {
     background-size: cover;
     -webkit-background-position: center;
     background-position: center center;
@@ -56,7 +56,7 @@
     transition: all 1s ease-in-out;
   }
 
-  .blob > picture {
+  .blob > picture, .blob > img {
     margin: 20px;
     max-width: 600px;
     width: 100%;
