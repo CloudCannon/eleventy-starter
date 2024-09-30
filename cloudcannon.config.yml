@@ -69,7 +69,7 @@ collections_config:
         icon: post_add
         schema: default
     create:
-      path: '[relative_base_path]/{title|slugify}.mdx'
+      path: '[relative_base_path]/{title|slugify}.md'
     disable_add: false
     disable_add_folder: false
     disable_file_actions: false
