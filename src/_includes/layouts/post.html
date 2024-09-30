@@ -34,7 +34,7 @@ layout: layouts/layout.html
       </div>
     </ul>
     <div class="markdown-text">
-      {{ content }}
+
     </div>
   </article>
   <section
@@ -42,7 +42,10 @@ layout: layouts/layout.html
   >
     <h2 class="text-2xl">Recent Posts</h2>
     <div class="grid sm:grid-cols-2 gap-5 mt-5">
-
+        {% assign latest_posts = collections.posts | reverse %}
+        {% for post in latest_posts limit:2 %}
+            {% include 'partials/blog/summary.html' %}
+        {% endfor %}
     </div>
   </section>
 </div>
