@@ -1,4 +1,5 @@
 ---
+_schema: default
 date: '2022-03-07'
 title: Email delivery tips
 draft:

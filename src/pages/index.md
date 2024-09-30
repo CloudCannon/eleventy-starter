@@ -1,4 +1,5 @@
 ---
+_schema: default
 title: Home
 seo:
   page_description: >-

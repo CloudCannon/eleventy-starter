@@ -1,4 +1,5 @@
 ---
+_schema: default
 title: Blog
 layout: layouts/blog.html
 eleventyExcludeFromCollections: false
