@@ -27,6 +27,9 @@ module.exports = function (eleventyConfig) {
   // Custom Shortcodes
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
   eleventyConfig.addShortcode("image", image_shortcode);
+  eleventyConfig.addPairedLiquidShortcode("tint", function(content, tint_color) { 
+    return `<span style="color: ${tint_color}">${ content }</span>`
+  });
 
   // Custom Filters
   eleventyConfig.addFilter("markdownify", (markdown) => md.render(markdown));

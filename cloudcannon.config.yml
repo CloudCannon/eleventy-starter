@@ -425,23 +425,18 @@ _snippets:
       link_message:
         type: textarea
         comment: The text for the download link
-  mdx_tint:
-    template: eleventy_liquid_bookshop_component
+  tint:
+    template: eleventy_liquid_paired_shortcode_positional_args
     inline: true
     preview:
       text: Tint
     definitions:
-      component_name: snippets/tint
-      named_args:
-        - editor_key: content
-          source_key: content
-          type: string
+      shortcode_name: tint
+      content_key: text
+      positional_args:
         - editor_key: color
-          source_key: tint_color
           type: string
     _inputs:
-      tint_color:
-        type: color
-      content:
+      text:
         comment: This text will be tinted
         type: textarea

@@ -85,6 +85,6 @@ object:
 
 {% bookshop 'snippets/file' src: "/documents/test.pdf" file_name: "test-file" link_message: "A test file to show how you'd have a downloadable link through your markdown" %}
 
-Some text which is normal color - {% bookshop 'snippets/tint' content: "Woah a tint!" tint_color: "#F7B2AD" %} Some more text to show how inline tint is.
+Some text which is normal color - {% tint "#F7B2AD" %}Woah a tint!{% endtint %} Some more text to show how inline tint is.
 
 {% bookshop 'snippets/video' src: "/videos/test.mp4" %}
