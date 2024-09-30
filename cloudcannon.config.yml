@@ -16,6 +16,8 @@ collections_config:
       - visual
     filter:
       base: strict
+      exclude:
+        - tags.md
     add_options:
       - name: Add New Page
         schema: default
@@ -52,7 +54,6 @@ collections_config:
       tags[*]:
         type: text
   data:
-    path: data
     disable_add: true
     disable_add_folder: true
     # _inputs:
