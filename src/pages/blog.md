@@ -2,8 +2,11 @@
 title: Blog
 layout: layouts/blog.html
 eleventyExcludeFromCollections: false
-page_size: 6
-permalink: /blog/
+pagination:
+  data: collections.posts
+  size: 3
+  alias: posts
+permalink: /blog{% if pagination.pageNumber > 0 %}/{{ pagination.pageNumber }}{% endif %}/index.html
 seo:
   page_description: 'A blog template with tags.'
   canonical_url:

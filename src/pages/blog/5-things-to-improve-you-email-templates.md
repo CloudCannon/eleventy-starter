@@ -15,7 +15,7 @@ image_alt: Children looking at a laptop
 seo:
   page_description:
   canonical_url:
-  featured_image: /images/blog/featured-image-2.jpg
+  featured_image: /assets/images/blog/featured-image-2.jpg
   featured_image_alt:
   author_twitter_handle:
   open_graph_type: article
