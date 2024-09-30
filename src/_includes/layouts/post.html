@@ -24,7 +24,7 @@ layout: layouts/layout.html
         {% assign fixedContent = content | split: " " %}
         {% assign wordCount = fixedContent | size %}
         {% assign readingRate = 183 %}
-        {% assign readingTime = wordCount | divided_by: readingRate | ciel %}
+        {% assign readingTime = wordCount | divided_by: readingRate | ceil %}
         <li class="post-data-list-item post-size">
           <p>{{ wordCount }}<span> words</span></p>
         </li>
