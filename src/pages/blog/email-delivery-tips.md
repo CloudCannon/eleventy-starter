@@ -1,9 +1,8 @@
 ---
 date: '2022-03-07'
-layout: layouts/post.html
-eleventyExcludeFromCollections: false
 title: Email delivery tips
-permalink: /blog/{{ title | slugify }}/
+draft:
+permalink: 
 tags:
   - email
 author: Gerard Hopper

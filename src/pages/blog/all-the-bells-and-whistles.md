@@ -1,10 +1,9 @@
 ---
 _schema: default
-layout: layouts/post.html
-eleventyExcludeFromCollections: false
 date: 2024-05-02T21:43:46Z
 title: All the bells and whistles
-permalink: /blog/{{ title | slugify }}/
+draft:
+permalink: 
 tags:
   - Bells
   - Whistles

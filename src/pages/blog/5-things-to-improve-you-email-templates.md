@@ -1,10 +1,9 @@
 ---
 _schema: default
-layout: layouts/post.html
-eleventyExcludeFromCollections: false
 date: 2022-03-07T00:00:00Z
 title: Five things to improve your email templates
-permalink: /blog/{{ title | slugify }}/
+draft: true
+permalink: 
 tags:
   - marketing
 author: Aaron Britt

@@ -1,9 +1,8 @@
 ---
-layout: layouts/post.html
-eleventyExcludeFromCollections: false
 date:
 title: ''
-permalink: /blog/{{ title | slugify }}/
+draft:
+permalink: 
 tags:
   - ''
 author:

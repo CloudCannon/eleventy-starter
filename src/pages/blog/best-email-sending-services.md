@@ -1,10 +1,9 @@
 ---
 _schema: default
-layout: layouts/post.html
-eleventyExcludeFromCollections: false
 date: 2022-03-11T00:00:00Z
 title: Best email sending services changed
-permalink: /blog/{{ title | slugify }}/
+draft: false
+permalink:
 tags:
   - technology
 author: Coen Simmons

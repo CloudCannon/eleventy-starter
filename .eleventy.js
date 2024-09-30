@@ -31,6 +31,11 @@ module.exports = function (eleventyConfig) {
   // Custom Filters
   eleventyConfig.addFilter("markdownify", (markdown) => md.render(markdown));
 
+  // Custom Collection
+  eleventyConfig.addCollection("posts", function (collectionApi) {
+		return collectionApi.getFilteredByGlob("src/pages/blog/**/*.md");
+	});
+
   return {
     dir: {
         input: "src",
