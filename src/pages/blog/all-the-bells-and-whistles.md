@@ -17,14 +17,10 @@ image_alt: >-
   Children stand around a laptop smiling, while one child works with her back to
   us on the laptop.
 seo:
-  page_description: >-
-    A demo page to show off some of the markdown editing features that
-    CloudCannon's CMS offers.
+  page_description:
   canonical_url:
   featured_image: /assets/images/blog/featured-image-2.jpg
-  featured_image_alt: >-
-    Children stand around a laptop smiling, while one child works with her back
-    to us on the laptop.
+  featured_image_alt:
   author_twitter_handle:
   open_graph_type: article
   no_index: false
