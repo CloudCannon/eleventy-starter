@@ -11,96 +11,83 @@ collections_config:
   pages:
     path: pages
     output: true
-    icon: laptop_mac
-    _enabled_editors:
-      - visual
     filter:
       base: strict
       exclude:
         - tags.md
+    description: ''
+    icon: laptop_mac
+    _editables:
+    _enabled_editors:
+      - visual
+    _inputs:
+    _select_data:
+    _structures:
     add_options:
       - name: Add New Page
-        schema: default
         icon: pages
-    schemas:
-      default:
-        name: New Page
-        path: .cloudcannon/schemas/page.md
-        remove_extra_inputs: false
+        schema: default
     create:
       path: '[relative_base_path]/{title|slugify}.md'
+    disable_add: false
+    disable_add_folder: false
+    disable_file_actions: false
+    schemas:
+      default:
+        path: .cloudcannon/schemas/page.md
+        reorder_inputs: true
+        hide_extra_inputs: false
+        remove_empty_inputs: false
+        remove_extra_inputs: false
+        name: New Page
+        icon: notes
+        _editables:
+        _enabled_editors:
+        _inputs:
+        _select_data:
+        _structures:
+        new_preview_url: /
   posts:
     path: pages/blog
     output: true
+    icon: notes
     _enabled_editors:
       - content
       - visual
-    add_options:
-      - name: Add New Post
-        schema: default
-        icon: post_add
-    schemas:
-      default:
-        name: New Post
-        path: .cloudcannon/schemas/post.md
-    create:
-      path: '[relative_base_path]/{title|slugify}.mdx'
     _inputs:
       tags:
         type: array
         options:
           allow_create: true
           empty_type: array
+        cascade: true
       tags[*]:
         type: text
+        cascade: true
+    add_options:
+      - name: Add New Post
+        icon: post_add
+        schema: default
+    create:
+      path: '[relative_base_path]/{title|slugify}.mdx'
+    disable_add: false
+    disable_add_folder: false
+    disable_file_actions: false
+    schemas:
+      default:
+        path: .cloudcannon/schemas/post.md
+        reorder_inputs: true
+        hide_extra_inputs: false
+        remove_empty_inputs: false
+        remove_extra_inputs: true
+        name: New Post
+        icon: notes
   data:
+    output: false
+    icon: notes
     disable_add: true
     disable_add_folder: true
-    # _inputs:
-    #   colors[*]:
-    #     options:
-    #       preview:
-    #         icon: palette
-    #   value:
-    #     type: color
-    #   icons:
-    #     comment: Add an icon from the list of [Font Awesome icons](https://fontawesome.com/search?o=r&m=free). Then add it to the ```src/components/utility/icon.jsx``` file, following the existing pattern.
-_structures:
-  content_blocks:
-    style: modal
-timezone: Pacific/Auckland
-_editables:
-  content:
-    blockquote: true
-    bold: true
-    format: p h2 h3 h4
-    italic: true
-    strike: true
-    subscript: true
-    superscript: true
-    underline: true
-    link: true
-    bulletedlist: true
-    indent: true
-    numberedlist: true
-    outdent: true
-    code: true
-    embed: true
-    horizontalrule: true
-    image: true
-    table: true
-    undo: true
-    redo: true
-    removeformat: true
-    copyformatting: true
-    styles: /css/editor.css
-    left: align-left
-    center: align-center
-    right: align-right
-    justify: align-justify
-    image_size_attributes: true
-    snippet: true
-
+    disable_file_actions: false
 collection_groups:
   - heading: Pages
     collections:
@@ -111,52 +98,60 @@ collection_groups:
   - heading: Data
     collections:
       - data
-
 _inputs:
   markdown_content:
     type: markdown
     options:
+      allow_resize: true
+      allow_custom_markup: false
+      remove_custom_markup: false
+      initial_height: 320
       blockquote: true
       bold: true
+      bulletedlist: true
+      code: true
+      copyformatting: true
+      embed: true
       format: p h1 h2 h3 h4
+      horizontalrule: true
+      image: true
+      image_size_attributes: true
       italic: true
+      link: true
+      numberedlist: true
+      redo: true
+      removeformat: true
       strike: true
       subscript: true
       superscript: true
-      underline: true
-      link: true
-      bulletedlist: true
-      numberedlist: true
       table: true
-      code: true
-      embed: true
-      horizontalrule: true
-      image: true
+      underline: true
       undo: true
-      redo: true
-      removeformat: true
-      copyformatting: true
+    cascade: true
   image_path:
     type: image
-    comment: The path to the source file of the image to be optimized.
     options:
+      paths:
+        uploads: src/assets/images
+        static: .
       accepts_mime_types:
         - image/png
         - image/jpeg
         - image/gif
-      paths:
-        static: '.'
-        uploads: src/assets/images
+    comment: The path to the source file of the image to be optimized.
+    cascade: true
   alt_text:
-    label: Image Alt Text
     type: textarea
+    label: Image Alt Text
     hidden: '!image_path'
+    cascade: true
   width:
     type: number
+    cascade: true
   height:
     type: number
+    cascade: true
   background_color:
-    hidden: 'border_only'
     type: select
     options:
       values: data.colors
@@ -164,6 +159,8 @@ _inputs:
       preview:
         text:
           - key: name
+    hidden: border_only
+    cascade: true
   text_color:
     type: select
     options:
@@ -172,6 +169,7 @@ _inputs:
       preview:
         text:
           - key: name
+    cascade: true
   color:
     type: select
     options:
@@ -180,204 +178,162 @@ _inputs:
       preview:
         text:
           - key: name
+    cascade: true
   icon:
     type: select
     options:
+      allow_empty: true
       values: data.icons
+    cascade: true
   button_icon:
     type: select
     options:
+      allow_empty: true
       values: data.icons
+    cascade: true
   button_link:
     type: url
+    cascade: true
   hover_brightness:
     type: range
     options:
       min: 0
       max: 1.5
       step: 0.05
+    cascade: true
   seo:
+    type: auto
     options:
       preview:
-        icon: query_stats
         text:
-          - 'Search engine optimization'
+          - Search engine optimization
         subtext:
           - key: page_description
-          - 'Update SEO values for the page'
+          - Update SEO values for the page
+        icon: query_stats
+    cascade: true
   layout:
+    type: auto
     hidden: true
+    cascade: true
   date:
+    type: auto
     instance_value: now
+    cascade: true
   page_size:
     type: number
     comment: The number of collection items to list per page
+    cascade: true
   social:
+    type: auto
     options:
       preview:
         icon: link
+    cascade: true
   links[*]:
+    type: auto
     options:
       preview:
-        icon: link
         text:
           - key: text
-          - 'Link'
+          - Link
         subtext:
           - key: link
-          - 'Add a social link'
+          - Add a social link
+        icon: link
+    cascade: true
   social_icon:
     type: select
     options:
+      allow_empty: true
       values: data.icons
+    cascade: true
   social[*]:
+    type: auto
     options:
       preview:
         icon: query_stats
+    cascade: true
   logo:
     type: image
+    cascade: true
   logo_url:
+    type: auto
     comment: Link for the logo in the top left of the footer
+    cascade: true
   copyright:
+    type: auto
     comment: Automatically prefixed with the current year
+    cascade: true
   page_description:
+    type: auto
     comment: Defaults to the description set in the Site SEO data file
+    cascade: true
   canonical_url:
+    type: auto
     comment: Defaults to the pages url
+    cascade: true
   featured_image:
+    type: auto
     comment: Defaults to the image set in the Site SEO data file
+    cascade: true
   open_graph_type:
     type: select
     options:
+      allow_empty: true
       values:
         - website
         - article
     comment: Defaults to the type 'website'
+    cascade: true
   author_twitter_handle:
+    type: auto
     comment: Defaults to the twitter site value set in the Site SEO data file
+    cascade: true
   twitter_site:
     type: url
+    cascade: true
   no_index:
     type: checkbox
-    comment:
+    comment: >-
       When selected this removes the page from your sitemap and adds the noindex
       robots meta tag
-
-# data_config:
-#   icons:
-#     path: data/icons.json
-#   colors:
-#     path: data/colors.json
-
-# _snippets_imports:
-#   mdx: true
-# _snippets:
-#   alert:
-#     template: mdx_component
-#     inline: false
-#     preview:
-#       text:
-#         - key: alert_message
-#         - 'Alert'
-#     definitions:
-#       component_name: SnippetsAlert
-#       named_args:
-#         - editor_key: background_color
-#           source_key: background_color
-#           type: string
-#         - editor_key: alert_message
-#           source_key: alert_message
-#           type: string
-#         - editor_key: color
-#           source_key: color
-#           type: string
-#         - editor_key: icon
-#           source_key: icon
-#           type: string
-#     _inputs:
-#       background_color:
-#         type: select
-#         options:
-#           values: data.colors
-#           value_key: value
-#           preview:
-#             text:
-#               - key: name
-#       icon:
-#         type: select
-#         options:
-#           values: data.icons
-#       color:
-#         type: select
-#         options:
-#           values: data.colors
-#           value_key: value
-#           preview:
-#             text:
-#               - key: name
-#       alert_message:
-#         comment: This is the text displayed in the alert
-#         type: textarea
-#   video:
-#     template: mdx_component
-#     inline: false
-#     preview:
-#       text: Video
-#     definitions:
-#       component_name: SnippetsVideo
-#       named_args:
-#         - editor_key: src
-#           source_key: src
-#           type: string
-#     _inputs:
-#       src:
-#         type: file
-#         options:
-#           paths:
-#             uploads: public/videos
-#   file:
-#     template: mdx_component
-#     inline: false
-#     preview:
-#       text: File
-#     definitions:
-#       component_name: SnippetsFile
-#       named_args:
-#         - editor_key: src
-#           source_key: src
-#           type: string
-#         - editor_key: file_name
-#           source_key: file_name
-#           type: string
-#         - editor_key: link_message
-#           source_key: link_message
-#           type: string
-#     _inputs:
-#       src:
-#         type: file
-#         label: File source
-#         options:
-#           paths:
-#             uploads: public/documents
-#       file_name:
-#         comment: The name of the file, once downloaded.
-#       link_message:
-#         type: textarea
-#         comment: The text for the download link
-#   mdx_tint:
-#     template: mdx_paired_component
-#     inline: true
-#     preview:
-#       text: Tint
-#     definitions:
-#       component_name: SnippetsTint
-#       content_key: inner_text
-#       named_args:
-#         - editor_key: color
-#           source_key: tint_color
-#           type: string
-#     _inputs:
-#       tint_color:
-#         type: color
-#       inner_text:
-#         comment: This text will be tinted
+    cascade: true
+_structures:
+  content_blocks:
+    style: modal
+_editables:
+  content:
+    allow_custom_markup: false
+    remove_custom_markup: false
+    blockquote: true
+    bold: true
+    bulletedlist: true
+    center: align-center
+    code: true
+    copyformatting: true
+    embed: true
+    format: p h2 h3 h4
+    horizontalrule: true
+    image: true
+    image_size_attributes: true
+    indent: true
+    italic: true
+    justify: align-justify
+    left: align-left
+    link: true
+    numberedlist: true
+    outdent: true
+    redo: true
+    removeformat: true
+    right: align-right
+    snippet: true
+    strike: true
+    styles: /css/editor.css
+    subscript: true
+    superscript: true
+    table: true
+    underline: true
+    undo: true
+data_config: {}
+timezone: Pacific/Auckland
