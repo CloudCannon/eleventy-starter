@@ -444,4 +444,4 @@ _snippets:
         type: color
       content:
         comment: This text will be tinted
-        type: markdown
+        type: textarea
