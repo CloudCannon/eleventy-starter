@@ -21,16 +21,7 @@ layout: layouts/layout.html
         </p>
       </li>
       <div class="flex gap-3">
-        {% assign fixedContent = content | split: " " %}
-        {% assign wordCount = fixedContent | size %}
-        {% assign readingRate = 183 %}
-        {% assign readingTime = wordCount | divided_by: readingRate | round %}
-        <li class="post-data-list-item post-size">
-          <p>{{ wordCount }}<span> words</span></p>
-        </li>
-        <li>
-          <p>{{ readingTime }}<span> minute{% if readingTime > 1 %}s{% endif %}</span></p>
-        </li>
+
       </div>
     </ul>
     <div class="markdown-text">
