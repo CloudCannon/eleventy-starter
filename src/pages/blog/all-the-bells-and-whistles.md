@@ -29,3 +29,4 @@ seo:
   open_graph_type: article
   no_index: false
 ---
+A new post to test and show off what you can do from inside CloudCannon's content editor.
