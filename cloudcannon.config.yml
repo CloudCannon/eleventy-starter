@@ -15,14 +15,9 @@ collections_config:
       base: strict
       exclude:
         - tags.md
-    description: ''
     icon: laptop_mac
-    _editables:
     _enabled_editors:
       - visual
-    _inputs:
-    _select_data:
-    _structures:
     add_options:
       - name: Add New Page
         icon: pages
@@ -50,7 +45,7 @@ collections_config:
   posts:
     path: pages/blog
     output: true
-    icon: notes
+    icon: article
     _enabled_editors:
       - content
       - visual
@@ -80,11 +75,9 @@ collections_config:
         hide_extra_inputs: false
         remove_empty_inputs: false
         remove_extra_inputs: true
-        name: New Post
-        icon: notes
   data:
     output: false
-    icon: notes
+    icon: data_usage
     disable_add: true
     disable_add_folder: true
     disable_file_actions: false
