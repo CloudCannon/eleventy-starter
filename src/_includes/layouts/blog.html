@@ -1,0 +1,40 @@
+---
+layout: layouts/layout.html
+---
+<div class="py-[48px] md:py-[96px]">
+    <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-center xl:mb-12">
+      {{title}}
+    </h1>
+    <section class="blog-index mx-auto flex justify-center">
+        <div class="grid md:grid-cols-2 xl:grid-cols-3 justify-between gap-5 mt-8 md:mt-16 ">
+            {% for post in collections.posts %}
+                <article class="block">
+                <a href="/blog/{{post.data.slug}}">
+                    <img
+                    class="rounded-lg aspect-video"
+                    src="{{post.data.thumb_image_path}}"
+                    alt="{{post.data.thumb_image_alt}}"
+                    loading="lazy"
+                    />
+                </a>
+                <div class="blog-post-tag">
+                    {% for tag in post.data.tags limit:2 %}
+                    <a href="/tags/{{tag}}">
+                        {{ tag }}
+                    </a>
+                    {% endfor %}
+                </div>
+                <a
+                    class="flex flex-col justify-start mt-2 max-w-[500px]"
+                    href="/blog/{{slug}}">
+                    <p class="text-2xl font-semibold">{{post.data.title}}</p>
+                    <p class="font-light">{{post.data.author}}</p>
+                    <p class="font-light">
+                    {{post.date}}
+                    </p>
+                </a>
+                </article>
+            {% endfor %}
+        </div>
+    </section>
+</div>

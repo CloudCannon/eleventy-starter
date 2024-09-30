@@ -33,7 +33,7 @@
     <body>
         {% include 'partials/navigation/header.html' %}
         <main id="main">
-            {% bookshop_include "page" content_blocks: content_blocks %}
+            {{ content }}
         </main>
         {% include 'partials/navigation/footer.html' %}
     </body>

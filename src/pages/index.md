@@ -11,7 +11,7 @@ seo:
   author_twitter_handle:
   open_graph_type:
   no_index: false
-layout: layouts/layout.html
+layout: layouts/component-page.html
 permalink: /
 eleventyExcludeFromCollections: false
 content_blocks:
