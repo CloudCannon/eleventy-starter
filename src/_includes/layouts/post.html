@@ -21,7 +21,16 @@ layout: layouts/layout.html
         </p>
       </li>
       <div class="flex gap-3">
-
+        {% assign fixedContent = content | split: " " %}
+        {% assign wordCount = fixedContent | size %}
+        {% assign readingRate = 183 %}
+        {% assign readingTime = wordCount | divided_by: readingRate | round %}
+        <li class="post-data-list-item post-size">
+          <p>{{ wordCount }}<span> words</span></p>
+        </li>
+        <li>
+          <p>{{ readingTime }}<span> minute{% if readingTime > 1 %}s{% endif %}</span></p>
+        </li>
       </div>
     </ul>
     <div class="markdown-text">
@@ -33,10 +42,7 @@ layout: layouts/layout.html
   >
     <h2 class="text-2xl">Recent Posts</h2>
     <div class="grid sm:grid-cols-2 gap-5 mt-5">
-        {% assign latest_posts = collections.posts | reverse %}
-        {% for post in latest_posts limit:2 %}
-            {% include 'partials/blog/summary.html' %}
-        {% endfor %}
+
     </div>
   </section>
 </div>
