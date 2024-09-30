@@ -341,7 +341,7 @@ _snippets:
         - key: alert_message
         - 'Alert'
     definitions:
-      component_name: SnippetsAlert
+      component_name: snippets/alert
       named_args:
         - editor_key: background_color
           source_key: background_color
@@ -379,3 +379,69 @@ _snippets:
       alert_message:
         comment: This is the text displayed in the alert
         type: textarea
+  video:
+    template: eleventy_liquid_bookshop_component
+    inline: false
+    preview:
+      text: Video
+    definitions:
+      component_name: snippets/video
+      named_args:
+        - editor_key: src
+          source_key: src
+          type: string
+    _inputs:
+      src:
+        type: file
+        options:
+          paths:
+            uploads: assets/videos
+  file:
+    template: eleventy_liquid_bookshop_component
+    inline: false
+    preview:
+      text: File
+    definitions:
+      component_name: snippets/file
+      named_args:
+        - editor_key: src
+          source_key: src
+          type: string
+        - editor_key: file_name
+          source_key: file_name
+          type: string
+        - editor_key: link_message
+          source_key: link_message
+          type: string
+    _inputs:
+      src:
+        type: file
+        label: File source
+        options:
+          paths:
+            uploads: assets/documents
+      file_name:
+        comment: The name of the file, once downloaded.
+      link_message:
+        type: textarea
+        comment: The text for the download link
+  mdx_tint:
+    template: eleventy_liquid_bookshop_component
+    inline: true
+    preview:
+      text: Tint
+    definitions:
+      component_name: snippets/tint
+      named_args:
+        - editor_key: content
+          source_key: content
+          type: string
+        - editor_key: color
+          source_key: tint_color
+          type: string
+    _inputs:
+      tint_color:
+        type: color
+      content:
+        comment: This text will be tinted
+        type: markdown
