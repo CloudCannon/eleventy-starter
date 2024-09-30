@@ -322,7 +322,7 @@ _editables:
     right: align-right
     snippet: true
     strike: true
-    styles: .cloudcannon/css/editor.css
+    styles: /src/assets/styles/editor.css
     subscript: true
     superscript: true
     table: true
