@@ -92,6 +92,8 @@ collection_groups:
     collections:
       - data
 _inputs:
+  draft:
+    type: checkbox
   markdown_content:
     type: markdown
     options:
