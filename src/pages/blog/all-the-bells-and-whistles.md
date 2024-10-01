@@ -83,8 +83,8 @@ object:
 
 {% bookshop 'snippets/alert' background_color: "#034AD8" alert_message: "This is an alert message" color: "#000000" icon: "Bell" %}
 
-{% bookshop 'snippets/file' src: "/documents/test.pdf" file_name: "test-file" link_message: "A test file to show how you'd have a downloadable link through your markdown" %}
+{% bookshop 'snippets/file' src: "/assets/documents/test.pdf" file_name: "test-file" link_message: "A test file to show how you'd have a downloadable link through your markdown" %}
 
 Some text which is normal color - {% tint, "#F7B2AD" %}Woah a tint!{% endtint %} Some more text to show how inline tint is.
 
-{% bookshop 'snippets/video' src: "/videos/test.mp4" %}
+{% bookshop 'snippets/video' src: "/assets/videos/test.mp4" %}

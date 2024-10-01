@@ -12,6 +12,8 @@ const image_shortcode = require('./_11ty_config/image_shortcode')
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("assets/styles/main.css")
   eleventyConfig.addPassthroughCopy("src/assets/images")
+  eleventyConfig.addPassthroughCopy("src/assets/videos")
+  eleventyConfig.addPassthroughCopy("src/assets/documents")
   eleventyConfig.addPassthroughCopy("node_modules/@fortawesome/fontawesome-free/css/all.min.css")
   eleventyConfig.addPassthroughCopy("node_modules/@fortawesome/fontawesome-free/webfonts")
 
