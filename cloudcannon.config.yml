@@ -354,7 +354,6 @@ _editables:
     table: true
     underline: true
     undo: true
-data_config: {}
 timezone: Pacific/Auckland
 _snippets_imports:
   eleventy_liquid: true
