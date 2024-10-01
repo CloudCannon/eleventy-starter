@@ -7,6 +7,9 @@ layout: layouts/layout.html
     </h1>
     <section class="blog-index mx-auto flex flex-col justify-center">
         {% include 'partials/blog/list.html' %}
-        {% include 'partials/blog/pagination.html' %}
+        {% assign pageCount = pagination.hrefs | size %}
+        {% if pageCount > 1 %}
+          {% include 'partials/blog/pagination.html' %}
+        {% endif %}
     </section>
 </div>
