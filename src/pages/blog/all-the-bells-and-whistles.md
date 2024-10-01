@@ -2,7 +2,7 @@
 _schema: default
 date: 2024-05-02T21:43:46Z
 title: All the bells and whistles
-draft:
+draft: true
 permalink:
 tags:
   - Bells
@@ -64,6 +64,7 @@ Left align
 * Another item
   * A sub item though
   * Another sub item
+
 
 <img src="/assets/images/blog/blog-thumb-1.jpg" height="413" width="500" />
 
