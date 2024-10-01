@@ -2,5 +2,5 @@ npm run sass:build
 npm run tailwind:build
 npm run bookshop-sass:build
 
-ELEVENTY_ENV = production
+export ELEVENTY_ENV=production
 echo "$ELEVENTY_ENV"
