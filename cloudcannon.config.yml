@@ -340,6 +340,8 @@ _snippets:
       text:
         - key: alert_message
         - 'Alert'
+      gallery:
+        image: "/component-library/snippets/alert.preview.webp"
     definitions:
       component_name: snippets/alert
       named_args:
