@@ -386,6 +386,8 @@ _snippets:
     inline: false
     preview:
       text: Video
+      gallery:
+        image: /assets/images/snippet-previews/video.preview.webp
     definitions:
       component_name: snippets/video
       named_args:
@@ -403,6 +405,8 @@ _snippets:
     inline: false
     preview:
       text: File
+      gallery:
+        image: /assets/images/snippet-previews/file.preview.webp
     definitions:
       component_name: snippets/file
       named_args:
@@ -432,6 +436,8 @@ _snippets:
     inline: true
     preview:
       text: Tint
+      gallery:
+        image: /assets/images/snippet-previews/tint.preview.webp
     definitions:
       shortcode_name: tint
       content_key: text
