@@ -10,7 +10,6 @@ const MarkdownIt = require("markdown-it"),
 const image_shortcode = require('./_11ty_config/image_shortcode')
 
 module.exports = function (eleventyConfig) {
-  eleventyConfig.addPassthroughCopy("assets/styles/main.css")
   eleventyConfig.addPassthroughCopy("src/assets/images")
   eleventyConfig.addPassthroughCopy("src/assets/videos")
   eleventyConfig.addPassthroughCopy("src/assets/documents")
@@ -18,8 +17,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("node_modules/@fortawesome/fontawesome-free/webfonts")
 
   eleventyConfig.addWatchTarget('tailwind.config.js');
-	eleventyConfig.addWatchTarget('src/assets/styles/tailwind.css');
-  eleventyConfig.addWatchTarget('src/assets/styles/compiled-tailwind.css');
+  eleventyConfig.addWatchTarget('src/assets/styles/**/*.{css,scss}');
   eleventyConfig.addWatchTarget("component-library/");
 
   eleventyConfig.addPlugin(pluginBookshop({
