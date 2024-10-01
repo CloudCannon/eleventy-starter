@@ -1,4 +1,5 @@
 const pluginBookshop = require("@bookshop/eleventy-bookshop");
+const pluginRss = require("@11ty/eleventy-plugin-rss");
 
 const MarkdownIt = require("markdown-it"),
   md = new MarkdownIt({
@@ -23,6 +24,8 @@ module.exports = function (eleventyConfig) {
     bookshopLocations: ["component-library"],
     pathPrefix: ''
   }));
+
+  eleventyConfig.addPlugin(pluginRss);
 
   // Custom Shortcodes
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);

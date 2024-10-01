@@ -31,6 +31,7 @@
   },
   "dependencies": {
     "@11ty/eleventy-img": "^4.0.2",
+    "@11ty/eleventy-plugin-rss": "^1.2.0",
     "@bookshop/eleventy-bookshop": "3.10.1",
     "@bookshop/sass": "^3.10.1",
     "@fortawesome/fontawesome-free": "^6.6.0",
