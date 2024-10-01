@@ -15,11 +15,11 @@ spec:
 blueprint:
   background_color: '#ffffff'
   heading:
-    heading_text: Astro Bookshop Starter
+    heading_text: Eleventy Bookshop Starter
     heading_gradient_color: '#a0a2ff'
   subheading:
     markdown_content: >-
-      A starting point for developers looking to build a website with Astro, using Bookshop components in CloudCannon. Create your own copy, and start creating your own components to use in the CloudCannon CMS.
+      A starting point for developers looking to build a website with Eleventy, using Bookshop components in CloudCannon. Create your own copy, and start creating your own components to use in the CloudCannon CMS.
     color: '#393939'
   image:
     image_path: /assets/images/blog/featured-image-5.jpg
