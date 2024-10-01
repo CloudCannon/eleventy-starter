@@ -1,11 +1,9 @@
 const currentEnv = process.env.ELEVENTY_ENV || "development"
 const isDevEnv = currentEnv !== 'production';
-const todaysDate = new Date();
 
 function showDraft(data) {
-	const isDraft = 'draft' in data && data.draft !== false;
-	const isFutureDate = data.page.date > todaysDate;
-	return isDevEnv || (!isDraft && !isFutureDate);
+	const isDraft = data.draft == true ? 'draft' : '';
+	return isDevEnv || (!isDraft);
 }
 
 module.exports = {
