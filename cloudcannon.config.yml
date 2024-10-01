@@ -101,13 +101,13 @@ file_config:
     _inputs:
       permalink:
         hidden: true
-  - glob: _data/icons.json
+  - glob: src/_data/icons.json
     _inputs:
       $:
         comment: Add an icon from the list of [Font Awesome icons](https://fontawesome.com/search?o=r&m=free&s=solid).
 data_config:
   icons:
-    path: _data/icons.json
+    path: src/_data/icons.json
 _inputs:
   draft:
     type: checkbox
