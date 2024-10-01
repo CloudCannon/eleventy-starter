@@ -107,6 +107,7 @@ file_config:
         comment: Add an icon from the list of [Font Awesome icons](https://fontawesome.com/search?o=r&m=free&s=solid).
 data_config:
   icons: true
+  colors: true
 _inputs:
   draft:
     type: checkbox
