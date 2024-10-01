@@ -341,7 +341,7 @@ _snippets:
         - key: alert_message
         - 'Alert'
       gallery:
-        image: ./component-library/components/snippets/alert/alert.preview.png
+        image: component-library/components/snippets/alert/alert.preview.png
     definitions:
       component_name: snippets/alert
       named_args:
