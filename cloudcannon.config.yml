@@ -27,6 +27,9 @@ collections_config:
     disable_add: false
     disable_add_folder: false
     disable_file_actions: false
+    _inputs:
+      permalink:
+        comment: The relative url that this page should be located (e.g. /page-name/)
     schemas:
       default:
         path: .cloudcannon/schemas/page.md
@@ -59,6 +62,8 @@ collections_config:
       tags[*]:
         type: text
         cascade: true
+      permalink:
+        comment: Override the relative url for this pages location (by default it will be at /blog/page-name/ if you don't set anything here)
     add_options:
       - name: Add New Post
         icon: post_add
@@ -91,6 +96,11 @@ collection_groups:
   - heading: Data
     collections:
       - data
+file_config:
+  - glob: pages/blog.md
+    _inputs:
+      permalink:
+        hidden: true
 _inputs:
   draft:
     type: checkbox
