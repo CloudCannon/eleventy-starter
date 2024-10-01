@@ -105,6 +105,16 @@ _inputs:
   draft:
     type: checkbox
     hidden: true
+  eleventyExcludeFromCollections:
+    hidden: true
+  pagination.data:
+    hidden: true
+  pagination.alias:
+    hidden: true
+  pagination.size:
+    type: number
+    comment: The number of collection items to list per page
+    cascade: true
   markdown_content:
     type: markdown
     options:
@@ -225,10 +235,6 @@ _inputs:
   date:
     type: auto
     instance_value: now
-    cascade: true
-  page_size:
-    type: number
-    comment: The number of collection items to list per page
     cascade: true
   social:
     type: auto
