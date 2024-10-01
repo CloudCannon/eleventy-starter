@@ -341,7 +341,7 @@ _snippets:
         - key: alert_message
         - 'Alert'
       gallery:
-        image: assets/images/snippet-previews/alert.preview.webp
+        image: /assets/images/snippet-previews/alert.preview.webp
     definitions:
       component_name: snippets/alert
       named_args:
