@@ -1,3 +1,5 @@
 npm run sass:build
 npm run tailwind:build
 npm run bookshop-sass:build
+
+echo "$ELEVENTY_ENV"
