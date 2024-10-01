@@ -94,6 +94,7 @@ collection_groups:
 _inputs:
   draft:
     type: checkbox
+    hidden: true
   markdown_content:
     type: markdown
     options:

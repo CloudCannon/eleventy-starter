@@ -1,7 +1,7 @@
 ---
 date:
 title: ''
-draft:
+draft: false
 permalink: 
 tags:
   - ''
