@@ -101,7 +101,11 @@ file_config:
     _inputs:
       permalink:
         hidden: true
-  - glob: _data/icons.json
+  - glob: _data/navigation.json
+    _inputs:
+      logo:
+        comment: test comment
+  - glob: icons.json
     _inputs:
       value:
         comment: Add an icon from the list of [Font Awesome icons](https://fontawesome.com/search?o=r&m=free&s=solid).
