@@ -1,7 +1,7 @@
 {
   "name": "eleventy-starter",
   "version": "1.0.0",
-  "description": "A simple starter template for Eleventy, Bookshop & CloudCannon. This is designed to be a good starting point for a site built with Bookshop on CloudCannon, without having to spend too much time stripping out placeholder content. This template aims to take out as much set up work as possible, to allow you to start building pages as quick as possible. <!-- TODO: Live demo site -->",
+  "description": "A simple starter template for Eleventy, Bookshop & CloudCannon. This is designed to be a good starting point for a site built with Bookshop on CloudCannon, without having to spend too much time stripping out placeholder content. This template aims to take out as much set up work as possible, to allow you to start building pages as quick as possible.",
   "main": "index.js",
   "scripts": {
     "bookshop-sass:build": "bookshop-sass -b component-library -o _site/assets/styles/bookshop.css",

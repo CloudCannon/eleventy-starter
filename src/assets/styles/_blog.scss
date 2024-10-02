@@ -50,6 +50,6 @@
 }
 
 .blog-index {
-  max-width: 1280px;
-  padding-inline: 2rem;
+  max-width: var(--pageContainer);
+  padding-inline: var(--pagePadding);
 }
