@@ -1,0 +1,13 @@
+{% if env_bookshop_live %}
+
+    <img class="c-image c-image--live-editing" src="{{ image_path }}" alt="{{ alt_text }}">
+
+{% elsif image_path contains 'http://' or image_path contains 'https://' %}
+
+    <img class="c-image" src="{{ image_path }}" alt="{{ alt_text }}">
+
+{% else %}
+
+    {% image image_path, alt_text, 'c-image', image_sizes, true %}
+
+{% endif %}

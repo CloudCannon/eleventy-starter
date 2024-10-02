@@ -1,0 +1,52 @@
+<title>{{ title }}{% if site.site_title %} | {{ site.site_title }}{% endif %}</title>
+
+{% if seo.page_description %}
+    <meta name="description" content="{{ seo.page_description }}">
+    <meta property="og:description" content="{{ seo.page_description }}" />
+{% elsif site.description %}
+    <meta name="description" content="{{ site.description }}">
+    <meta property="og:description" content="{{ site.description }}" />
+{% endif %}
+
+<link rel="shortcut icon" href="{{ site.favicon }}" type="image/x-icon" />
+<link rel="icon" href="{{ site.favicon }}" type="image/x-icon" />
+
+<meta name="twitter:card" content="summary_large_image" />
+{% if seo.open_graph_type %}
+    <meta property="og:type" content="{{ seo.open_graph_type }}" />
+{% else %}
+    <meta property="og:type" content="website" />
+{% endif %}
+<meta name="og:title" content="{{ title }}{% if site.site_title %} | {{ site.site_title }}{% endif %}" />
+<meta name="twitter:title" content="{{ title }}{% if site.site_title %} | {{ site.site_title }}{% endif %}" />
+
+{% if site.twitter_site %}
+    <meta name="twitter:site" content="{{ site.twitter_site }}" />
+{% endif %}
+
+
+{% if seo.author_twitter_handle %}
+    <meta name="twitter:creator" content="{{ seo.author_twitter_handle }}">
+{% elsif site.twitter_site %}
+    <meta name="twitter:site" content="{{ site.twitter_site }}" />
+{% endif %}
+
+{% if seo.featured_image %}
+    <meta name="og:image" content="{{ .featured_image.image_path }}" />
+    <meta name="twitter:image" content="{{ .featured_image.image_path }}" />
+    {% if seo.featured_image_alt %}<meta name="twitter:image:alt" content="{{ seo.featured_image_alt }}" />{% endif %}
+{% elsif site.image %}
+    <meta name="og:image" content="{{ site.image }}" />
+    <meta name="twitter:image" content="{{ site.image }}" />
+    {% if site.image_alt %}<meta name="twitter:image:alt" content="{{ site.image_alt }}" />{% endif %}
+{% endif %}
+
+{% if seo.canonical_url %}
+    <link rel="canonical" href="{{ seo.canonical_url }}" />
+{% else %}
+    <link rel="canonical" href="{{ site.base_url }}{{ page.url | url }}" />
+{% endif %}
+
+{% if seo.no_index %}
+    <meta name="robots" content="noindex">
+{% endif %}

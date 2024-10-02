@@ -1,0 +1,12 @@
+<button
+  style="--hover_brightness: {{ hover_brightness }}; background-color: transparent; border: 2px solid {{text_color}}"
+  class="button">
+  <a style="color: {{text_color}}" href={{button_link}}>
+    {% if button_icon %}
+      <span class="button__icon">
+        {% bookshop "icon" icon: button_icon %}
+      </span>
+    {% endif %}
+    {{button_text}}
+  </a>
+</button>

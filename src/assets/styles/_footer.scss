@@ -1,0 +1,12 @@
+.footer {
+  max-width: var(--pageContainer);
+    margin: 0 auto;
+
+    a {
+        color: inherit;
+    }
+  }
+  .footer__logo-image {
+    display: block;
+    max-width: min(200px, 80%);
+  }

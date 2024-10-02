@@ -1,0 +1,31 @@
+.post-size {
+    position: relative;
+  }
+
+  .post-size::after {
+    position: absolute;
+    content: "";
+    background: #4d4d4d;
+    width: 1px;
+    height: 15px;
+    top: 50%;
+    right: -10%;
+    transform: translate(-50%, -50%);
+  }
+
+  @media (min-width: 640px) {
+    .post-data-list-item {
+      position: relative;
+    }
+
+    .post-data-list-item::after {
+      position: absolute;
+      content: "";
+      background: #4d4d4d;
+      width: 1px;
+      height: 15px;
+      top: 50%;
+      right: -12%;
+      transform: translate(-50%, -50%);
+    }
+  }

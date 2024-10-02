@@ -1,26 +1,41 @@
-{% assign_local c = "shared-bg-left-right" %}
-
-<section class="{{ c }}" style="--background-image:url({{ bg_image }})">
-   <div class="content-block">
-      {% if image_on_left == true %}
-         {% if image %}
-            <div class="{{ c }}__img {{ c }}__img--image-on-left">
-               <img src={{ image }} alt={{ image_alt }} />
-            </div>
-         {% endif %}
-         <div class="{{ c }}__text {{ c }}__text--image-on-left">
-            {% bookshop "heading-text" bind: heading_text %}
-         </div>
-      {% else %}         
-         <div class="{{ c }}__text">
-            {% bookshop "heading-text" bind: heading_text %}
-         </div>
-         {% if image %}
-            <div class="{{ c }}__img">
-               {%- assign sizes = "100vw" %}
-               {%- image image, image_alt, sizes, true %}
-            </div>
-         {% endif %}
-      {% endif %}      
-   </div>
-</section>
+<div class="left-right" style="background-color: {{background_color}};">
+  {% if flipped %}
+      <div class="left-right__wrapper">
+        <div class="order-2 md:order-1">
+          {% if image.image_path %}
+            {% bookshop "image" bind:image image_sizes:"(max-width: 640px) 320px, (max-width: 960px) 500px, (max-width: 1280px) 640px" %}
+          {% endif %}
+        </div>
+        <div class="left-right__text order-1 md:order-2">
+          <h2 class="text-4xl" style="color: {{heading.color}};">
+            {{heading.heading_text}}
+          </h2>
+          <div class="mb-4 markdown-text" style="color: {{text.color}};">
+            {% if text.markdown_content %}{{ text.markdown_content | markdownify }}{% endif %}
+          </div>
+          {% if button %}
+            {% bookshop "{{button._bookshop_name}}" bind: button %}
+          {% endif %}
+        </div>
+      </div>
+  {% else %}
+      <div class="left-right__wrapper">
+        <div class="left-right__text">
+          <h2 class="text-4xl" style="color: {{heading.color}};">
+            {{heading.heading_text}}
+          </h2>
+          <div class="mb-4 markdown-text" style="color: {{text.color}};">
+            {% if text.markdown_content %}{{ text.markdown_content | markdownify }}{% endif %}
+          </div>
+          {% if button %}
+            {% bookshop "{{button._bookshop_name}}" bind: button %}
+          {% endif %}
+        </div>
+        <div>
+          {% if image.image_path %}
+            {% bookshop "image" bind:image image_sizes:"(max-width: 640px) 320px, (max-width: 960px) 500px, (max-width: 1280px) 640px" %}
+          {% endif %}
+        </div>
+      </div>
+    {% endif %}
+</div>

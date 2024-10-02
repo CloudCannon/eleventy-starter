@@ -1,0 +1,51 @@
+---
+layout: layouts/layout.html
+---
+<div class="py-[48px] md:py-[96px] px-8">
+    <article class="max-w-screen-md mx-auto">
+    <img class="rounded-lg mb-4" src={{image}} alt={{image_alt}} />
+    <h1
+      class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold sm:text-center"
+    >
+      {{title}}
+    </h1>
+    <ul
+      class="flex flex-col justify-between sm:flex-row sm:justify-center sm:gap-5 py-5 font-light text-sm"
+    >
+      <li class="post-data-list-item">
+        {{author}}
+      </li>
+      <li class="post-data-list-item">
+        <p>
+            {{date | date: "%B %d, %Y"}}
+        </p>
+      </li>
+      <div class="flex gap-3">
+        {% assign fixedContent = content | split: " " %}
+        {% assign wordCount = fixedContent | size %}
+        {% assign readingRate = 183 %}
+        {% assign readingTime = wordCount | divided_by: readingRate | ceil %}
+        <li class="post-data-list-item post-size">
+          <p>{{ wordCount }}<span> words</span></p>
+        </li>
+        <li>
+          <p>{{ readingTime }}<span> minute{% if readingTime > 1 %}s{% endif %}</span></p>
+        </li>
+      </div>
+    </ul>
+    <div class="markdown-text">
+      {% if content %}{{ content | markdownify }}{% endif %}
+    </div>
+  </article>
+  <section
+    class="max-w-screen-md mx-auto pt-[48px] flex flex-col items-center"
+  >
+    <h2 class="text-2xl">Recent Posts</h2>
+    <div class="grid sm:grid-cols-2 gap-5 mt-5">
+        {% assign latest_posts = collections.posts | reverse %}
+        {% for post in latest_posts limit:2 %}
+            {% include 'partials/blog/summary.html' %}
+        {% endfor %}
+    </div>
+  </section>
+</div>

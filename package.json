@@ -1,33 +1,40 @@
 {
-  "name": "eleventy-template",
+  "name": "eleventy-starter",
   "version": "1.0.0",
-  "description": "",
+  "description": "A simple starter template for Eleventy, Bookshop & CloudCannon. This is designed to be a good starting point for a site built with Bookshop on CloudCannon, without having to spend too much time stripping out placeholder content. This template aims to take out as much set up work as possible, to allow you to start building pages as quick as possible.",
   "main": "index.js",
   "scripts": {
-    "fetch-theme-color": "node utils/fetch-theme-color.js",
-    "watch:eleventy": "eleventy --serve",
-    "build:eleventy": "eleventy",
-    "start": "npm-run-all watch:eleventy",
-    "build": "npm-run-all build:eleventy",
-    "new": "npx @bookshop/init --component"
+    "bookshop-sass:build": "bookshop-sass -b component-library -o _site/assets/styles/bookshop.css",
+    "bookshop-sass:watch": "bookshop-sass -b component-library -o _site/assets/styles/bookshop.css -w",
+    "bookshop:browser": "bookshop-browser",
+    "bookshop:new": "npx @bookshop/init --component",
+    "bookshop:update": "npx @bookshop/up@latest",
+    "sass:watch": "sass --watch src/assets/styles:_site/assets/styles",
+    "sass:build": "sass src/assets/styles:_site/assets/styles",
+    "eleventy:build": "eleventy",
+    "eleventy:watch": "ELEVENTY_ENV=development eleventy --serve",
+    "tailwind:watch": "tailwindcss -i src/assets/styles/tailwind.css -o _site/assets/styles/tailwind.css --watch --postcss",
+    "tailwind:build": "tailwindcss -i src/assets/styles/tailwind.css -o _site/assets/styles/tailwind.css --postcss",
+    "start": "npm-run-all sass:build tailwind:build bookshop-sass:build --parallel bookshop-sass:watch sass:watch tailwind:watch eleventy:watch"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
-    "@bookshop/browser": "3.8.1",
-    "@bookshop/eleventy-engine": "3.8.1",
-    "@bookshop/generate": "3.8.1",
-    "@bookshop/sass": "^3.8.1",
-    "npm-run-all": "^4.1.5"
+    "@bookshop/browser": "3.10.1",
+    "@bookshop/eleventy-engine": "3.10.1",
+    "@bookshop/generate": "3.10.1",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.13"
   },
   "dependencies": {
-    "@11ty/eleventy-img": "^3.1.8",
-    "@11ty/eleventy-navigation": "^0.3.5",
-    "@bookshop/eleventy-bookshop": "3.8.1",
-    "eleventy-plugin-embed-everything": "^1.17.0",
-    "postcss-cloudcannon": "file:postcss-cloudcannon",
-    "sass": "^1.69.2"
+    "@11ty/eleventy-img": "^4.0.2",
+    "@11ty/eleventy-plugin-rss": "^1.2.0",
+    "@bookshop/eleventy-bookshop": "3.10.1",
+    "@bookshop/sass": "^3.10.1",
+    "@fortawesome/fontawesome-free": "^6.6.0",
+    "npm-run-all": "^4.1.5"
   }
 }

@@ -1,0 +1,26 @@
+<article class="block">
+    <a href="{{ post.url }}">
+        <img
+        class="rounded-lg aspect-video"
+        src="{{post.data.thumb_image_path}}"
+        alt="{{post.data.thumb_image_alt}}"
+        loading="lazy"
+        />
+    </a>
+    <div class="blog-post-tag">
+        {% for tag in post.data.tags limit:2 %}
+        <a href="/blog/tags/{{tag | downcase}}">
+            {{ tag | capitalize }}
+        </a>
+        {% endfor %}
+    </div>
+    <a
+        class="flex flex-col justify-start mt-2 max-w-[500px]"
+        href="{{ post.url }}">
+        <p class="text-2xl font-semibold">{{post.data.title}}</p>
+        <p class="font-light">{{post.data.author}}</p>
+        <p class="font-light">
+        {{post.date | date: "%B %d, %Y"}}
+        </p>
+    </a>
+</article>

@@ -1,7 +1,20 @@
-{% assign_local c = "shared-bg-hero" %}
-
-<section class="{{ c }}" style="--background-image:url({{ bg_image }})" >
-   <div class="{{ c }}__wrapper content-block">
-      {% bookshop "heading-text" bind: heading_text %}
-   </div>
+<section style="--headingGradientColor: {{heading.heading_gradient_color}}; background-color: {{background_color}};">
+  <div class="hero-container">
+    <div class="content">
+      <h1 class="heading">{{heading.heading_text}}</h1>
+      <div class="subheading-text markdown-text" style="color: {{subheading.color}}">
+        {% if subheading.markdown_content %}{{ subheading.markdown_content | markdownify }}{% endif %}
+      </div>
+      <div class="buttons">
+        {% for button in buttons %}
+            {% bookshop "{{button._bookshop_name}}" bind: button %}
+        {% endfor %}
+      </div>
+    </div>
+    <div class="blob">
+      {% if image.image_path %}
+        {% bookshop "image" bind:image image_sizes:"(max-width: 640px) 320px, (max-width: 960px) 500px, (max-width: 1280px) 640px" %}
+      {% endif %}
+    </div>
+  </div>
 </section>

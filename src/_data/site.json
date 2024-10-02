@@ -1,10 +1,10 @@
 {
-    "BaseURL": "http://example.org",
-    "site_title": "Eleventy Starter Template",
-    "favicon_icon": "/images/favicons/favicon.ico",
-    "favicon_image": "/images/favicons/favicon.png",
-    "description": "A barebones Eleventy template, suitable for developers",
-    "twitter_image": "",
+    "base_url": "https://ancient-taro.cloudvent.net",
+    "site_title": "Eleventy Starter",
+    "description": "A starter template for Eleventy, built by Bookshop components - for CloudCannon CMS.",
     "twitter_site": "",
-    "image": ""
-}
+    "image": "",
+    "image_alt": "",
+    "favicon": "/favicon.svg"
+  }
+  
