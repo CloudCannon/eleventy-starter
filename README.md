@@ -23,14 +23,14 @@ To start using this template, go to the [GitHub repository](https://github.com/C
 3. Run `npm start`. Eleventy will generate and serve your site from a folder called `_site`.
 
 ## Features
-- Bookshop
-- Styling
-- Blog with pagination & tags
-- Data files
-- Image Optimization
-- Optimised for editing in CloudCannon
-- SEO controls
-- Font Awesome Icons
+- [Bookshop](#bookshop)
+- [Styling](#styling)
+- [Blog with pagination & tags](#blog-with-pagination--tags)
+- [Data files](#data-files)
+- [Image Optimization](#image-optimization)
+- [Optimised for editing in CloudCannon](#optimised-for-editing-in-cloudcannon)
+- [SEO controls](#seo-controls)
+- [Font Awesome Icons](#font-awesome-icons)
 
 ### Bookshop
 
@@ -48,7 +48,7 @@ To create a new component, at the root of the project run `npm run bookshop:new 
 
 - A .scss file where you can add your styles if you aren't using tailwind within the .eleventy.liquid file.
 
-#### Styling
+### Styling
 
 TailwindCSS or SCSS/CSS are both configured to be usable within this project.
 
