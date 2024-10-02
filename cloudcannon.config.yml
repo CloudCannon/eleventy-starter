@@ -110,11 +110,18 @@ file_config:
     _inputs:
       $:
         label: Colors
+        type: array
         options:
-          preview:
-            icon: palette
-      value:
-        type: color
+          structures:
+            values:
+              - label: Color
+                icon: palette
+                value:
+                  name:
+                  value:
+                _inputs:
+                  value:
+                    type: color
 data_config:
   icons: true
   colors: true
