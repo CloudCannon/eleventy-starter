@@ -110,11 +110,10 @@ file_config:
     _inputs:
       $:
         label: Colors
-      $.[*]:
         options:
           preview:
             icon: palette
-      $.[*].value:
+      value:
         type: color
 data_config:
   icons: true
