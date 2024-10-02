@@ -328,6 +328,8 @@ _inputs:
       When selected this removes the page from your sitemap and adds the noindex
       robots meta tag
     cascade: true
+  favicon:
+    type: image
 _structures:
   content_blocks:
     style: modal
