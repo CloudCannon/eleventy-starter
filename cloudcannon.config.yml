@@ -105,6 +105,17 @@ file_config:
     _inputs:
       $:
         comment: Add an icon from the list of [Font Awesome icons](https://fontawesome.com/search?o=r&m=free&s=solid).
+        label: Icons
+  - glob: _data/colors.json
+    _inputs:
+      $:
+        label: Colors
+      $.[*]:
+        options:
+          preview:
+            icon: palette
+      $.[*].value:
+        type: color
 data_config:
   icons: true
   colors: true
