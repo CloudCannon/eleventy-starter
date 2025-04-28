@@ -11,7 +11,7 @@
             {{heading.heading_text}}
           </h2>
           <div class="mb-4 markdown-text" style="color: {{text.color}};">
-            {% if text.markdown_content %}{{ text.markdown_content | markdownify }}{% endif %}
+            {% if text.markdown_content %}{{ text.markdown_content | renderContent }}{% endif %}
           </div>
           {% if button %}
             {% bookshop "{{button._bookshop_name}}" bind: button %}
@@ -25,7 +25,7 @@
             {{heading.heading_text}}
           </h2>
           <div class="mb-4 markdown-text" style="color: {{text.color}};">
-            {% if text.markdown_content %}{{ text.markdown_content | markdownify }}{% endif %}
+            {% if text.markdown_content %}{{ text.markdown_content | renderContent }}{% endif %}
           </div>
           {% if button %}
             {% bookshop "{{button._bookshop_name}}" bind: button %}

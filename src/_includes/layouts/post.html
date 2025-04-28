@@ -34,7 +34,7 @@ layout: layouts/layout.html
       </div>
     </ul>
     <div class="markdown-text">
-      {% if content %}{{ content | markdownify }}{% endif %}
+      {% if content %}{{ content | renderContent }}{% endif %}
     </div>
   </article>
   <section
