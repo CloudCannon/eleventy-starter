@@ -17,6 +17,9 @@ module.exports = async function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy(
     "node_modules/@fortawesome/fontawesome-free/webfonts"
   );
+  eleventyConfig.addPassthroughCopy(
+    "node_modules/@11ty/eleventy"
+  );
 
   eleventyConfig.addWatchTarget("tailwind.config.js");
   eleventyConfig.addWatchTarget("src/assets/styles/**/*.{css,scss}");
@@ -31,6 +34,7 @@ module.exports = async function (eleventyConfig) {
 
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(RenderPlugin);
+  console.log(RenderPlugin.String)
 
   // Custom Shortcodes
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
