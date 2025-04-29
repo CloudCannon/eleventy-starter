@@ -1,8 +1,8 @@
 
-export default function () {
-  this.registerFilter("renderContent", async () => {
+export default function (Liquid) {
+  this.registerFilter("renderContent", async (content) => {
     const { RenderPlugin } = await import("@11ty/eleventy");
 
-		return RenderPlugin;
+		return RenderPlugin(content);
 	});
 }
