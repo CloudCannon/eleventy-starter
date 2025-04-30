@@ -1,10 +1,12 @@
-import { Tokenizer, assert } from "liquidjs";
+import MarkdownIt from "markdown-it";
+const md = new MarkdownIt({html: true})
 
 export default function (Liquid) {
 	this.registerFilter("renderContent", (value) => {
-		console.log('this.context.get: ', this.liquid)
+		console.log('Here in renderContent')
+		console.log('this: ', this)
 		console.log('value: ', value)
-		return 'A Rubbish value'
+		return md.render(value)
 	});
 }
 
