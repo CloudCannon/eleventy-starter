@@ -391,17 +391,13 @@ _snippets:
       component_name: snippets/alert
       named_args:
         - editor_key: background_color
-          source_key: background_color
           type: string
         - editor_key: alert_message
-          source_key: alert_message
           type: string
         - editor_key: color
-          source_key: color
           type: string
-        - editor_key: icon
-          source_key: icon
-          type: string
+        # - editor_key: icon
+        #   type: string
     _inputs:
       background_color:
         type: select
@@ -411,10 +407,10 @@ _snippets:
           preview:
             text:
               - key: name
-      icon:
-        type: select
-        options:
-          values: data.icons
+      # icon:
+      #   type: select
+      #   options:
+      #     values: data.icons
       color:
         type: select
         options:
