@@ -1,11 +1,10 @@
 import MarkdownIt from "markdown-it";
 const md = new MarkdownIt({html: true})
 
-export default function (Liquid) {
+export default function () {
 	this.registerFilter("renderContent", (value) => {
-		console.log('Here in renderContent')
 		console.log('this: ', this)
-		console.log('value: ', value)
+		console.log('this.liquid.evalValue: ', this.liquid.evalValue)
 		return md.render(value)
 	});
 }

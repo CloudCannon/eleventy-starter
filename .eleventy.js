@@ -34,7 +34,6 @@ module.exports = async function (eleventyConfig) {
 
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(RenderPlugin);
-  console.log(RenderPlugin.String)
 
   // Custom Shortcodes
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
