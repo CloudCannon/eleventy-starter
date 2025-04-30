@@ -1,13 +1,8 @@
 import { Tokenizer, assert } from "liquidjs";
 
 export default function (Liquid) {
-	console.log('this.liquid: ', this.liquid)
-	console.log('this.context: ', this.context)
 	this.registerFilter("renderContent", (value) => {
-		console.log('Here in renderContent')
-		console.log('this: ', this)
-		console.log('this.context: ', this.context)
-		console.log('this.context.get: ', this.context.get)
+		console.log('this.context.get: ', this.liquid)
 		console.log('value: ', value)
 		return 'A Rubbish value'
 	});
