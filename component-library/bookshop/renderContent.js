@@ -1,28 +1,25 @@
 import MarkdownIt from "markdown-it";
 const md = new MarkdownIt({ html: true });
 
-const alert = (
-  <div
-    class="flex items-center gap-4 px-4 py-2 rounded-lg shadow-md my-4"
-    style="background-color: {{background_color}}; color: {{color}};">
-    <p class="!mb-0">{{ alert_message }}</p>
-  </div>
-);
-
 export default function () {
   this.registerFilter("renderContent", (value) => {
-    const tpl = this.parse(`
-			<div class="flex items-center gap-4 px-4 py-2 rounded-lg shadow-md my-4" style="background-color: {{background_color}}; color: {{color}};">
-				<p class="!mb-0">{{alert_message}}</p>
-			</div>
-		`);
+    const alertShortcodeRegex =
+      /{% bookshop 'snippets\/alert' background_color: "(#FF785A)" alert_message: "(Test test test)" color: ("#FEF9EF)" %}/gi;
 
-    const renderedShortcode = this.renderSync(tpl, {
-      alert_message: "Test yo",
-      background_color: "#ff0000",
-      color: "#00ffff",
-    });
-    return renderedShortcode;
+    const alertShortcodeRendered = `
+			<div class="flex items-center gap-4 px-4 py-2 rounded-lg shadow-md my-4" style="background-color: ${alertShortcodeRegex[1]}; color: ${alertShortcodeRegex[3]};">
+				<p class="!mb-0">${alertShortcodeRegex[2]}</p>
+			</div>
+		`;
+
+    const valueWithRenderedShortcode = value.replaceAll(
+      alertShortcodeRegex,
+      alertShortcodeRendered
+    );
+
+    const renderedMarkdownAndShortcode = md.render(valueWithRenderedShortcode);
+
+    return renderedMarkdownAndShortcode;
   });
 }
 
