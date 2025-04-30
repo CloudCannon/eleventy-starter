@@ -1,16 +1,14 @@
 import { Tokenizer, assert } from "liquidjs";
 
 export default function (Liquid) {
-	const tokenizer = new Tokenizer(token.args, this.liquid.options.operatorsTrie);
-	console.log(tokenizer.readIdentifier().content);
-	console.log(this.liquid)
-	console.log(this.context)
+	console.log('this.liquid: ', this.liquid)
+	console.log('this.context: ', this.context)
 	this.registerFilter("renderContent", (value) => {
 		console.log('Here in renderContent')
-		console.log(this)
-		console.log(this.context)
-		console.log(this.context.get)
-		console.log(value)
+		console.log('this: ', this)
+		console.log('this.context: ', this.context)
+		console.log('this.context.get: ', this.context.get)
+		console.log('value: ', value)
 		return 'A Rubbish value'
 	});
 }
