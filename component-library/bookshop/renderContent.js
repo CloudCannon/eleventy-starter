@@ -6,14 +6,10 @@ export default function (Liquid) {
     const renderedMarkdownSansShortcode = md.render(value);
 
     const alertShortcodeRegex =
-      /{% bookshop 'snippets\/alert' background_color: (.*?) alert_message: (.*?) color: (.*?) %}/gi;
-
-    console.log(alertShortcodeRegex);
+      /{% bookshop 'snippets\/alert' background_color: "(.*?)" alert_message: "(.*?)" color: "(.*?)" %}/gi;
 
     const alertShortcodeRendered =
-      /<div class="flex items-center gap-4 px-4 py-2 rounded-lg shadow-md my-4" style="background-color: $1; color: $3;"><p class="!mb-0">$2<\/p><\/div>/;
-
-    const testReplacement = "<h1>A snippet should go here</h1>";
+      /<div class="flex items-center gap-4 px-4 py-2 rounded-lg shadow-md my-4" style="background-color: $1; color: $3;"><p class="!mb-0"> $2 \<\/p\>\<\/div\>/;
 
     const valueWithRenderedShortcode = renderedMarkdownSansShortcode.replaceAll(
       alertShortcodeRegex,
