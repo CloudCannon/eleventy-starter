@@ -29,7 +29,7 @@ content_blocks:
         CMS.
 
 
-        {% bookshop 'snippets/alert' background_color: "#FF785A" alert_message: "Test test test" color: "#FEF9EF" icon: "Bell" %}
+        {% bookshop 'snippets/alert' background_color: "#FF785A" alert_message: "Test test test" color: "#FEF9EF" %}
       color: '#393939'
     image:
       image_path: /assets/images/blog/featured-image-5.jpg
