@@ -1,13 +1,29 @@
 import MarkdownIt from "markdown-it";
-const md = new MarkdownIt({html: true})
+const md = new MarkdownIt({ html: true });
+
+const alert = (
+  <div
+    class="flex items-center gap-4 px-4 py-2 rounded-lg shadow-md my-4"
+    style="background-color: {{background_color}}; color: {{color}};">
+    <p class="!mb-0">{{ alert_message }}</p>
+  </div>
+);
 
 export default function () {
-	this.registerFilter("renderContent", (value) => {
-		console.log('this: ', this)
-		console.log('this.parser?.liquid: ', this.parser?.liquid)
-		console.log('this.parser?.fs: ', this.parser?.fs)
-		return md.render(value)
-	});
+  this.registerFilter("renderContent", (value) => {
+    const tpl = this.parse(`
+			<div class="flex items-center gap-4 px-4 py-2 rounded-lg shadow-md my-4" style="background-color: {{background_color}}; color: {{color}};">
+				<p class="!mb-0">{{alert_message}}</p>
+			</div>
+		`);
+
+    const renderedShortcode = this.renderSync(tpl, {
+      alert_message: "Test yo",
+      background_color: "#ff0000",
+      color: "#00ffff",
+    });
+    return renderedShortcode;
+  });
 }
 
 // /**
