@@ -4,7 +4,8 @@ const md = new MarkdownIt({html: true})
 export default function () {
 	this.registerFilter("renderContent", (value) => {
 		console.log('this: ', this)
-		console.log('this.liquid.evalValue: ', this.liquid.evalValue)
+		console.log('this.parser?.liquid: ', this.parser?.liquid)
+		console.log('this.parser?.fs: ', this.parser?.fs)
 		return md.render(value)
 	});
 }
