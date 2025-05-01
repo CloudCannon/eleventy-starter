@@ -1,7 +1,7 @@
 import MarkdownIt from "markdown-it";
 const md = new MarkdownIt({ html: true });
 
-const allSnippets = {
+const allComponents = {
   file: {
     regex:
       /{% bookshop 'snippets\/file' src: "(.*?)" file_name: "(.*?)" link_message: "(.*?)" %}/gim,
@@ -19,18 +19,18 @@ const allSnippets = {
       '<video class="py-6" controls><source src=$1 type="video/mp4" /> Your browser does not support the video tag.</video>',
   },
 };
-const allSnippetKeys = Object.keys(allSnippets);
+const allComponentKeys = Object.keys(allComponents);
 
 export default function (Liquid) {
   this.registerFilter("renderContent", (value) => {
     let markdownToWrite = value;
 
-    allSnippetKeys.map((snippet) => {
-      const snippetData = allSnippets[snippet];
+    allComponentKeys.map((component) => {
+      const componentData = allComponents[component];
 
       markdownToWrite = markdownToWrite.replaceAll(
-        snippetData.regex,
-        snippetData.rendered
+        componentData.regex,
+        componentData.rendered
       );
     });
 
