@@ -36,9 +36,7 @@ content_blocks:
         {% bookshop 'snippets/alert' background_color: "" alert_message: "A new
         one" color: "" %}
 
-
-        {% tint, "" %}Some tinted text{% endtint %}
-
+        {% bookshop 'icon' icon: "CloudCannon" %}
 
         {% bookshop 'snippets/file' src: "a value" file_name: "download name" link_message: "The link to click on" %}
 
