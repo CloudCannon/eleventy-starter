@@ -1,8 +1,6 @@
 import MarkdownIt from "markdown-it";
 const md = new MarkdownIt({ html: true });
 
-const iconRegex = /{% bookshop 'icon' icon: "(.*?)" %}/gim;
-
 const allComponents = {
   file: {
     regex:
@@ -36,7 +34,14 @@ export default function (Liquid) {
 
       const matches = [...markdownToWrite.matchAll(componentData.regex)];
       // [...str.matchAll(regexp)];
+      console.log("\n\nComponent key: ", component);
       console.log({ matches });
+
+      matches.map((matchArgs) => {
+        matchArgs.map((arg, index) => {
+          console.log("Arg: ", arg, " at index: ", index);
+        });
+      });
 
       markdownToWrite = markdownToWrite.replaceAll(
         componentData.regex,
