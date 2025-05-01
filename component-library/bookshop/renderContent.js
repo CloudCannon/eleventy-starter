@@ -34,7 +34,8 @@ export default function (Liquid) {
     allComponentKeys.map((component) => {
       const componentData = allComponents[component];
 
-      const matches = markdownToWrite.matchAll(componentData.regex);
+      const matches = [...markdownToWrite.matchAll(componentData.regex)];
+      // [...str.matchAll(regexp)];
       console.log({ matches });
 
       markdownToWrite = markdownToWrite.replaceAll(
