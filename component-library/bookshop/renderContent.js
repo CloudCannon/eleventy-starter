@@ -5,15 +5,21 @@ export default function (Liquid) {
   this.registerFilter("renderContent", (value) => {
     const fileShortcodeRegex =
       /{% bookshop 'snippets\/file' src: "(?<filesrc>.*?)" file_name: "(?<filefile_name>.*?)" link_message: "(?<filelink_message>.*?)" %}/gim;
-    const { filesrc, filefile_name, filelink_message } =
-      fileShortcodeRegex.exec(value).groups;
-
-    const fileShortcodeRendered = `<a href="${filesrc}" download="${filefile_name}">${filelink_message}</a>`;
+    const fileShortcodeRendered =
+      '<a href="$filesrc" download="$filefile_name">$filelink_message</a>';
 
     const valueWithRenderedFileShortcode = value.replaceAll(
       fileShortcodeRegex,
       fileShortcodeRendered
     );
+
+    const matches = value.matchAll(fileShortcodeRegex);
+    for (const match of matches) {
+      const captures = [...match];
+      for (let i = 0; i < captures.length; i++) {
+        console.log(`[${i}] ${captures[i]}`);
+      }
+    }
 
     const alertShortcodeRegex =
       /{% bookshop 'snippets\/alert' background_color: "(?<alertbackground_color>.*?)" alert_message: "(?<alertalert_message>.*?)" color: "(?<alert_color>.*?)" %}/gim;
