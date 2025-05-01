@@ -12,16 +12,6 @@ export default function (Liquid) {
       fileShortcodeRendered
     );
 
-    // const matches = value.matchAll(fileShortcodeRegex);
-    // console.log(matches);
-
-    // for (const match of matches) {
-    //   const captures = [...match];
-    //   for (let i = 0; i < captures.length; i++) {
-    //     console.log(`[${i}] ${captures[i]}`);
-    //   }
-    // }
-
     const alertShortcodeRegex =
       /{% bookshop 'snippets\/alert' background_color: "(.*?)" alert_message: "(.*?)" color: "(.*?)" %}/gim;
 
