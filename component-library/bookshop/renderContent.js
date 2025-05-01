@@ -14,10 +14,11 @@ export default function (Liquid) {
     );
 
     const matches = value.matchAll(fileShortcodeRegex);
+    console.log(matches);
+    console.log(matches.groups);
 
-    for (const match of matches.groups) {
+    for (const match of matches) {
       const captures = [...match];
-      console.log({ match });
       for (let i = 0; i < captures.length; i++) {
         console.log(`[${i}] ${captures[i]}`);
       }
