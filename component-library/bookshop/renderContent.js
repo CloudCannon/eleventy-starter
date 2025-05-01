@@ -5,8 +5,10 @@ export default function (Liquid) {
   this.registerFilter("renderContent", (value) => {
     const fileShortcodeRegex =
       /{% bookshop 'snippets\/file' src: "(?<filesrc>.*?)" file_name: "(?<filefile_name>.*?)" link_message: "(?<filelink_message>.*?)" %}/gim;
-    const fileShortcodeRendered =
-      '<a href="$filesrc" download="$filefile_name">$filelink_message</a>';
+    const { filesrc, filefile_name, filelink_message } =
+      fileShortcodeRegex.exec(value).groups;
+
+    const fileShortcodeRendered = `<a href="${filesrc}" download="${filefile_name}">${filelink_message}</a>`;
 
     const valueWithRenderedFileShortcode = value.replaceAll(
       fileShortcodeRegex,
