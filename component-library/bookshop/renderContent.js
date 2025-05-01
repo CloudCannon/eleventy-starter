@@ -16,8 +16,8 @@ export default function (Liquid) {
     const fileShortcodeMatches = value.matchAll(fileShortcodeRegex);
 
     for (const match of fileShortcodeMatches) {
-      const captures = [...match];
-      console.log({ match });
+      const captures = [...match.groups];
+      console.log({ captures });
       for (let i = 0; i < captures.length; i++) {
         console.log(`[${i}] ${captures[i]}`);
       }
