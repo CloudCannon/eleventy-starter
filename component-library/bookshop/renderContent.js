@@ -13,9 +13,11 @@ export default function (Liquid) {
       fileShortcodeRendered
     );
 
-    const matches = value.matchAll(fileShortcodeRegex);
-    for (const match of matches) {
+    const fileShortcodeMatches = value.matchAll(fileShortcodeRegex);
+
+    for (const match of fileShortcodeMatches) {
       const captures = [...match];
+      console.log({ match });
       for (let i = 0; i < captures.length; i++) {
         console.log(`[${i}] ${captures[i]}`);
       }

@@ -40,7 +40,7 @@ content_blocks:
         {% tint, "" %}Some tinted text{% endtint %}
 
 
-        {% bookshop 'snippets/file' src: "" file_name: "" link_message: "" %}
+        {% bookshop 'snippets/file' src: "a value" file_name: "download name" link_message: "The link to click on" %}
 
 
         {% bookshop 'snippets/video' src: "" %}
