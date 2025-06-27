@@ -105,7 +105,7 @@ file_config:
   - glob: _data/icons.json
     _inputs:
       $:
-        comment: Add an icon from the list of [Font Awesome icons](https://fontawesome.com/search?o=r&m=free&s=solid).
+        comment: Add an icon from the list of [Font Awesome icons](https://fontawesome.com/search?o=r&m=free&s=solid). Add the HTML class that FA gives you, eg. 'fa-solid fa-bookmark'. The name you add is what will appear in any select dropdown lists that use this data file.
         label: Icons
   - glob: _data/colors.json
     _inputs:
@@ -230,12 +230,20 @@ _inputs:
     options:
       allow_empty: true
       values: data.icons
+      value_key: value
+      preview:
+        text:
+          - key: name
     cascade: true
   button_icon:
     type: select
     options:
       allow_empty: true
       values: data.icons
+      value_key: value
+      preview:
+        text:
+          - key: name
     cascade: true
   button_link:
     type: url
@@ -289,6 +297,10 @@ _inputs:
     options:
       allow_empty: true
       values: data.icons
+      value_key: value
+      preview:
+        text:
+          - key: name
     cascade: true
   social[*]:
     type: auto
@@ -412,7 +424,12 @@ _snippets:
       icon:
         type: select
         options:
+          allow_empty: true
           values: data.icons
+          value_key: value
+          preview:
+            text:
+              - key: name
       color:
         type: select
         options:

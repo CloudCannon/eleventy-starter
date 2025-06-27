@@ -16,7 +16,7 @@
         {% for link in navigation.footer.social %}
             <li class="w-[2rem]">
                 <a href={{link.link}}>
-                    <i class="fab fa-{{ link.social_icon | downcase }}"></i>
+                    <i class="{{ link.social_icon }}"></i>
                 </a>
             </li>
         {% endfor %}

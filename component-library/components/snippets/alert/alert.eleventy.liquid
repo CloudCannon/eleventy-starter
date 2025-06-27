@@ -1,3 +1,3 @@
 <div class="flex items-center gap-4 px-4 py-2 rounded-lg shadow-md my-4" style="background-color: {{background_color}}; color: {{color}};">
-  <p class="!mb-0">{{alert_message}}</p>
+  <p class="!mb-0">{% if icon %}<span class="icon">{% bookshop "icon" icon: icon %}</span>{% endif %}{{alert_message}}</p>
 </div>

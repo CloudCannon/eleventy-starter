@@ -24,8 +24,6 @@
         <path d="M368 404 c-80 -43 -76 -179 6 -218 73 -35 149 -4 175 71 13 35 13 46 0 79 -27 72 -114 105 -181 68z" />
         </g>
     </svg>
-{% elsif icon == "GitHub" or icon == "Facebook" or icon == "Instagram" or icon == "Youtube" or icon == "Google" or icon == "Stripe" or icon == "Shopify" %}
-    <i class="fab fa-{{ icon | downcase }}"></i>
 {% else %}
-    <i class="fas fa-{{ icon | downcase }}"></i>
+    <i class="{{ icon }}"></i>
 {% endif %}
