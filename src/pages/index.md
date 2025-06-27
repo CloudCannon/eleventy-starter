@@ -27,21 +27,6 @@ content_blocks:
         Eleventy, using Bookshop components in CloudCannon**. Create your own
         copy, and start creating your own components to use in the CloudCannon
         CMS.
-
-
-        {% bookshop 'snippets/alert' background_color: "#FF785A" alert_message:
-        "Test test testaaa" color: "#FEF9EF" %}
-
-
-        {% bookshop 'snippets/alert' background_color: "" alert_message: "A new
-        one" color: "" %}
-
-        {% bookshop 'icon' icon: "CloudCannon" %}
-
-        {% bookshop 'snippets/file' src: "a value" file_name: "download name" link_message: "The link to click on" %}
-
-
-        {% bookshop 'snippets/video' src: "" %}
       color: '#393939'
     image:
       image_path: /assets/images/blog/featured-image-5.jpg
