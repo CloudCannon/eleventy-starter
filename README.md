@@ -162,9 +162,9 @@ To add more icons:
 
 1. Go to the [Font Awesome icon list](https://fontawesome.com/search?o=r&m=free)
 2. Pick a free icon
-3. Add the icon name to `data/icons.json` which populates the icon dropdown list used for icons in the placeholder components.
+3. Add a new entry to the icons file in the data collection, `data/icons.json`. This file populates the icon dropdown list used for icons in the placeholder components. Add a name, and the class that FA gives you, eg. `fa-solid fa-bookmark`.
 
-If the icon is one of the solid variants, no extra configuration is needed and you can start using the icon. Otherwise further development will be needed.
+If you want to add a custom icon, follow the example of the CloudCannon icon used in this template.
 
 #### Remove Font Awesome Icons
 

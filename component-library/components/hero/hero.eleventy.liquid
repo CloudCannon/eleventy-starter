@@ -3,7 +3,7 @@
     <div class="content">
       <h1 class="heading">{{heading.heading_text}}</h1>
       <div class="subheading-text markdown-text" style="color: {{subheading.color}}">
-        {% if subheading.markdown_content %}{{ subheading.markdown_content | markdownify }}{% endif %}
+        {% if subheading.markdown_content %}{{ subheading.markdown_content | renderContent }}{% endif %}
       </div>
       <div class="buttons">
         {% for button in buttons %}

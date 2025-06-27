@@ -1,20 +1,24 @@
+timezone: America/New_York
+
 source: src
+
+commit_templates:
+  - label: Default message
+    template_string: '[default_commit_message]'
+  - label: Custom message
+    template_string: '{message}'
+
 paths:
   static: ''
   uploads: assets/images
-  data: _data
-  includes: _includes
-  layouts: _includes
-  collections: ''
-  pages: ''
+
 collections_config:
   pages:
     path: pages
-    output: true
-    filter:
-      base: strict
-      exclude:
-        - tags.md
+    url: '/[full_slug]/'
+    glob: 
+      - '!blog/*'
+      - '!tags.md'
     icon: laptop_mac
     _enabled_editors:
       - visual
@@ -39,15 +43,10 @@ collections_config:
         remove_extra_inputs: false
         name: New Page
         icon: notes
-        _editables:
-        _enabled_editors:
-        _inputs:
-        _select_data:
-        _structures:
         new_preview_url: /
   posts:
     path: pages/blog
-    output: true
+    url: /blog/[full_slug]/
     icon: article
     _enabled_editors:
       - content
@@ -56,7 +55,6 @@ collections_config:
       tags:
         type: array
         options:
-          allow_create: true
           empty_type: array
         cascade: true
       tags[*]:
@@ -64,6 +62,27 @@ collections_config:
         cascade: true
       permalink:
         comment: Override the relative url for this pages location (by default it will be at /blog/page-name/ if you don't set anything here)
+    preview:
+      text:
+        - key: title
+      gallery:
+        fit: cover
+        image: 
+          - key: thumb_image_path
+          - key: image
+      metadata:
+        - icon: calendar_month
+          text: 
+            - template: Created {date|date_long}
+            - Add date
+        - icon: person
+          text:
+            - template: By {author}
+            - No author
+        - icon: style
+          text:
+            - template: '{tags[*]}'
+            - No tags
     add_options:
       - name: Add New Post
         icon: post_add
@@ -81,11 +100,13 @@ collections_config:
         remove_empty_inputs: false
         remove_extra_inputs: true
   data:
-    output: false
+    path: _data
     icon: data_usage
+    disable_url: true
     disable_add: true
     disable_add_folder: true
     disable_file_actions: false
+
 collection_groups:
   - heading: Pages
     collections:
@@ -96,6 +117,7 @@ collection_groups:
   - heading: Data
     collections:
       - data
+
 file_config:
   - glob: pages/blog.md
     _inputs:
@@ -104,7 +126,7 @@ file_config:
   - glob: _data/icons.json
     _inputs:
       $:
-        comment: Add an icon from the list of [Font Awesome icons](https://fontawesome.com/search?o=r&m=free&s=solid).
+        comment: Add an icon from the list of [Font Awesome icons](https://fontawesome.com/search?o=r&m=free&s=solid). Add the HTML class that FA gives you, eg. 'fa-solid fa-bookmark'. The name you add is what will appear in any select dropdown lists that use this data file.
         label: Icons
   - glob: _data/colors.json
     _inputs:
@@ -122,9 +144,13 @@ file_config:
                 _inputs:
                   value:
                     type: color
+
 data_config:
-  icons: true
-  colors: true
+  icons:
+    path: _data/icons.json
+  colors:
+    path: _data/colors.json
+
 _inputs:
   draft:
     type: checkbox
@@ -167,6 +193,7 @@ _inputs:
       table: true
       underline: true
       undo: true
+      snippet: true
     cascade: true
   image_path:
     type: image
@@ -224,12 +251,20 @@ _inputs:
     options:
       allow_empty: true
       values: data.icons
+      value_key: value
+      preview:
+        text:
+          - key: name
     cascade: true
   button_icon:
     type: select
     options:
       allow_empty: true
       values: data.icons
+      value_key: value
+      preview:
+        text:
+          - key: name
     cascade: true
   button_link:
     type: url
@@ -283,6 +318,10 @@ _inputs:
     options:
       allow_empty: true
       values: data.icons
+      value_key: value
+      preview:
+        text:
+          - key: name
     cascade: true
   social[*]:
     type: auto
@@ -337,9 +376,6 @@ _inputs:
     cascade: true
   favicon:
     type: image
-_structures:
-  content_blocks:
-    style: modal
 _editables:
   content:
     allow_custom_markup: false
@@ -365,7 +401,6 @@ _editables:
     redo: true
     removeformat: true
     right: align-right
-    snippet: true
     strike: true
     styles: /src/assets/styles/editor.css
     subscript: true
@@ -373,9 +408,10 @@ _editables:
     table: true
     underline: true
     undo: true
-timezone: Pacific/Auckland
+
 _snippets_imports:
   eleventy_liquid: true
+
 _snippets:
   alert:
     template: eleventy_liquid_bookshop_component
@@ -390,16 +426,12 @@ _snippets:
       component_name: snippets/alert
       named_args:
         - editor_key: background_color
-          source_key: background_color
           type: string
         - editor_key: alert_message
-          source_key: alert_message
           type: string
         - editor_key: color
-          source_key: color
           type: string
         - editor_key: icon
-          source_key: icon
           type: string
     _inputs:
       background_color:
@@ -413,7 +445,12 @@ _snippets:
       icon:
         type: select
         options:
+          allow_empty: true
           values: data.icons
+          value_key: value
+          preview:
+            text:
+              - key: name
       color:
         type: select
         options:

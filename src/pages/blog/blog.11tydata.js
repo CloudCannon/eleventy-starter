@@ -1,6 +1,5 @@
 const currentEnv = process.env.ELEVENTY_ENV || "development"
-console.log("Hi")
-console.log(currentEnv)
+console.log({currentEnv})
 const isDevEnv = currentEnv !== 'production';
 
 function showDraft(data) {

@@ -34,7 +34,7 @@ content_blocks:
     buttons:
       - _bookshop_name: buttons/primary
         button_text: GitHub
-        button_icon: GitHub
+        button_icon: fa-brands fa-github
         button_link: https://github.com/CloudCannon/eleventy-starter/tree/main
         background_color: '#034ad8'
         hover_brightness: 0.85
@@ -84,7 +84,7 @@ content_blocks:
     button:
       _bookshop_name: buttons/primary
       button_text: GitHub
-      button_icon: GitHub
+      button_icon: fa-brands fa-github
       button_link: https://github.com/CloudCannon/eleventy-starter/tree/main
       background_color: '#034ad8'
       hover_brightness: 0.85
