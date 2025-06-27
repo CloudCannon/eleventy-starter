@@ -62,6 +62,27 @@ collections_config:
         cascade: true
       permalink:
         comment: Override the relative url for this pages location (by default it will be at /blog/page-name/ if you don't set anything here)
+    preview:
+      text:
+        - key: title
+      gallery:
+        fit: cover
+        image: 
+          - key: thumb_image_path
+          - key: image
+      metadata:
+        - icon: calendar_month
+          text: 
+            - template: Created {date|date_long}
+            - Add date
+        - icon: person
+          text:
+            - template: By {author}
+            - No author
+        - icon: style
+          text:
+            - template: '{tags[*]}'
+            - No tags
     add_options:
       - name: Add New Post
         icon: post_add
