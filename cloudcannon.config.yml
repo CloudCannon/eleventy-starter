@@ -2,6 +2,12 @@ timezone: America/New_York
 
 source: src
 
+commit_templates:
+  - label: Default message
+    template_string: '[default_commit_message]'
+  - label: Custom message
+    template_string: '{message}'
+
 paths:
   static: ''
   uploads: assets/images
