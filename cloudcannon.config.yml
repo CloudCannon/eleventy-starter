@@ -15,7 +15,7 @@ paths:
 collections_config:
   pages:
     path: pages
-    url: '/[full_slug]'
+    url: '/[full_slug]/'
     glob: 
       - '!blog/*'
       - '!tags.md'
