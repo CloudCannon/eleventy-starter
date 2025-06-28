@@ -1,9 +1,9 @@
 {
-    "base_url": "https://liked-sea.cloudvent.net/",
-    "site_title": "Eleventy Starter",
-    "description": "A starter template for Eleventy, built by Bookshop components - for CloudCannon CMS.",
-    "twitter_site": "",
-    "image": "",
-    "image_alt": "",
-    "favicon": "/assets/images/favicon.png"
+  "base_url": "https://large-leek.cloudvent.net/",
+  "site_title": "Eleventy Starter",
+  "description": "A starter template for Eleventy, built by Bookshop components - for CloudCannon CMS.",
+  "twitter_site": "",
+  "image": "",
+  "image_alt": "",
+  "favicon": "/assets/images/favicon.png"
 }

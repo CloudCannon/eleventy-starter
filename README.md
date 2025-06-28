@@ -9,7 +9,7 @@ To try to cut down on setup time this starter template includes some commonly us
 This template is aimed at helping developers build sites quickly, rather than providing editors with a fully built editable site.
 If you are an editor looking for an already built template, have a look at [CloudCannon's templates page](https://cloudcannon.com/templates/).
 
-[See a demo version of this site](https://liked-sea.cloudvent.net/).
+[See a demo version of this site](https://large-leek.cloudvent.net/).
 
 ## Getting Started
 
