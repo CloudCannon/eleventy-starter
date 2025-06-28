@@ -29,13 +29,17 @@ content_blocks:
         CMS.
       color: '#393939'
     image:
-      image_path: /assets/images/blog/featured-image-5.jpg
-      alt_text: An image
+      image_path: /assets/images/undraw-online-test.svg
+      alt_text: >-
+        An illustration of someone leaning against the inside of a desktop
+        computer monitor, with one leg dangled off the side. They're holding a
+        piece of paper with a large 'A', and are next to some buttons on the
+        screen.
     buttons:
       - _bookshop_name: buttons/primary
         button_text: GitHub
         button_icon: fa-brands fa-github
-        button_link: https://github.com/CloudCannon/eleventy-starter/tree/main
+        button_link: https://github.com/CloudCannon/eleventy-starter/
         background_color: '#034ad8'
         hover_brightness: 0.85
         text_color: '#ffffff'
@@ -79,14 +83,53 @@ content_blocks:
       color: '#393939'
     image:
       image_path: /assets/images/undraw-hello.svg
-      alt_text: An image
+      alt_text: >-
+        An illustration of someone sitting a desk with a monitor and a pile of
+        books on it. Seen from behind, the figure is turned around to face us
+        and is waving.
     flipped: true
     button:
       _bookshop_name: buttons/primary
       button_text: GitHub
       button_icon: fa-brands fa-github
-      button_link: https://github.com/CloudCannon/eleventy-starter/tree/main
+      button_link: https://github.com/CloudCannon/eleventy-starter/
       background_color: '#034ad8'
+      hover_brightness: 0.85
+      text_color: '#ffffff'
+  - _bookshop_name: left-right
+    background_color: '#ffffff'
+    flipped: false
+    heading:
+      heading_text: You choose your editing experience.
+      text_color: '#333232'
+    text:
+      markdown_content: >-
+        CloudCannon is a flexible Git-backed CMS that specialises in editing
+        markdown and data files.
+
+
+        Visual editing allows you to preview your changes live before you save
+        them.
+
+
+        Git-backed means you can keep all your familiar git workflows, while
+        providing an easy-to-understand interface for non-technical editors to
+        collaborate via Git.
+      text_color: '#333232'
+    image:
+      image_path: /assets/images/undraw-startup.svg
+      alt_text: >-
+        An illustration of someone leaning on one leg while facing us, next to a
+        laptop that comes up their waist. One of their hands is on the back of
+        the laptop, and one is in their pocket. On the laptop screen is an
+        illustration of the world.
+    button:
+      _bookshop_name: buttons/primary
+      button_text: GitHub
+      button_icon: fa-brands fa-github
+      button_link: https://github.com/CloudCannon/eleventy-starter/
+      button_aria_label:
+      background_color: '#034AD8'
       hover_brightness: 0.85
       text_color: '#ffffff'
 ---

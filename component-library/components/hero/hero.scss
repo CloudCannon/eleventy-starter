@@ -1,15 +1,14 @@
 .hero-container {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    justify-content: space-between;
-    align-items: center;
-    padding-block: 24px;
-    padding-inline: var(--pagePadding);
-    max-width: var(--pageContainer);
-    margin-inline: auto;
-    overflow: hidden;
-
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 24px;
+  padding-inline: var(--pagePadding);
+  max-width: var(--pageContainer);
+  margin-inline: auto;
+  overflow: hidden;
 
   .content h1 {
     font-size: 2.5rem;
@@ -43,23 +42,12 @@
     margin-top: 1rem;
   }
 
-  .blob {
+  .hero-image {
     width: 100%;
+    max-width: 600px;
+    margin-top: 32px;
     display: flex;
     justify-content: center;
-  }
-  .blob > picture > img, .blob > img {
-    background-size: cover;
-    -webkit-background-position: center;
-    background-position: center center;
-    animation: animate 10s ease-in-out infinite;
-    transition: all 1s ease-in-out;
-  }
-
-  .blob > picture, .blob > img {
-    margin: 20px;
-    max-width: 600px;
-    width: 100%;
   }
 
   @media only screen and (min-width: 400px) {
@@ -79,7 +67,7 @@
       width: 50%;
     }
 
-    .blob {
+    .hero-image {
       width: 50%;
     }
     .buttons {
@@ -89,16 +77,6 @@
   @media only screen and (min-width: 1280px) {
     .buttons {
       flex-direction: row;
-    }
-  }
-
-  @keyframes animate {
-    0%,
-    100% {
-      border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-    }
-    50% {
-      border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
     }
   }
 }

@@ -11,7 +11,7 @@
         {% endfor %}
       </div>
     </div>
-    <div class="blob">
+    <div class="hero-image">
       {% if image.image_path %}
         {% bookshop "image" bind:image image_sizes:"(max-width: 640px) 320px, (max-width: 960px) 500px, (max-width: 1280px) 640px" %}
       {% endif %}
