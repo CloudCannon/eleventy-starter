@@ -31,7 +31,7 @@ seo:
 ---
 A new post to test and show off what you can do from inside CloudCannon's content editor.
 
-{% bookshop 'snippets/alert' background_color: "#FF785A" alert_message: "Test test test" color: "#FEF9EF" icon: "fa-solid fa-bell" %}
+{% alert "#FF785A", "Test test test", "#FEF9EF", "fa-solid fa-bell" %}
 
 ## A heading 2
 
@@ -82,10 +82,10 @@ object:
 
 <table><caption><p>Such table</p></caption><thead><tr><th><p>Col 1</p></th><th><p>Col 2</p></th></tr></thead><tbody><tr><td><p>true</p></td><td><p>false</p></td></tr><tr><td><p>true</p></td><td><p>true</p></td></tr><tr><td><p>null</p></td><td><p>true</p></td></tr><tr><td><p>false</p></td><td><p>false</p></td></tr></tbody></table>
 
-{% bookshop 'snippets/alert' background_color: "#034AD8" alert_message: "This is an alert message" color: "#000000" icon: "fa-solid fa-bell" %}
+{% alert "#034AD8", "This is an alert message", "#000000", "fa-solid fa-bell" %}
 
-{% bookshop 'snippets/file' src: "/assets/documents/test.pdf" file_name: "test-file" link_message: "A test file to show how you'd have a downloadable link through your markdown" %}
+{% file "/assets/documents/test.pdf", "test-file", "A test file to show how you'd have a downloadable link through your markdown" %}
 
 Some text which is normal color - {% tint, "#F7B2AD" %}Woah a tint!{% endtint %} Some more text to show how inline tint is.
 
-{% bookshop 'snippets/video' src: "/assets/videos/test.mp4" %}
+{% video "/assets/videos/test.mp4" %}

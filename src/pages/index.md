@@ -4,7 +4,7 @@ title: Home
 seo:
   page_description: >-
     A starting point for developers looking to build a website with Eleventy,
-    using Bookshop components in CloudCannon. Create your own copy, and start
+    using CloudCannon editable regions. Create your own copy, and start
     creating your own components to use in the CloudCannon CMS.
   canonical_url:
   featured_image:
@@ -16,15 +16,15 @@ layout: layouts/component-page.html
 permalink: /
 eleventyExcludeFromCollections: false
 content_blocks:
-  - _bookshop_name: hero
+  - _type: components/hero
     background_color: '#ffffff'
     heading:
-      heading_text: Eleventy Bookshop Starter
+      heading_text: Eleventy Starter
       heading_gradient_color: '#a0a2ff'
     subheading:
       markdown_content: >-
         A starting point for **developers looking to build a website with
-        Eleventy, using Bookshop components in CloudCannon**. Create your own
+        Eleventy, using CloudCannon editable regions**. Create your own
         copy, and start creating your own components to use in the CloudCannon
         CMS.
       color: '#393939'
@@ -36,20 +36,20 @@ content_blocks:
         piece of paper with a large 'A', and are next to some buttons on the
         screen.
     buttons:
-      - _bookshop_name: buttons/primary
+      - _type: components/buttons/primary
         button_text: GitHub
         button_icon: fa-brands fa-github
         button_link: https://github.com/CloudCannon/eleventy-starter/
         background_color: '#034ad8'
         hover_brightness: 0.85
         text_color: '#ffffff'
-      - _bookshop_name: buttons/secondary
+      - _type: components/buttons/secondary
         button_text: CloudCannon
         button_icon: CloudCannon
         button_link: https://www.cloudcannon.com
         text_color: '#034ad8'
         hover_brightness: 0.95
-  - _bookshop_name: left-right
+  - _type: components/left-right
     background_color: '#ffffff'
     heading:
       heading_text: Keep what you need. Delete the rest.
@@ -58,8 +58,8 @@ content_blocks:
       markdown_content: >-
         To help save you time, some features are set up in this template, like:
 
-        -
-        [Bookshop](https://cloudcannon.com/documentation/guides/bookshop-eleventy-guide/)
+        - [Editable
+        regions](https://cloudcannon.com/documentation/articles/introduction-to-editable-regions/)
 
         - Blog with pagination, tags and
         [snippets](https://cloudcannon.com/documentation/articles/snippets-using-eleventy-shortcodes/)
@@ -89,14 +89,14 @@ content_blocks:
         and is waving.
     flipped: true
     button:
-      _bookshop_name: buttons/primary
+      _type: components/buttons/primary
       button_text: GitHub
       button_icon: fa-brands fa-github
       button_link: https://github.com/CloudCannon/eleventy-starter/
       background_color: '#034ad8'
       hover_brightness: 0.85
       text_color: '#ffffff'
-  - _bookshop_name: left-right
+  - _type: components/left-right
     background_color: '#ffffff'
     flipped: false
     heading:
@@ -124,7 +124,7 @@ content_blocks:
         the laptop, and one is in their pocket. On the laptop screen is an
         illustration of the world.
     button:
-      _bookshop_name: buttons/primary
+      _type: components/buttons/primary
       button_text: GitHub
       button_icon: fa-brands fa-github
       button_link: https://github.com/CloudCannon/eleventy-starter/

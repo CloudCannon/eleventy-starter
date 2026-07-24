@@ -1,0 +1,65 @@
+label: Left Right
+icon: view_column
+picker_preview:
+  text:
+    - Left Right
+  icon:
+    - view_column
+preview:
+  text:
+    - key: heading.heading_text
+    - Left Right
+  subtext:
+    - key: text.markdown_content
+    - Text and image side by side
+  icon:
+    - view_column
+  image:
+    - key: image.image_path
+value:
+  _type: components/left-right
+  background_color: '#ffffff'
+  heading:
+    heading_text: Left right heading
+    color: '#393939'
+  text:
+    markdown_content: >-
+      Some supporting text that sits beside the image.
+    color: '#393939'
+  image:
+    image_path: /assets/images/undraw-hello.svg
+    alt_text: An image
+  flipped: false
+  button:
+    _type: components/buttons/primary
+    button_text: Button Text
+    button_icon:
+    button_link: ''
+    background_color: '#034ad8'
+    hover_brightness: 0.85
+    text_color: '#ffffff'
+_inputs:
+  heading:
+    type: object
+    options:
+      preview:
+        icon: short_text
+  text:
+    type: object
+    options:
+      preview:
+        icon: short_text
+  image:
+    type: object
+    options:
+      preview:
+        icon: image
+  flipped:
+    type: switch
+    comment: Swap the image to the other side
+  button:
+    type: object
+    options:
+      structures: _structures.buttons
+      preview:
+        icon: ads_click

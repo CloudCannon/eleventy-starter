@@ -1,13 +1,12 @@
-{% if env_bookshop_live %}
-
+{% comment %}
+    In the CloudCannon Visual Editor (ENV_CLIENT) render a plain <img> so the
+    live-editing bundle never calls the Node/sharp-based `image` optimizer.
+    At build time, use the optimizing `{% image %}` shortcode.
+{% endcomment %}
+{% if ENV_CLIENT %}
     <img class="c-image c-image--live-editing" src="{{ image_path }}" alt="{{ alt_text }}">
-
 {% elsif image_path contains 'http://' or image_path contains 'https://' %}
-
     <img class="c-image" src="{{ image_path }}" alt="{{ alt_text }}">
-
 {% else %}
-
     {% image image_path, alt_text, 'c-image', image_sizes, true %}
-
 {% endif %}

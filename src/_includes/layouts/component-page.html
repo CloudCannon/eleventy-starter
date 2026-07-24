@@ -1,4 +1,11 @@
 ---
 layout: layouts/layout.html
 ---
-{% bookshop_include "page" content_blocks: content_blocks %}
+<div data-editable="array" data-prop="content_blocks" data-component-key="_type">
+  {% for block in content_blocks %}
+    {% assign _blockType = block._type %}
+    <div data-editable="array-item" data-component="{{ block._type }}" data-id="{{ forloop.index0 }}">
+      {% includeWith _blockType, block %}
+    </div>
+  {% endfor %}
+</div>

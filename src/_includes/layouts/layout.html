@@ -13,9 +13,7 @@
     />
     <!-- Add TailwindCSS -->
     <link rel="stylesheet" href='/assets/styles/tailwind.css'>
-    <!-- Add component styles -->
-    <link rel="stylesheet" href="/assets/styles/bookshop.css">
-    <!-- Add general styles -->
+    <!-- Add general + component styles -->
     <link rel="stylesheet" href="/assets/styles/main.css">
 
     <!-- Add editor styles -->
@@ -36,5 +34,14 @@
             {{ content }}
         </main>
         {% include 'partials/navigation/footer.html' %}
+
+        <!-- CloudCannon editable regions: load the live-editing bundle only inside the Visual Editor -->
+        <script>
+          if (window.inEditorMode) {
+            import("/register-components.js").catch((error) => {
+              console.warn("Failed to load CloudCannon component registration:", error);
+            });
+          }
+        </script>
     </body>
 </html>

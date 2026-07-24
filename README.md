@@ -1,6 +1,6 @@
 # Eleventy CloudCannon Starter
 
-A starting point for developers looking to build a website with Eleventy, using Bookshop components in CloudCannon.
+A starting point for developers looking to build a website with Eleventy, using CloudCannon editable regions for visual editing.
 
 Create your own copy, and start creating your own components to use in the CloudCannon CMS.
 
@@ -22,7 +22,7 @@ To start using this template, go to the [GitHub repository](https://github.com/C
 3. Run `npm start`. Eleventy will generate and serve your site from a folder called `_site`.
 
 ## Features
-- [Bookshop](#bookshop)
+- [Editable regions](#editable-regions)
 - [Styling](#styling)
 - [Blog with pagination & tags](#blog-with-pagination--tags)
 - [Data files](#data-files)
@@ -31,21 +31,21 @@ To start using this template, go to the [GitHub repository](https://github.com/C
 - [SEO controls](#seo-controls)
 - [Font Awesome Icons](#font-awesome-icons)
 
-### Bookshop
+### Editable regions
 
-[Bookshop](https://cloudcannon.com/documentation/guides/bookshop-eleventy-guide/) is a component development workflow for static websites.
+[Editable regions](https://cloudcannon.com/documentation/articles/introduction-to-editable-regions/) let non-technical editors edit and build pages directly on the live preview in CloudCannon's Visual Editor.
 
-Build custom components that non-technical editors can use in a page building experience in CloudCannon.
+Components are plain Liquid partials in `src/_includes/components/`. The `@cloudcannon/editable-regions` Eleventy plugin (wired up in `.eleventy.js`) marks parts of a component editable with `data-editable` attributes and re-renders them live as the editor types.
 
-Bookshop is already set up on this project, so that you can start building components straight away.
+To create a new page-building component:
 
-To create a new component, at the root of the project run `npm run bookshop:new my-new-component-name`. This will create a new component folder in `component-library/components` with three files:
+1. Add a Liquid partial in `src/_includes/components/`, e.g. `my-block.liquid`. Mark editable parts with `data-editable` attributes (`text`, `image`, `array`, `component`).
 
-- A .bookshop.yml file where you define your components configuration for within CloudCannon.
+2. Add a co-located `my-block.cloudcannon.structure-value.yml` next to it, defining its `label`, `icon`, `preview`, default `value` (including a `_type: components/my-block` discriminator), and any component-scoped `_inputs`. It's picked up automatically by the `_structures.content_blocks` glob in `cloudcannon.config.yml` — no central edit needed.
 
-- A .eleventy.liquid file where the HTML and liquid templating for the component are.
+3. The page builder (`src/_includes/layouts/component-page.html`) renders `content_blocks` as an editable array, so your new block is immediately available in the Add menu.
 
-- A .scss file where you can add your styles if you aren't using tailwind within the .eleventy.liquid file.
+See `BOOKSHOP-TO-EDITABLE-REGIONS.md` for a full explanation of how the editable-regions setup works (including the migration this starter went through from Bookshop).
 
 ### Styling
 
@@ -95,9 +95,9 @@ Documentation, blog and other text heavy sections should replicate how the blog 
 
 The blog pages in this template allow for snippets and have some preconfigured options. Snippets allow you to use HTML components throughout your markdown text.
 
-A common layout, with changing markdown content is favored for these kinds of text heavy pages, rather than using Bookshop components - which are defined and managed in your markdown pages frontmatter.
+A common layout, with changing markdown content is favored for these kinds of text heavy pages, rather than using editable-region components - which are defined and managed in your markdown pages frontmatter.
 
-These text heavy pages will be edited in CloudCannon's content editor, rather than the visual editor used for building pages with Bookshop components.
+These text heavy pages will be edited in CloudCannon's content editor, rather than the visual editor used for building pages with editable-region components.
 
 #### Drafts
 
@@ -120,7 +120,7 @@ Demonstrates using data files to:
 
 ### Image Optimization
 
-[11ty Image](https://www.11ty.dev/docs/plugins/image/) is used in the two placeholder components in this template, it has been created as a subcomponent in `/component-library/components/image`.
+[11ty Image](https://www.11ty.dev/docs/plugins/image/) is used in the two placeholder components in this template, it has been created as a subcomponent in `/src/_includes/components/image.liquid`.
 The image component will process an image in your src/assets/images folder, and output an optimized image, like below:
 
 ```html
@@ -135,7 +135,7 @@ The image component will process an image in your src/assets/images folder, and 
 
 #### Cloudcannon Configuration
 
-The placeholder Bookshop components show how to configure your components to control inputs and previews in CloudCannon.
+The placeholder components show how to configure your components to control inputs and previews in CloudCannon.
 
 A `cloudcannon.config.yml` file has been provided with some configuration that starts to show what can be done to configure the CMS.
 
@@ -145,7 +145,7 @@ This template also demonstrates how to set [`uploads` paths](https://cloudcannon
 
 Shows how to set up schemas in CloudCannon to allow for non-technical editors to create new pages, with preset frontmatter and content.
 Schemas can be defined on a collection level, allowing your new blog pages to be different to your new landing pages.
-This allows for your text heavy blog/docs pages to be built and edited in the content editor, while your other pages can be built with Bookshop in the visual editor.
+This allows for your text heavy blog/docs pages to be built and edited in the content editor, while your other pages can be built with editable regions in the visual editor.
 
 ### SEO controls
 
@@ -176,7 +176,7 @@ If you want to add a custom icon, follow the example of the CloudCannon icon use
   }
 ```
 
-2. Remove `/component-library/components/icon/**.**`
+2. Remove `/src/_includes/components/icon.liquid`
 
 3. Remove any references to the icon component from other components
 

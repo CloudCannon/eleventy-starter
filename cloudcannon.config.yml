@@ -151,7 +151,32 @@ data_config:
   colors:
     path: _data/colors.json
 
+# Page-building structures. Each block/button component ships its own
+# `*.cloudcannon.structure-value.yml` next to its Liquid template; these globs
+# collect them so a new file = a new available block (no central edit needed).
+_structures:
+  content_blocks:
+    values_from_glob:
+      - /src/_includes/components/*.cloudcannon.structure-value.yml
+  buttons:
+    values_from_glob:
+      - /src/_includes/components/buttons/*.cloudcannon.structure-value.yml
+
 _inputs:
+  _type:
+    hidden: true
+  content_blocks:
+    type: array
+    options:
+      structures: _structures.content_blocks
+  buttons:
+    type: array
+    options:
+      structures: _structures.buttons
+  button:
+    type: object
+    options:
+      structures: _structures.buttons
   draft:
     type: checkbox
     hidden: true
@@ -172,6 +197,7 @@ _inputs:
       allow_custom_markup: false
       remove_custom_markup: false
       initial_height: 320
+      snippet: true
       blockquote: true
       bold: true
       bulletedlist: true
@@ -291,7 +317,7 @@ _inputs:
     cascade: true
   date:
     type: auto
-    instance_value: now
+    instance_value: NOW
     cascade: true
   social:
     type: auto
@@ -378,6 +404,7 @@ _editables:
   content:
     allow_custom_markup: false
     remove_custom_markup: false
+    snippet: true
     blockquote: true
     bold: true
     bulletedlist: true
@@ -407,30 +434,39 @@ _editables:
     underline: true
     undo: true
 
-_snippets_imports:
-  eleventy_liquid: true
-
+# Snippets let editors insert the Eleventy Liquid shortcodes defined in
+# .eleventy.js from the rich-text editor. alert/video/file are `raw` snippets:
+# their pattern is spelled out explicitly (positional args, comma-separated,
+# quoted) because CloudCannon's built-in Eleventy shortcode template ids are not
+# publicly enumerable. tint keeps a built-in paired-shortcode template.
 _snippets:
   alert:
-    template: eleventy_liquid_bookshop_component
     inline: false
+    snippet: '{% alert [[args]] %}'
     preview:
       text:
         - key: alert_message
         - 'Alert'
       gallery:
         image: /assets/images/snippet-previews/alert.preview.webp
-    definitions:
-      component_name: snippets/alert
-      named_args:
-        - editor_key: background_color
-          type: string
-        - editor_key: alert_message
-          type: string
-        - editor_key: color
-          type: string
-        - editor_key: icon
-          type: string
+    params:
+      args:
+        parser: argument_list
+        options:
+          models:
+            - editor_key: background_color
+              type: string
+            - editor_key: alert_message
+              type: string
+            - editor_key: color
+              type: string
+            - editor_key: icon
+              type: string
+          format:
+            root_pair_delimiter:
+              - ', '
+            string_boundary:
+              - '"'
     _inputs:
       background_color:
         type: select
@@ -461,18 +497,22 @@ _snippets:
         comment: This is the text displayed in the alert
         type: textarea
   video:
-    template: eleventy_liquid_bookshop_component
     inline: false
+    snippet: '{% video [[src]] %}'
     preview:
       text: Video
       gallery:
         image: /assets/images/snippet-previews/video.preview.webp
-    definitions:
-      component_name: snippets/video
-      named_args:
-        - editor_key: src
-          source_key: src
-          type: string
+    params:
+      src:
+        parser: argument
+        options:
+          model:
+            editor_key: src
+            type: string
+          format:
+            string_boundary:
+              - '"'
     _inputs:
       src:
         type: file
@@ -480,24 +520,28 @@ _snippets:
           paths:
             uploads: assets/videos
   file:
-    template: eleventy_liquid_bookshop_component
     inline: false
+    snippet: '{% file [[args]] %}'
     preview:
       text: File
       gallery:
         image: /assets/images/snippet-previews/file.preview.webp
-    definitions:
-      component_name: snippets/file
-      named_args:
-        - editor_key: src
-          source_key: src
-          type: string
-        - editor_key: file_name
-          source_key: file_name
-          type: string
-        - editor_key: link_message
-          source_key: link_message
-          type: string
+    params:
+      args:
+        parser: argument_list
+        options:
+          models:
+            - editor_key: src
+              type: string
+            - editor_key: file_name
+              type: string
+            - editor_key: link_message
+              type: string
+          format:
+            root_pair_delimiter:
+              - ', '
+            string_boundary:
+              - '"'
     _inputs:
       src:
         type: file

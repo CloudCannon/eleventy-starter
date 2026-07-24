@@ -1,7 +1,7 @@
 {
   "base_url": "https://large-leek.cloudvent.net/",
   "site_title": "Eleventy Starter",
-  "description": "A starter template for Eleventy, built by Bookshop components - for CloudCannon CMS.",
+  "description": "A starter template for Eleventy, using CloudCannon editable regions - for CloudCannon CMS.",
   "twitter_site": "",
   "image": "",
   "image_alt": "",

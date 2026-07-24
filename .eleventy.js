@@ -1,8 +1,11 @@
-const pluginBookshop = require("@bookshop/eleventy-bookshop");
+const pluginEditableRegions = require("@cloudcannon/editable-regions/eleventy");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
+const MarkdownIt = require("markdown-it");
 
 /* 11ty config imports */
 const image_shortcode = require("./_11ty_config/image_shortcode");
+
+const md = new MarkdownIt({ html: true });
 
 // biome-ignore lint/complexity/useArrowFunction: <explanation>
 module.exports = async function (eleventyConfig) {
@@ -23,17 +26,25 @@ module.exports = async function (eleventyConfig) {
 
   eleventyConfig.addWatchTarget("tailwind.config.js");
   eleventyConfig.addWatchTarget("src/assets/styles/**/*.{css,scss}");
-  eleventyConfig.addWatchTarget("component-library/");
+  eleventyConfig.addWatchTarget("src/_includes/components/");
 
-  eleventyConfig.addPlugin(
-    pluginBookshop({
-      bookshopLocations: ["component-library"],
-      pathPrefix: "",
-    })
-  );
+  // CloudCannon editable regions: emits _site/register-components.js and
+  // registers the `includeWith` tag. `@11ty/eleventy-img` (pulled in by the
+  // image shortcode below) is Node/sharp-only, so stub it out of the browser
+  // live-editing bundle — the optimizer path is guarded by `ENV_CLIENT`.
+  eleventyConfig.addPlugin(pluginEditableRegions, {
+    liquid: { browserStub: ["@11ty/eleventy-img"] },
+  });
 
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(RenderPlugin);
+
+  // Markdown rendering for component fields. NB: not named `renderContent` —
+  // that name is a reserved built-in shim in the editable-regions Liquid
+  // runtime, and a same-named custom filter is skipped by the auto-mirror.
+  eleventyConfig.addLiquidFilter("renderMarkdown", (value) =>
+    value ? md.render(value) : ""
+  );
 
   // Custom Shortcodes
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
@@ -42,6 +53,31 @@ module.exports = async function (eleventyConfig) {
     "tint",
     function (content, tint_color) {
       return `<span style="color: ${tint_color}">${content}</span>`;
+    }
+  );
+
+  // Snippet shortcodes (migrated off Bookshop snippet components)
+  eleventyConfig.addLiquidShortcode(
+    "alert",
+    function (background_color, alert_message, color, icon) {
+      const iconHtml = icon
+        ? `<span class="icon"><i class="${icon}"></i></span>`
+        : "";
+      return `<div class="flex items-center gap-4 px-4 py-2 rounded-lg shadow-md my-4" style="background-color: ${background_color}; color: ${color};">
+  <p class="!mb-0">${iconHtml}${alert_message}</p>
+</div>`;
+    }
+  );
+  eleventyConfig.addLiquidShortcode("video", function (src) {
+    return `<video class="py-6" controls>
+  <source src="${src}" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>`;
+  });
+  eleventyConfig.addLiquidShortcode(
+    "file",
+    function (src, file_name, link_message) {
+      return `<a href="${src}" download="${file_name}">${link_message}</a>`;
     }
   );
 
