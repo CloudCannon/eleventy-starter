@@ -24,7 +24,6 @@ module.exports = async function (eleventyConfig) {
     "node_modules/@11ty/eleventy"
   );
 
-  eleventyConfig.addWatchTarget("tailwind.config.js");
   eleventyConfig.addWatchTarget("src/assets/styles/**/*.{css,scss}");
   eleventyConfig.addWatchTarget("src/_includes/components/");
 

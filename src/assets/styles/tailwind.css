@@ -1,3 +1,7 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss" source(none);
+
+/* Tailwind 4 is CSS-first — there is no tailwind.config.js. Templates live
+   outside this file's directory, so declare them explicitly. `source(none)`
+   disables automatic detection, which would otherwise scan the whole project
+   and pull class names out of the docs in .agents/skills/. */
+@source "../../**/*.{html,liquid,njk,md}";
