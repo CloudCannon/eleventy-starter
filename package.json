@@ -25,7 +25,7 @@
   "dependencies": {
     "@11ty/eleventy-img": "^6.0.4",
     "@11ty/eleventy-plugin-rss": "^1.2.0",
-    "@cloudcannon/editable-regions": "^0.0.18",
+    "@cloudcannon/editable-regions": "github:tomrcc/editable-regions#fix-async-11ty-helpers",
     "@fortawesome/fontawesome-free": "^6.6.0",
     "markdown-it": "^14.1.0",
     "npm-run-all2": "^8.0.4"
