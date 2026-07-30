@@ -21,6 +21,40 @@ To start using this template, go to the [GitHub repository](https://github.com/C
 2. At the root of the project, run `npm install`, to install the node modules.
 3. Run `npm start`. Eleventy will generate and serve your site from a folder called `_site`.
 
+### CloudCannon skills for AI coding agents
+
+If you build with an AI coding agent (Claude Code, Cursor, Copilot, etc.), install CloudCannon's [agent skills](https://github.com/cloudcannon/agent-skills). These teach your agent how CloudCannon configuration, editable regions, and snippets actually work, so it stops guessing.
+
+Install all of them into this project:
+
+```bash
+npx skills add cloudcannon/agent-skills --all
+```
+
+Or pick the ones you need:
+
+```bash
+npx skills add cloudcannon/agent-skills --skill cloudcannon-visual-editing,cloudcannon-configuration
+```
+
+Available skills:
+
+| Skill | Use it for |
+| --- | --- |
+| `cloudcannon-visual-editing` | Adding Visual Editor support, setting up editable regions, debugging visual editing |
+| `cloudcannon-configuration` | Writing `cloudcannon.config.yml` — collections, inputs, structures, select data, collection URLs |
+| `cloudcannon-snippets` | Adding snippets to markdown content and configuring the Content Editor |
+| `migrating-to-cloudcannon` | Onboarding an existing SSG site to CloudCannon |
+| `brainstorming` | Exploring intent and design before a migration or larger change |
+
+Useful flags:
+
+- `-g` / `--global` — install for your user instead of just this project.
+- `-l` / `--list` — list the skills in the repo without installing.
+- `-a '*'` — install to every supported agent, not just the detected one.
+
+Skill files land in `.agents/skills/`, with agent-specific directories such as `.claude/skills/` symlinked to them, and the installed versions recorded in `skills-lock.json`. Commit `skills-lock.json` so teammates can restore the same set with `npx skills experimental_install`. Run `npx skills update` to pull in newer versions, `npx skills ls` to see what's installed, and `npx skills remove` to drop them.
+
 ## Features
 - [Editable regions](#editable-regions)
 - [Styling](#styling)
