@@ -60,6 +60,9 @@ collections_config:
       tags[*]:
         type: text
         cascade: true
+      featured:
+        type: switch
+        comment: List this post in any Featured Posts component
       permalink:
         comment: Override the relative url for this pages location (by default it will be at /blog/page-name/ if you don't set anything here)
     preview:

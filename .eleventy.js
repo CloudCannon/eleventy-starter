@@ -62,13 +62,16 @@ module.exports = async function (eleventyConfig) {
       const iconHtml = icon
         ? `<span class="icon"><i class="${icon}"></i></span>`
         : "";
-      return `<div class="flex items-center gap-4 px-4 py-2 rounded-lg shadow-md my-4" style="background-color: ${background_color}; color: ${color};">
-  <p class="!mb-0">${iconHtml}${alert_message}</p>
+      // NB: plain classes, styled in _components.scss. Tailwind only scans the
+      // template globs in tailwind.css, so utilities written here as strings
+      // would never be generated.
+      return `<div class="s-alert" style="background-color: ${background_color}; color: ${color};">
+  <p class="s-alert__message">${iconHtml}${alert_message}</p>
 </div>`;
     }
   );
   eleventyConfig.addLiquidShortcode("video", function (src) {
-    return `<video class="py-6" controls>
+    return `<video class="s-video" controls>
   <source src="${src}" type="video/mp4" />
   Your browser does not support the video tag.
 </video>`;

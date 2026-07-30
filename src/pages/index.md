@@ -132,4 +132,14 @@ content_blocks:
       background_color: '#034AD8'
       hover_brightness: 0.85
       text_color: '#ffffff'
+  - _type: components/featured-posts
+    background_color: '#ffffff'
+    heading:
+      heading_text: Featured posts
+      color: '#393939'
+    description:
+      markdown_content: >-
+        A hand-picked selection of posts from the blog.
+      color: '#393939'
+    limit: 3
 ---

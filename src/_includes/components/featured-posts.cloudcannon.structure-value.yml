@@ -1,0 +1,41 @@
+label: Featured Posts
+icon: star
+picker_preview:
+  text:
+    - Featured Posts
+  icon:
+    - star
+preview:
+  text:
+    - key: heading.heading_text
+    - Featured Posts
+  subtext:
+    - key: description.markdown_content
+    - Lists blog posts marked as featured, newest first
+  icon:
+    - star
+value:
+  _type: components/featured-posts
+  background_color: '#ffffff'
+  heading:
+    heading_text: Featured posts
+    color: '#393939'
+  description:
+    markdown_content: >-
+      A hand-picked selection of posts from the blog.
+    color: '#393939'
+  limit: 3
+_inputs:
+  heading:
+    type: object
+    options:
+      preview:
+        icon: short_text
+  description:
+    type: object
+    options:
+      preview:
+        icon: short_text
+  limit:
+    type: number
+    comment: The maximum number of featured posts to list

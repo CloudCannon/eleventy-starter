@@ -1,0 +1,33 @@
+<section class="featured-posts" style="background-color: {{background_color}};">
+  <div class="featured-posts__wrapper">
+    <h2 class="featured-posts__heading" style="color: {{heading.color}};" data-editable="text" data-type="span" data-prop="heading.heading_text">{{heading.heading_text}}</h2>
+    <div class="featured-posts__description markdown-text" style="color: {{description.color}};" data-editable="text" data-type="block" data-prop="description.markdown_content">
+      {% if description.markdown_content %}{{ description.markdown_content | renderMarkdown }}{% endif %}
+    </div>
+
+    {% comment %}
+      `collections.posts` resolves in both the Eleventy build and the visual
+      editor (the editable-regions browser bundle supplies it from the
+      CloudCannon `posts` collection). Assign it before filtering so the value
+      is awaited once. Filter on the `featured` frontmatter key, then order
+      newest-first — the editor's collection order isn't date-sorted, so sort
+      explicitly rather than relying on Eleventy's default ordering.
+    {% endcomment %}
+    {% assign all_posts = collections.posts %}
+    {% assign featured_posts = all_posts | where: 'data.featured', true %}
+    {% assign featured_posts = featured_posts | sort: 'date' | reverse %}
+    {% assign post_limit = limit | default: 3 %}
+
+    {% if featured_posts.size > 0 %}
+      <div class="featured-posts__grid">
+        {% for post in featured_posts limit: post_limit %}
+          {% include 'partials/blog/summary.html' %}
+        {% endfor %}
+      </div>
+    {% else %}
+      <p class="featured-posts__empty">
+        No featured posts yet — set <code>Featured</code> to on for a post to list it here.
+      </p>
+    {% endif %}
+  </div>
+</section>

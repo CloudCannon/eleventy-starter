@@ -7,11 +7,10 @@
 @import 'editor';
 @import 'components';
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+// NB: no `* { margin: 0; padding: 0; box-sizing: border-box }` reset here.
+// Tailwind 4's Preflight already applies exactly that, and because Tailwind 4
+// emits its utilities inside `@layer utilities` while this file is unlayered,
+// an unlayered `*` rule would beat every margin/padding utility in the cascade.
 
 html {
   font-family: Poppins, sans-serif;

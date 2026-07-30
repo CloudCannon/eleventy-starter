@@ -157,6 +157,78 @@
   }
 }
 
+// featured-posts
+.featured-posts {
+  overflow: hidden;
+
+  .featured-posts__wrapper {
+    max-width: var(--pageContainer);
+    margin-inline: auto;
+    padding-block: 48px;
+    padding-inline: var(--pagePadding);
+  }
+
+  .featured-posts__heading {
+    font-size: 2.5rem;
+    line-height: 1.1;
+    font-weight: 600;
+  }
+
+  .featured-posts__description {
+    max-width: 620px;
+    margin-top: 1rem;
+  }
+
+  .featured-posts__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin-top: 2rem;
+  }
+
+  .featured-posts__empty {
+    margin-top: 2rem;
+    font-weight: 300;
+  }
+
+  @media only screen and (min-width: 768px) {
+    .featured-posts__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media only screen and (min-width: 1280px) {
+    .featured-posts__grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+}
+
+// snippets (alert / video), rendered by the shortcodes in .eleventy.js
+.s-alert {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  margin-block: 1rem;
+}
+// Two classes deep so this beats `.markdown-text p { margin-bottom: 1.5rem }`,
+// since alerts are rendered inside markdown content.
+.s-alert .s-alert__message {
+  margin-bottom: 0;
+}
+.s-alert .icon {
+  display: inline-flex;
+  margin-right: 0.5rem;
+}
+
+.s-video {
+  width: 100%;
+  margin-block: 1.5rem;
+}
+
 // image
 .c-image {
   width: 100%;
