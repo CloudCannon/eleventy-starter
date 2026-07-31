@@ -1,0 +1,61 @@
+label: Hero
+icon: cottage
+picker_preview:
+  text:
+    - Hero
+  icon:
+    - cottage
+preview:
+  text:
+    - key: heading.heading_text
+    - Hero
+  subtext:
+    - key: subheading.markdown_content
+    - Heading, subheading, image and buttons
+  icon:
+    - cottage
+  image:
+    - key: image.image_path
+value:
+  _type: components/hero
+  background_color: '#ffffff'
+  heading:
+    heading_text: Hero heading
+    heading_gradient_color: '#a0a2ff'
+  subheading:
+    markdown_content: >-
+      A starting point for developers looking to build a website with Eleventy
+      in CloudCannon.
+    color: '#393939'
+  image:
+    image_path: /assets/images/undraw-online-test.svg
+    alt_text: An image
+  buttons: []
+_inputs:
+  heading:
+    type: object
+    options:
+      preview:
+        icon: short_text
+  subheading:
+    type: object
+    options:
+      preview:
+        icon: short_text
+  heading_gradient_color:
+    type: select
+    options:
+      values: data.colors
+      value_key: value
+      preview:
+        text:
+          - key: name
+  image:
+    type: object
+    options:
+      preview:
+        icon: image
+  buttons:
+    type: array
+    options:
+      structures: _structures.buttons

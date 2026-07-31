@@ -1,0 +1,25 @@
+<section style="--headingGradientColor: {{heading.heading_gradient_color}}; background-color: {{background_color}};">
+  <div class="hero-container">
+    <div class="content">
+      <h1 class="heading" data-editable="text" data-type="span" data-prop="heading.heading_text">{{heading.heading_text}}</h1>
+      <div class="subheading-text markdown-text" style="color: {{subheading.color}}" data-editable="text" data-type="block" data-prop="subheading.markdown_content">
+        {% if subheading.markdown_content %}{{ subheading.markdown_content | renderMarkdown }}{% endif %}
+      </div>
+      <div class="buttons" data-editable="array" data-prop="buttons" data-component-key="_type">
+        {% for button in buttons %}
+            {% assign _buttonType = button._type %}
+            <div data-editable="array-item" data-component="{{ button._type }}" data-id="{{ forloop.index0 }}">
+              {% includeWith _buttonType, button %}
+            </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="hero-image">
+      {% if image.image_path %}
+        <div data-editable="image" data-prop-src="image.image_path" data-prop-alt="image.alt_text">
+          {% include "components/image", image_path: image.image_path, alt_text: image.alt_text, image_sizes: "(max-width: 640px) 320px, (max-width: 960px) 500px, (max-width: 1280px) 640px" %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>

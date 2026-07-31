@@ -2,6 +2,7 @@
 date:
 title: ''
 draft: false
+featured: false
 permalink: 
 tags:
   - ''

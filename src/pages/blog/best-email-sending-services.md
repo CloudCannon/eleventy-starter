@@ -3,6 +3,7 @@ _schema: default
 date: 2022-03-11T00:00:00Z
 title: Best email sending services changed
 draft: false
+featured: true
 permalink:
 tags:
   - technology

@@ -1,0 +1,21 @@
+label: Primary Button
+icon: ads_click
+picker_preview:
+  text:
+    - Primary Button
+  icon:
+    - ads_click
+preview:
+  text:
+    - key: button_text
+    - Primary Button
+  icon:
+    - ads_click
+value:
+  _type: components/buttons/primary
+  button_text: Button Text
+  button_icon:
+  button_link: ''
+  background_color: '#034ad8'
+  hover_brightness: 0.85
+  text_color: '#ffffff'

@@ -1,0 +1,20 @@
+label: Secondary Button
+icon: ads_click
+picker_preview:
+  text:
+    - Secondary Button
+  icon:
+    - ads_click
+preview:
+  text:
+    - key: button_text
+    - Secondary Button
+  icon:
+    - ads_click
+value:
+  _type: components/buttons/secondary
+  button_text: Button Text
+  button_icon:
+  button_link: ''
+  text_color: '#034ad8'
+  hover_brightness: 0.95
