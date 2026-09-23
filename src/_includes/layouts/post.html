@@ -42,7 +42,12 @@ layout: layouts/layout.html
   >
     <h2 class="text-2xl">Recent Posts</h2>
     <div class="grid sm:grid-cols-2 gap-5 mt-5">
-        {% assign latest_posts = collections.posts | reverse %}
+        {% comment %}
+          `collections.posts` is already newest-first from the Eleventy config,
+          but the visual editor supplies its own unsorted copy of the
+          collection, so sort explicitly here too.
+        {% endcomment %}
+        {% assign latest_posts = collections.posts | sort: 'date' | reverse %}
         {% for post in latest_posts limit:2 %}
             {% include 'partials/blog/summary.html' %}
         {% endfor %}
