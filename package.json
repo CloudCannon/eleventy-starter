@@ -23,12 +23,12 @@
     "tailwindcss": "^4.3.3"
   },
   "dependencies": {
-    "@11ty/eleventy-img": "^6.0.4",
-    "@11ty/eleventy-plugin-rss": "^1.2.0",
-    "@cloudcannon/editable-regions": "0.0.19",
-    "@fortawesome/fontawesome-free": "^6.6.0",
-    "markdown-it": "^14.1.0",
-    "npm-run-all2": "^8.0.4"
+    "@11ty/eleventy-img": "^7.0.0",
+    "@11ty/eleventy-plugin-rss": "^3.0.0",
+    "@cloudcannon/editable-regions": "^0.0.19",
+    "@fortawesome/fontawesome-free": "^7.3.1",
+    "markdown-it": "^15.0.2",
+    "npm-run-all2": "^9.0.3"
   },
   "overrides": {
     "sharp": "^0.35.3"

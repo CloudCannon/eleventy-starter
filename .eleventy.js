@@ -1,5 +1,5 @@
 const pluginEditableRegions = require("@cloudcannon/editable-regions/eleventy");
-const pluginRss = require("@11ty/eleventy-plugin-rss");
+const pluginRss = require("@11ty/eleventy-plugin-rss").default;
 const MarkdownIt = require("markdown-it");
 
 /* 11ty config imports */
