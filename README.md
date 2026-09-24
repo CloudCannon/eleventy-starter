@@ -21,6 +21,45 @@ To start using this template, go to the [GitHub repository](https://github.com/C
 2. At the root of the project, run `npm install`, to install the node modules.
 3. Run `npm start`. Eleventy will generate and serve your site from a folder called `_site`.
 
+### Editing Locally with CloudCannon
+
+Run CloudCannon against your local files with the [CloudCannon CLI](https://cloudcannon.com/documentation/developer-reference/cli/)
+dev server. This is the fastest way to iterate on `cloudcannon.config.yml`, inputs, and structures —
+you see the editing experience without committing and pushing first.
+
+1. Install the CLI and log in (requires Node.js 24+):
+
+   ```bash
+   npm install --global @cloudcannon/cli
+   cloudcannon login
+   ```
+
+2. Build the site, so the dev server has output to serve:
+
+   ```bash
+   npm run build
+   ```
+
+3. Start CloudCannon locally, pointing it at the build output:
+
+   ```bash
+   cloudcannon dev _site
+   ```
+
+The dev server runs on port `10101` by default and opens CloudCannon in your browser, pointed at the
+files in this repo. Content edits sync to disk as you make them; re-run the build after changing
+components or templates to refresh the preview.
+
+Before you commit configuration changes, validate them:
+
+```bash
+cloudcannon validate
+```
+
+The dev server is a development tool only — editors never access it. See
+[Build your editing experience locally](https://cloudcannon.com/blog/build-your-editing-experience-locally-with-the-cloudcannon-dev-server/)
+for the full workflow.
+
 ### CloudCannon skills for AI coding agents
 
 If you build with an AI coding agent (Claude Code, Cursor, Copilot, etc.), install CloudCannon's [agent skills](https://github.com/cloudcannon/agent-skills). These teach your agent how CloudCannon configuration, editable regions, and snippets actually work, so it stops guessing.

@@ -1,5 +1,5 @@
 const pluginEditableRegions = require("@cloudcannon/editable-regions/eleventy");
-const pluginRss = require("@11ty/eleventy-plugin-rss");
+const pluginRss = require("@11ty/eleventy-plugin-rss").default;
 const MarkdownIt = require("markdown-it");
 
 /* 11ty config imports */
@@ -83,9 +83,14 @@ module.exports = async function (eleventyConfig) {
     }
   );
 
-  // Custom Collection
+  // Custom Collection. Sorted newest-first: Eleventy collections default to
+  // oldest-first, and `pagination` slices the collection before a template can
+  // see it, so page 1 of /blog would otherwise show the oldest posts. Ordering
+  // here is the only place that fixes every page of the paginated list at once.
   eleventyConfig.addCollection("posts", function (collectionApi) {
-    return collectionApi.getFilteredByGlob("src/pages/blog/**/*.md");
+    return collectionApi
+      .getFilteredByGlob("src/pages/blog/**/*.md")
+      .sort((a, b) => b.date - a.date);
   });
 
   return {

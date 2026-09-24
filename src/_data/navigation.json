@@ -1,6 +1,6 @@
 {
   "header": {
-    "logo": "/assets/images/logos/logo-wordmark-blue.png",
+    "logo": "/assets/images/logos/eleventy-starter-logo.svg",
     "logo_alt": "",
     "logo_url": "/",
     "background_color": "#ffffff",
@@ -17,7 +17,7 @@
     ]
   },
   "footer": {
-    "logo": "/assets/images/logos/logo-wordmark-white.png",
+    "logo": "/assets/images/logos/eleventy-starter-logo-reversed.svg",
     "logo_alt": "",
     "logo_url": "/",
     "copyright": "MyCompany. All rights reserved.",

@@ -8,7 +8,7 @@ layout: layouts/layout.html
       {{title}}
     </h1>
     <section class="blog-index mx-auto">
-        {% assign posts = collections[ tag ] %}
+        {% assign posts = collections[ tag ] | reverse %}
         {% include 'partials/blog/list.html' %}
     </section>
 </div>
