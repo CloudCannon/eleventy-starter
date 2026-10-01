@@ -1,11 +1,11 @@
-@import 'variables';
-@import 'blog';
-@import 'post';
-@import 'markdown';
-@import 'header';
-@import 'footer';
-@import 'editor';
-@import 'components';
+@use 'variables';
+@use 'blog';
+@use 'post';
+@use 'markdown';
+@use 'header';
+@use 'footer';
+@use 'editor';
+@use 'components';
 
 // NB: no `* { margin: 0; padding: 0; box-sizing: border-box }` reset here.
 // Tailwind 4's Preflight already applies exactly that, and because Tailwind 4
