@@ -403,6 +403,18 @@ _inputs:
     cascade: true
   favicon:
     type: image
+    label: Favicon (SVG)
+    comment: Used by modern browsers. Should be a square SVG.
+    options:
+      accepts_mime_types:
+        - image/svg+xml
+  favicon_ico:
+    type: image
+    label: Favicon (ICO)
+    comment: Fallback for browsers that don't support SVG favicons. Should be a 32x32 .ico file.
+    options:
+      accepts_mime_types:
+        - image/x-icon
 _editables:
   content:
     allow_custom_markup: false

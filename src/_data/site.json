@@ -5,5 +5,6 @@
   "twitter_site": "",
   "image": "",
   "image_alt": "",
-  "favicon": "/assets/images/favicon.svg"
+  "favicon": "/assets/images/favicon.svg",
+  "favicon_ico": "/assets/images/favicon.ico"
 }
