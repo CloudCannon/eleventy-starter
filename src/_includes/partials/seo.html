@@ -8,8 +8,12 @@
     <meta property="og:description" content="{{ site.description }}" />
 {% endif %}
 
-<link rel="icon" href="/assets/images/favicon.ico" sizes="32x32" />
+{% if site.favicon_ico %}
+<link rel="icon" href="{{ site.favicon_ico }}" sizes="32x32" />
+{% endif %}
+{% if site.favicon %}
 <link rel="icon" href="{{ site.favicon }}" type="image/svg+xml" />
+{% endif %}
 
 <meta name="twitter:card" content="summary_large_image" />
 {% if seo.open_graph_type %}
